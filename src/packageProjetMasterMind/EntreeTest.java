@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class EntreeTest {
 	
-	// entr�e (tableau 1d)
+	// entrée (tableau 1d)
 	private int reponse [];
 	// maximum autorisé de chaque élément de 'reponse'
 	private int max;

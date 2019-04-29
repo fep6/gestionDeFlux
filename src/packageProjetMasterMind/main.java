@@ -24,23 +24,24 @@ public class main {
 		
 		// 1.1 input de type de jeu
 		
-	System.out.println("veuillez entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
-	typeJeu = sc.nextInt();
-	while (typeJeu != 1 && typeJeu != 2)
-		{
-		System.out.println("veuillez bien entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
-		typeJeu = sc.nextInt();
-		}
+//	System.out.println("veuillez entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
+//	typeJeu = sc.nextInt();
+//	while (typeJeu != 1 && typeJeu != 2)
+//		{
+//		System.out.println("veuillez bien entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
+//		typeJeu = sc.nextInt();
+//		}
 
-		//1.2 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups, 
-	System.out.println("veuillez entrer le mode � choisir:\n"
+		//1.2 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
+		
+	System.out.println("veuillez entrer le mode à choisir:\n"
 			+ "1-> Mode challenger o� vous devez trouver la combinaison secr�te de l'ordinateur \n"+
 			"2-> Mode d�fenseur o� c'est � l'ordinateur de trouver votre combinaison secr�te \n" +
-			"3-> Mode duel o� l'ordinateur et vous jouez tour � tour, \n"
-			+ "le premier � trouver la combinaison secr�te de l'autre a gagn�");
+			"3-> Mode duel o� l'ordinateur et vous jouez tour à tour, \n"
+			+ "le premier � trouver la combinaison secréte de l'autre a gagn�");
 	modeJeu = sc.nextInt();
 	while (modeJeu != 1 && modeJeu != 2 && modeJeu != 3) {
-		System.out.println("veuillez bien entrer le mode � choisir:\n"
+		System.out.println("veuillez bien entrer le mode à choisir:\n"
 				+ "1-> Mode challenger o� vous devez trouver la combinaison secr�te de l'ordinateur \n"+
 				"2-> Mode d�fenseur o� c'est � l'ordinateur de trouver votre combinaison secr�te \\n" +
 				"3-> Mode duel o� l'ordinateur et vous jouez tour � tour, \n "
