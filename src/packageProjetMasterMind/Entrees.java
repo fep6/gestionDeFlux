@@ -32,7 +32,7 @@ public class Entrees {
 		nCouleurs = sc.nextInt();
 		System.out.println("veuillez entrer le nombre de coups maximum:");
 		nCoups = sc.nextInt();
-		
+		 
 		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
 //		if (typeJeu == 1) {
 //			System.out.println("Recherche +/-");
