@@ -31,7 +31,7 @@ Entrees E = new Entrees();
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
 	
 	
-	// combinaison1 en d�fense (Mode 1 & 3)
+	// combinaison1 en défense (Mode 1 & 3)
 	int combinaisonDefense [] = new int[nPions];
 	// combinaison2 en attaque (Mode 2 & 3)
 	int combinaisonAttaque []= new int[nPions];
@@ -77,7 +77,7 @@ Entrees E = new Entrees();
 			
 			EntreeTest entre = new EntreeTest(reponse1,nCouleurs);
 			
-			//2.1.1.2 comparatif combinaison secr�te / entr�e => r�ponse ordinateur
+			//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur
 			boleenSiGagne = true;
 			
 			for (int i=0; i<nPions; i++) {
@@ -168,7 +168,7 @@ Entrees E = new Entrees();
 						}
 					}
 				}
-				// 2.2.3 Entr�e de la r�ponse du joueur (var tableauReponseJoueur)
+				// 2.2.3 Entrée de la réponse du joueur (var tableauReponseJoueur)
 				for (int i=0;i<nPions;i++) {
 				System.out.println("Veuillez entrer la r�ponse du " + (i+1) + " eme pion.");
 				tableauReponseJoueur[i][j]=sc.nextLine();
