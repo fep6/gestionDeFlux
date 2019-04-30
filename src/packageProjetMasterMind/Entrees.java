@@ -9,7 +9,7 @@ public class Entrees {
 	protected int modeJeu;
 	private Scanner sc = new Scanner(System.in);
 	
-	// Entrées des données du jeu
+	// Entrées des données du jeu 
 	Entrees(){
 		
 		System.out.println("veuillez entrer le mode à choisir:\n"
