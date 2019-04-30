@@ -2,11 +2,15 @@ package packageProjetMasterMind;
 
 import java.util.Scanner;
 
-public class EntreeDesDonnees {
-	
+public class Entrees {
+	protected int nCoups; 
+	protected int nPions; 
+	protected int nCouleurs; 
+	protected int modeJeu;
 	private Scanner sc = new Scanner(System.in);
 	
-	EntreeDesDonnees(){
+	// Entrées des données du jeu
+	Entrees(){
 		
 		System.out.println("veuillez entrer le mode à choisir:\n"
 				+ "1-> Mode challenger où vous devez trouver la combinaison secr�te de l'ordinateur \n"+

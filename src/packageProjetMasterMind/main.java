@@ -15,7 +15,7 @@ public class main {
 		// TODO Auto-generated method stub
 // 1 Choix du jeu et du mode
 		
-		int typeJeu = 0; 
+		// int typeJeu = 0; 
 		int nCoups; 
 		int nPions; 
 		int nCouleurs; 
@@ -61,12 +61,12 @@ public class main {
 
 
 	System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
-	if (typeJeu == 1) {
-		System.out.println("Recherche +/-");
-	}
-	if (typeJeu == 2) {
-		System.out.println("MasterMind");
-	}
+//	if (typeJeu == 1) {
+//		System.out.println("Recherche +/-");
+//	}
+//	if (typeJeu == 2) {
+//		System.out.println("MasterMind");
+//	}
 	System.out.println("Avec " + nPions + " pions avec " + nCouleurs + " couleurs, le tout � retrouver en " 
 	+ nCoups +" coups maximum.");
 	System.out.println("Enfin, vous avez choisi le mode:");
@@ -126,7 +126,7 @@ public class main {
 			tour++;
 			System.out.println("\n \n Veuillez entrer votre code:");
 			
-// Code de factorisation du test de l'entr�e
+// Code de factorisation du test de l'entrée
 			
 			EntreeTest entre = new EntreeTest(reponse1,nCouleurs);
 			

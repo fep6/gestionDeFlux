@@ -1,7 +1,7 @@
 package packageProjetMasterMind;
 import java.util.Scanner;
 
-//Test de l'entr�e de l'utilisateur
+//Test de l'entrée de l'utilisateur
 
 public class EntreeTest {
 	
@@ -16,7 +16,7 @@ public class EntreeTest {
 	
 	EntreeTest ( int pReponse [], int pMax ) {
 		
-		// repositionnement des param�tres d'entr�e en variables
+		// repositionnement des paramètres d'entrée en variables
 		reponse = pReponse;
 		max = pMax;
 		// for (int i=0; i<this.reponse.length;i++)
