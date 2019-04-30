@@ -22,66 +22,13 @@ public class main {
 		int modeJeu;
 		Scanner sc = new Scanner(System.in);
 		
-		// 1.1 input de type de jeu
-		
-//	System.out.println("veuillez entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
-//	typeJeu = sc.nextInt();
-//	while (typeJeu != 1 && typeJeu != 2)
-//		{
-//		System.out.println("veuillez bien entrer le type de jeu:\n  1-> Recherche +/- \n 2-> MasterMind");
-//		typeJeu = sc.nextInt();
-//		}
 
-		//1.2 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
-		
-	System.out.println("veuillez entrer le mode à choisir:\n"
-			+ "1-> Mode challenger o� vous devez trouver la combinaison secr�te de l'ordinateur \n"+
-			"2-> Mode d�fenseur o� c'est � l'ordinateur de trouver votre combinaison secr�te \n" +
-			"3-> Mode duel o� l'ordinateur et vous jouez tour à tour, \n"
-			+ "le premier � trouver la combinaison secréte de l'autre a gagn�");
-	modeJeu = sc.nextInt();
-	while (modeJeu != 1 && modeJeu != 2 && modeJeu != 3) {
-		System.out.println("veuillez bien entrer le mode à choisir:\n"
-				+ "1-> Mode challenger o� vous devez trouver la combinaison secr�te de l'ordinateur \n"+
-				"2-> Mode d�fenseur o� c'est � l'ordinateur de trouver votre combinaison secr�te \\n" +
-				"3-> Mode duel o� l'ordinateur et vous jouez tour � tour, \n "
-				+ "le premier � trouver la combinaison secr�te de l'autre a gagn�");
-		modeJeu = sc.nextInt();	
-	}
-	System.out.println("veuillez entrer le nombre de pions:");
-	nPions = sc.nextInt();
-	System.out.println("veuillez entrer le nombre de couleurs:");
-	nCouleurs = sc.nextInt();
-	System.out.println("veuillez entrer le nombre de coups maximum:");
-	nCoups = sc.nextInt();
+	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
+
+Entrees E = new Entrees();
 
 
-
-		//1.3 R�capitulatif
-
-
-	System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
-//	if (typeJeu == 1) {
-//		System.out.println("Recherche +/-");
-//	}
-//	if (typeJeu == 2) {
-//		System.out.println("MasterMind");
-//	}
-	System.out.println("Avec " + nPions + " pions avec " + nCouleurs + " couleurs, le tout � retrouver en " 
-	+ nCoups +" coups maximum.");
-	System.out.println("Enfin, vous avez choisi le mode:");
-	if (modeJeu == 1) {
-		System.out.println(" \' Challenger \' o� vous devez trouver la combinaison secr�te de l'ordinateur");
-	}
-	if (modeJeu == 2) {
-		System.out.println("  \' D�fenseur \' o� c'est � l'ordinateur de trouver votre combinaison secr�te");
-	}
-	if (modeJeu == 3) {
-		System.out.println("  \' Duel \' o� l'ordinateur et vous jouez tour � tour,\n" + 
-				"le premier � trouver la combinaison secr�te de l'autre a gagn�");
-	}
-
-	//1.4  Cr�ation Combinaison secr�te de l'ordi., et entr�es du joueur (pour modes 1 & 3):
+	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
 	
 	
 	// combinaison1 en d�fense (Mode 1 & 3)
@@ -93,13 +40,13 @@ public class main {
 	
 	if ( modeJeu == 1 || modeJeu == 3) {
 		
-		//1.4.1 Combinaison secr�te g�n�r� par l'ordi. 
+		//1.2.1 Combinaison secr�te g�n�r� par l'ordi. 
 		// combinaison1 (tableau)
 		for (int i=0 ; i<combinaisonDefense.length; i++) {
 			combinaisonDefense[i]=(int) (Math.random()*nCouleurs);
 		}
 		
-		// 1.4.2 Triche
+		// 1.2.2 Triche
 		System.out.println("\n \n-------------------------------------");
 		System.out.println("TRICHE : combinaisonDefense= ");
 		for (int i=0 ; i<combinaisonDefense.length; i++) {
@@ -111,7 +58,7 @@ public class main {
 	// 2 Recherche +/- : 
 	
 	// 2.1 Recherche +/- Mode 1 : 'Challenger' o� vous devez trouver la combinaison secr�te de l'ordinateur
-	if ( typeJeu == 1 && modeJeu == 1) {
+	if (modeJeu == 1) {
 		String verdict = new String();
 		// Variable r�ponse corrective de l'ordinateur
 		String correctif []= new String[nPions];
@@ -167,7 +114,7 @@ public class main {
 	}
 			
 			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secr�te
-	if ( typeJeu == 1 && modeJeu == 2) { 
+	if (  modeJeu == 2) { 
 		String verdict = new String();
 		verdict = "";
 		// Nombre de tours
@@ -238,33 +185,13 @@ public class main {
 	
 			// 2.3 Recherche +/- : mode 3
 	
-	if ( typeJeu == 1 && modeJeu == 3) {
-		
-	};
-			
-			
-			
-	//  3 Master Mind
-	
-			//mode 1
-	
-	if ( typeJeu == 2 && modeJeu == 1) {
-		
-	};
-			
-	
-			//mode 2
-	
-	if ( typeJeu == 2 && modeJeu == 2) {
-		
-	};
-			
-	
-			//mode 3
-	
-	if ( typeJeu == 2 && modeJeu == 3) {
+	if ( modeJeu == 3) {
 		
 	}
+			
+			
+			
+
 System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
 System.out.println("fin du jeu");
 

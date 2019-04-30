@@ -33,6 +33,26 @@ public class Entrees {
 		System.out.println("veuillez entrer le nombre de coups maximum:");
 		nCoups = sc.nextInt();
 		
+		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
+//		if (typeJeu == 1) {
+//			System.out.println("Recherche +/-");
+//		}
+//		if (typeJeu == 2) {
+//			System.out.println("MasterMind");
+//		}
+		System.out.println("Avec " + nPions + " pions avec " + nCouleurs + " couleurs, le tout � retrouver en " 
+		+ nCoups +" coups maximum.");
+		System.out.println("Enfin, vous avez choisi le mode:");
+		if (modeJeu == 1) {
+			System.out.println(" \' Challenger \' o� vous devez trouver la combinaison secr�te de l'ordinateur");
+		}
+		if (modeJeu == 2) {
+			System.out.println("  \' D�fenseur \' o� c'est � l'ordinateur de trouver votre combinaison secr�te");
+		}
+		if (modeJeu == 3) {
+			System.out.println("  \' Duel \' o� l'ordinateur et vous jouez tour � tour,\n" + 
+					"le premier � trouver la combinaison secr�te de l'autre a gagn�");
+		}
 		
 	}
 }
