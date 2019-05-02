@@ -19,12 +19,13 @@ public class Main {
 		int nPions = 0; 
 		int nCouleurs = 0; 
 		int modeJeu = 0;
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 
 	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-Entrees E = new Entrees();
+Entrees E = new Entrees(nCoups,nPions,nCouleurs,modeJeu);
 
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
