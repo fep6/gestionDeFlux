@@ -2,7 +2,7 @@ package packageProjetMasterMind;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 		//  Essai commit
@@ -12,14 +12,13 @@ public class main {
 		// Essai commit & push 19/04/19 14:45
 		// Essai commit & push 19/04/19 14:45
 		
-		// TODO Auto-generated method stub
 // 1 Choix du jeu et du mode
 		
 		// int typeJeu = 0; 
-		int nCoups; 
-		int nPions; 
-		int nCouleurs; 
-		int modeJeu;
+		int nCoups = 0; 
+		int nPions = 0; 
+		int nCouleurs = 0; 
+		int modeJeu = 0;
 		Scanner sc = new Scanner(System.in);
 		
 
@@ -35,12 +34,12 @@ Entrees E = new Entrees();
 	int combinaisonDefense [] = new int[nPions];
 	// combinaison2 en attaque (Mode 2 & 3)
 	int combinaisonAttaque []= new int[nPions];
-	// Cr�ation variable tampon r�ponse
+	// Création variable tampon réponse
 	int reponse1 [] = new int [nPions];
 	
 	if ( modeJeu == 1 || modeJeu == 3) {
 		
-		//1.2.1 Combinaison secr�te g�n�r� par l'ordi. 
+		//1.2.1 Combinaison secrète généré par l'ordi. 
 		// combinaison1 (tableau)
 		for (int i=0 ; i<combinaisonDefense.length; i++) {
 			combinaisonDefense[i]=(int) (Math.random()*nCouleurs);
@@ -69,7 +68,7 @@ Entrees E = new Entrees();
 		//2.1.1 par tableau (combinaison1, reponse1)
 		while (verdict != "GAGNE!" || verdict != "PERDU!") {
 			
-			//2.1.1.1 entr�es du joueur (var reponse1)
+			//2.1.1.1 entrées du joueur (var reponse1)
 			tour++;
 			System.out.println("\n \n Veuillez entrer votre code:");
 			
@@ -113,15 +112,15 @@ Entrees E = new Entrees();
 		System.out.println(verdict);
 	}
 			
-			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secr�te
+			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secrète
 	if (  modeJeu == 2) { 
 		String verdict = new String();
 		verdict = "";
 		// Nombre de tours
 		int tour = 0;
-		// Cr�ation tableau 2d r�ponse (/joueur) j->position pion, k->N� coup.
+		// Création tableau 2d réponse (/joueur) j->position pion, k->N coup.
 		String tableauReponseJoueur [][]=new String [nPions][nCoups];
-		// Cr�ation tableau 3d (/ordi)  i->position pion, j->N� coup.
+		// Création tableau 3d (/ordi)  i->position pion, j->N coup.
 		int tableauJeu [][] = new int [nPions][nCoups];	
 		
 		
@@ -143,13 +142,13 @@ Entrees E = new Entrees();
 			for (int j=0;j<nCoups;j++) {
 				tour++;
 				System.out.println("Nous sommes au tour :" + tour);
-				// 1er coup: On donne une couleur al�atoire differente � chaque pion
+				// 1er coup: On donne une couleur aléatoire differente à chaque pion
 				if (tour==1) {
 					for (int i=0;i<nPions;i++) {
 					tableauJeu[i][0]=(int)(Math.random()*nCouleurs);
 					System.out.println("Pion "+ i + " : " + tableauJeu[i][0]);
 					}
-				// Sinon, l'ordi. tient compte de ce qu'� dit le joueur au coup d'avant
+				// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant
 			} else {
 				for (int i=0;i<nPions;i++) {	
 					if (tableauReponseJoueur[i][j-1]=="=") {
@@ -192,7 +191,7 @@ Entrees E = new Entrees();
 			
 			
 
-System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
+	
 System.out.println("fin du jeu");
 
 }
