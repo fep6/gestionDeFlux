@@ -13,19 +13,9 @@ public class Entrees {
 	Entrees (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
 		
 		while (pModeJeu != 1 && pModeJeu != 2 && pModeJeu != 3) {
-			System.out.println("veuillez bien entrer le mode à choisir:\n"
-					+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"+
-					"2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \\n" +
-					"3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n "
-					+ "le premier à trouver la combinaison secrète de l'autre a gagné");
-			pModeJeu = sc.nextInt();	
+			setModeJeu();	
 		}
-		System.out.println("veuillez entrer le nombre de pions:");
-		pnPions = sc.nextInt();
-		System.out.println("veuillez entrer le nombre de couleurs:");
-		pnCouleurs = sc.nextInt();
-		System.out.println("veuillez entrer le nombre de coups maximum:");
-		pnCoups = sc.nextInt();
+		setModeJeu();
 		 
 		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
 
