@@ -3,14 +3,14 @@ package packageProjetMasterMind;
 import java.util.Scanner;
 
 public class Entrees {
-//	private int pnCoups; 
-//	private int pnPions; 
-//	private int pnCouleurs = 0; 
-//	private int pModeJeu = 0;
+	private int nCoups; 
+	private int nPions; 
+	private int nCouleurs = 0; 
+	private int modeJeu = 0;
 	private Scanner sc = new Scanner(System.in);
 	
 	// Entrées des données du jeu 
-	Entrees(int pnCoups, int pnPions, int pnCouleurs, int pModeJeu){
+	Entrees (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
 		
 		System.out.println("veuillez entrer le mode à choisir:\n"
 				+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"+

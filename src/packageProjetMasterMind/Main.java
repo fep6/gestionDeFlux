@@ -15,24 +15,21 @@ public class Main {
 // 1 Choix du jeu et du mode
 		
 		// int typeJeu = 0; 
-		int nCoups = 0; 
-		int nPions = 0; 
-		int nCouleurs = 0; 
-		int modeJeu = 0;
+		int nCoups =0; 
+		int nPions =0; 
+		int nCouleurs =0; 
+		int modeJeu =0;
 		Scanner sc = new Scanner(System.in);
 		
 
 	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-Entrees E = new Entrees (nCoups,nPions,nCouleurs,modeJeu);
+Entrees e = new Entrees(nCoups,nPions,nCouleurs,modeJeu);
 
-System.out.println("Le mode de jeu choisi est: " + modeJeu + " !!!!!!!!!!!!!!!!!!!!!");
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
 	
 	
-
-
 	// combinaison1 en défense (Mode 1 & 3)
 	int combinaisonDefense [] = new int[nPions];
 	// combinaison2 en attaque (Mode 2 & 3)
@@ -194,10 +191,11 @@ System.out.println("Le mode de jeu choisi est: " + modeJeu + " !!!!!!!!!!!!!!!!!
 			
 			
 
-	
+// System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
 System.out.println("fin du jeu");
 
 }
 	
 }
+
 
