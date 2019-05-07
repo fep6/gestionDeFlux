@@ -13,13 +13,11 @@ public class Entrees {
 	Entrees (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
 		
 		while (pModeJeu != 1 && pModeJeu != 2 && pModeJeu != 3) {
-			setModeJeu();	
+			this.setModeJeu();	
 		}
-		setModeJeu();
+		this.setModeJeu();
 		 
 		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
-
-
 		System.out.println("Avec " + pnPions + " pions avec " + pnCouleurs + " couleurs, le tout à retrouver en " 
 		+ pnCoups +" coups maximum.");
 		System.out.println("Enfin, vous avez choisi le mode:");
@@ -48,14 +46,17 @@ public class Entrees {
 	public int getModeJeu(){
 		return modeJeu;
 	}
-	void setNCoups(int pNCoups) {
-		nCoups = pNCoups;
+	void setNCoups() {
+		System.out.println("Veuillez entrer le nombre de coups souhaités: ");
+		nCoups = sc.nextInt();
 	}
-	void setNPions(int pNPions) {
-		nPions = pNPions;
+	void setNPions() {
+		System.out.println("Veuillez entrer le nombre de pions: ");
+		nPions = sc.nextInt();
 	}
-	void setNCouleurs(int pNCouleurs) {
-		nCouleurs = pNCouleurs;
+	void setNCouleurs() {
+		System.out.println("Veuillez entrer le nombre de couleurs souhaitées: ");
+		nCouleurs = sc.nextInt();
 	}
 	void setModeJeu(){
 
