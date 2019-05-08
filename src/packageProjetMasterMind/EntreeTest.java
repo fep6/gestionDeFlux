@@ -16,7 +16,7 @@ public class EntreeTest {
 	
 	EntreeTest ( int pReponse [], int pMax ) {
 		
-		// repositionnement des paramètres d'entrée en variables
+		// Renseignement des variables de classe par les variables d'instance
 		reponse = pReponse;
 		max = pMax;
 		// for (int i=0; i<this.reponse.length;i++)

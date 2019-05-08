@@ -5,15 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		//  Essai commit
-		// Essai commit & push 18/04 15:19 (install eclipse JEE)
-		// 3eme essai Essai commit & push 18/04 16:03
-		// Essai commit & push 19/04/19 14:44
-		// Essai commit & push 19/04/19 14:45
-		// Essai commit & push 19/04/19 14:45
-		
-// 1 Choix du jeu et du mode
-		
+
 		// int typeJeu = 0; 
 		int nCoups =0; 
 		int nPions =0; 
@@ -21,10 +13,14 @@ public class Main {
 		int modeJeu =0;
 		Scanner sc = new Scanner(System.in);
 		
+// 1 Choix du jeu et du mode
+		
+
+		
 
 	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-Entrees e = new Entrees(nCoups,nPions,nCouleurs,modeJeu);
+		Entrees e = new Entrees(nCoups,nPions,nCouleurs,modeJeu);
 
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
