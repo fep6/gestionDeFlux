@@ -2,7 +2,7 @@ package packageProjetMasterMind;
 
 import java.util.Scanner;
 
-public class Entrees {
+public class EntreesConfigDuJeu {
 	private int nCoups; 
 	private int nPions; 
 	private int nCouleurs = 0; 
@@ -10,7 +10,7 @@ public class Entrees {
 	private Scanner sc = new Scanner(System.in);
 	
 	// Entrées des données du jeu 
-	Entrees (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
+	EntreesConfigDuJeu (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
 		// Renseignement des variables de classe par les variables d'instance
 		this.nCoups = pnCoups;
 		this.nPions = pnPions;

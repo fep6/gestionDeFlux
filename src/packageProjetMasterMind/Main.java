@@ -20,7 +20,7 @@ public class Main {
 
 	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-		Entrees e = new Entrees(nCoups,nPions,nCouleurs,modeJeu);
+		EntreesConfigDuJeu e = new EntreesConfigDuJeu(nCoups,nPions,nCouleurs,modeJeu);
 
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
