@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 //Test de l'entrée de l'utilisateur
 
-public class EntreeTest {
+public class TestEntreesJeu {
 	
 	// entrée (tableau 1d)
 	private int reponse [];
@@ -14,7 +14,7 @@ public class EntreeTest {
 	
 
 	
-	EntreeTest ( int pReponse [], int pMax ) {
+	TestEntreesJeu ( int pReponse [], int pMax ) {
 		
 		// Renseignement des variables de classe par les variables d'instance
 		reponse = pReponse;
