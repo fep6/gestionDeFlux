@@ -9,14 +9,21 @@ public class EntreesConfigJeu {
 	private int modeJeu = 0;
 	private Scanner sc = new Scanner(System.in);
 	
+	// Entrée en cours 
+	// 1: Mode de jeu
+	// 2: Nombre de coups
+	// 3: Nombre de pions
+	// 4: Nombre de couleurs
+	int entree =0;
+
 	// Entrées des données du jeu 
 	EntreesConfigJeu (int pnCoups, int pnPions, int pnCouleurs, int pModeJeu) {
 		
-		// Renseignement des variables de classe par les variables d'instance 
+		// Renseignement des variables de classe par les variables d'instance
+		this.modeJeu = pModeJeu; 
 		this.nCoups = pnCoups;
 		this.nPions = pnPions;
 		this.nCouleurs = pnCouleurs;
-		this.modeJeu = pModeJeu;
 		
 		// Entrées des données du jeu
 		this.setModeJeu();
@@ -50,6 +57,9 @@ public class EntreesConfigJeu {
 	}
 	
 	// Getters
+	public int getModeJeu(){
+		return modeJeu;
+	}
 	public int getNCoups(){
 		return nCoups;
 	}
@@ -59,11 +69,17 @@ public class EntreesConfigJeu {
 	public int getNCouleurs(){
 		return nCouleurs;
 	}
-	public int getModeJeu(){
-		return modeJeu;
-	}
 	
 	// setters
+	void setModeJeu(){
+		entree = 1;
+		System.out.println("veuillez entrer le mode à choisir:\n"
+				+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"+
+				"2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" +
+				"3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
+				+ "le premier à trouver la combinaison secréte de l'autre a gagné");
+		modeJeu = sc.nextInt();
+	}
 	void setNCoups() {
 		System.out.println("Veuillez entrer le nombre de coups souhaités: ");
 		nCoups = sc.nextInt();
@@ -75,13 +91,5 @@ public class EntreesConfigJeu {
 	void setNCouleurs() {
 		System.out.println("Veuillez entrer le nombre de couleurs souhaitées: ");
 		nCouleurs = sc.nextInt();
-	}
-	void setModeJeu(){
-		System.out.println("veuillez entrer le mode à choisir:\n"
-				+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"+
-				"2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" +
-				"3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
-				+ "le premier à trouver la combinaison secréte de l'autre a gagné");
-		modeJeu = sc.nextInt();
 	}
 }

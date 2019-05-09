@@ -11,7 +11,7 @@ public class Main {
 		int nPions =0; 
 		int nCouleurs =0; 
 		int modeJeu =0;
-		Scanner sc = new Scanner(System.in);
+		// Scanner sc = new Scanner(System.in);
 		
 // 1 Choix du jeu et du mode
 		
@@ -23,33 +23,33 @@ public class Main {
 		EntreesConfigJeu e = new EntreesConfigJeu(nCoups,nPions,nCouleurs,modeJeu);
 
 
-//	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
-//	
-//	
-//	// combinaison1 en défense (Mode 1 & 3)
-//	int combinaisonDefense [] = new int[nPions];
-//	// combinaison2 en attaque (Mode 2 & 3)
-//	int combinaisonAttaque []= new int[nPions];
-//	// Création variable tampon réponse
-//	int reponse1 [] = new int [nPions];
-//	
-//	if ( modeJeu == 1 || modeJeu == 3) {
-//		
-//		//1.2.1 Combinaison secrète généré par l'ordi. 
-//		// combinaison1 (tableau)
-//		for (int i=0 ; i<combinaisonDefense.length; i++) {
-//			combinaisonDefense[i]=(int) (Math.random()*nCouleurs);
-//		}
-//		
-//		// 1.2.2 Triche
-//		System.out.println("\n \n-------------------------------------");
-//		System.out.println("TRICHE : combinaisonDefense= ");
-//		for (int i=0 ; i<combinaisonDefense.length; i++) {
-//			System.out.print((int)combinaisonDefense[i]);
-//		};
-//		System.out.println("\n-------------------------------------");
-//	}
-//
+	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
+	
+	
+	// combinaison1 en défense (Mode 1 & 3)
+	int combinaisonDefense [] = new int[nPions];
+	// combinaison2 en attaque (Mode 2 & 3)
+	int combinaisonAttaque []= new int[nPions];
+	// Création variable tampon réponse
+	int reponse1 [] = new int [nPions];
+	
+	if ( modeJeu == 1 || modeJeu == 3) {
+		
+		//1.2.1 Combinaison secrète généré par l'ordi. 
+		// combinaison1 (tableau)
+		for (int i=0 ; i<combinaisonDefense.length; i++) {
+			combinaisonDefense[i]=(int) (Math.random()*nCouleurs);
+		}
+		
+		// 1.2.2 Triche
+		System.out.println("\n \n-------------------------------------");
+		System.out.println("TRICHE : combinaisonDefense= ");
+		for (int i=0 ; i<combinaisonDefense.length; i++) {
+			System.out.print((int)combinaisonDefense[i]);
+		};
+		System.out.println("\n-------------------------------------");
+	}
+
 //	// 2 Recherche +/- : 
 //	
 //	// 2.1 Recherche +/- Mode 1 : 'Challenger' o� vous devez trouver la combinaison secr�te de l'ordinateur
@@ -70,7 +70,7 @@ public class Main {
 //			
 //// Code de factorisation du test de l'entrée
 //			
-//			EntreeTestJeu entre = new EntreeTestJeu (reponse1,nCouleurs);
+//			TestEntreesJeu entreesJeu = new TestEntreesJeu (reponse1,nCouleurs);
 //			
 //			//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur
 //			boleenSiGagne = true;
@@ -183,14 +183,14 @@ public class Main {
 //	if ( modeJeu == 3) {
 //		
 //	}
-			
-			
-			
-
-// System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
-System.out.println("fin du jeu");
-
-}
+//			
+//			
+//			
+//
+//// System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
+//System.out.println("fin du jeu");
+//
+   }
 	
 }
 
