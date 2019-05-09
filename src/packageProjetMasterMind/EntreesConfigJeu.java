@@ -49,6 +49,7 @@ public class EntreesConfigJeu {
 	void setModeJeu(){
 
 		// Détermination du mode de jeu (Entier,  0<nCoups<4)
+		modeJeu = 0;
 		boolean testEntier = false;
 		String str;			
 
@@ -59,6 +60,9 @@ public class EntreesConfigJeu {
 			+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
 			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
 			str = sc.nextLine();
+			
+			// Essai de factorisation
+			// GestionExeptionEntreesConfigJeu(modeJeu);
 			
 			try {
 				modeJeu = Integer.parseInt(str);
