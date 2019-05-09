@@ -47,32 +47,86 @@ public class EntreesConfigJeu {
 	
 	// setters
 	void setModeJeu(){
-		System.out.println("veuillez entrer le mode à choisir:\n"
-				+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"
-				+ "2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" 
-				+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
-				+ "le premier à trouver la combinaison secréte de l'autre a gagné");
-		modeJeu = sc.nextInt();
-		while (modeJeu != 1 && modeJeu != 2 && modeJeu != 3) {
-			System.out.println("VEUILLEZ SVP ENTRER UN CHOIX ENTRE 1, 2 OU 3 :"
-				+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"
-				+ "2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" 
-				+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
-				+ "le premier à trouver la combinaison secréte de l'autre a gagné");
-			modeJeu = sc.nextInt();
-		}
+
+		// Détermination du mode de jeu (Entier,  0<nCoups<4)
+		boolean testEntier = false;
+		String str;			
+
+		do {
+			System.out.println("veuillez entrer le mode à choisir:\n"
+			+ "1-> Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur \n"
+			+ "2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" 
+			+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
+			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
+			str = sc.nextLine();
+			
+			try {
+				modeJeu = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(modeJeu);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+		} while (testEntier != true || modeJeu < 1 || modeJeu > 3 );
 	}
+	
+	
 	void setNCoups() {
-		System.out.println("Veuillez entrer le nombre de coups souhaités: ");
-		nCoups = sc.nextInt();
+		// Détermination du nombre de coups (Entier, 0<nCoups<20)
+		boolean testEntier = false;
+		String str;
+			
+		do {
+			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
+			str = sc.nextLine();
+			
+			try {
+				nCoups = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nCoups);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+		} while (testEntier != true || nCoups < 1 || nCoups > 20 );
 	}
+	
 	void setNPions() {
-		System.out.println("Veuillez entrer le nombre de pions: ");
-		nPions = sc.nextInt();
+		// Détermination du nombre pions (Entier, 1<nPions<4)
+		boolean testEntier = false;
+		String str;
+			
+		do {
+			System.out.println("Veuillez entrer le nombre de pions: ");
+			str = sc.nextLine();
+			
+			try {
+				nPions = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nPions);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+		} while (testEntier != true || nPions < 1 || nPions > 4 );
 	}
-	void setNCouleurs() {
-		System.out.println("Veuillez entrer le nombre de couleurs souhaitées: ");
-		nCouleurs = sc.nextInt();
+	
+	void setNCouleurs() {		
+		
+		// Détermination du nombre de couleurs (Entier, 1<nPions<4)
+		boolean testEntier = false;
+		String str;
+			
+		do {
+			System.out.println("Veuillez entrer le nombre de couleurs souhaitées (entre 1 & 4): ");
+			str = sc.nextLine();
+			
+			try {
+				nCouleurs = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nPions);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+		} while (testEntier != true || nCouleurs < 1 || nCouleurs > 4 );
 	}
 	
 	// Getters
