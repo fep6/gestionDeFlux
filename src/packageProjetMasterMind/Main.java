@@ -10,7 +10,7 @@ public class Main {
 		int nCoups =0; 
 		int nPions =0; 
 		int nCouleurs =0; 
-		int modeJeu =0;
+		// int modeJeu =0;
 		// Scanner sc = new Scanner(System.in);
 		
 // 1 Choix du jeu et du mode
@@ -18,9 +18,9 @@ public class Main {
 
 		
 
-	//1.1 input du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
+	//1.1 Entrée du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-		EntreesConfigJeu e = new EntreesConfigJeu(nCoups,nPions,nCouleurs,modeJeu);
+		EntreesConfigJeu entrees = new EntreesConfigJeu();
 
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
@@ -33,7 +33,7 @@ public class Main {
 	// Création variable tampon réponse
 	int reponse1 [] = new int [nPions];
 	
-	if ( modeJeu == 1 || modeJeu == 3) {
+	if ( entrees.getModeJeu() == 1 || entrees.getModeJeu() == 3) {
 		
 		//1.2.1 Combinaison secrète généré par l'ordi. 
 		// combinaison1 (tableau)
