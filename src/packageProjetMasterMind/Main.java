@@ -25,29 +25,7 @@ public class Main {
 
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
 
-	// combinaison1 en défense (Mode 1 & 3)
-	int combinaisonDefense [] = new int[nPions];
-	// combinaison2 en attaque (Mode 2 & 3)
-	int combinaisonAttaque []= new int[nPions];
-	// Création variable tampon réponse
-	int reponse1 [] = new int [nPions];
-	
-	if ( modeJeu == 1 || modeJeu == 3) {
-		
-		//1.2.1 Combinaison secrète généré par l'ordi. 
-		// combinaison1 (tableau)
-		for (int i=0 ; i<combinaisonDefense.length; i++) {
-			combinaisonDefense[i]=(int) (Math.random()*nCouleurs);
-		}
-		
-		// 1.2.2 Triche
-		System.out.println("\n \n-------------------------------------");
-		System.out.println("TRICHE : combinaisonDefense= ");
-		for (int i=0 ; i<combinaisonDefense.length; i++) {
-			System.out.print((int)combinaisonDefense[i]);
-		};
-		System.out.println("\n-------------------------------------");
-	}
+		CombinaisonSecreteOrdiEntreesJoueur csoj = new CombinaisonSecreteOrdiEntreesJoueur();
 
 	// 2 Recherche +/- : 
 	
@@ -69,20 +47,20 @@ public class Main {
 			
 // Code de factorisation du test de l'entrée
 			
-			TestEntreesJeu entreesJeu = new TestEntreesJeu (reponse1,nCouleurs);
+			TestEntreesJeu entreesJeu = new TestEntreesJeu (csoj.reponse1,nCouleurs);
 			
 			//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur
 			boleenSiGagne = true;
 			
 			for (int i=0; i<nPions; i++) {
-				if ( reponse1[i]==combinaisonDefense[i] ) {
+				if ( csoj.reponse1[i]==csoj.combinaisonDefense[i] ) {
 					correctif[i]="=";
 				}
-				if ( reponse1[i]<combinaisonDefense[i] ) {
+				if ( csoj.reponse1[i]<csoj.combinaisonDefense[i] ) {
 					correctif[i]="-";
 					boleenSiGagne = false;
 				}
-				if ( reponse1[i]>combinaisonDefense[i] ) {
+				if ( csoj.reponse1[i]>csoj.combinaisonDefense[i] ) {
 					correctif[i]="+";
 					boleenSiGagne = false;
 				}
@@ -96,7 +74,7 @@ public class Main {
 			//2.1.1.4 test
 			tourRestant = nCoups - tour;
 			System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-			System.out.println(" TRICHE 2 : reponse1 "+ reponse1 + " 1 combinaisonDefense "+ combinaisonDefense);
+			System.out.println(" TRICHE 2 : reponse1 "+ csoj.reponse1 + " 1 combinaisonDefense "+ csoj.combinaisonDefense);
 			if (tourRestant == 0 &&  !boleenSiGagne ) {
 				verdict = "PERDU!";
 			}
@@ -122,11 +100,11 @@ public class Main {
 	// 2.2.1 Entr�es du joueur (var combinaisonDefense)
 		for (int i = 0 ; i < nPions; i++) {
 			System.out.println("veuillez entrer la couleur du " + (i+1) + " eme pion: ");
-			combinaisonDefense [i]= sc.nextInt();
+			csoj.combinaisonDefense [i]= sc.nextInt();
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
 		for (int i = 0 ; i < nPions; i++) {
-			System.out.print(combinaisonDefense [i]);
+			System.out.print(csoj.combinaisonDefense [i]);
 		}
 		System.out.print("\n ---------------------");
 		
