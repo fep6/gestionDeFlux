@@ -3,11 +3,23 @@ package packageProjetMasterMind;
 import java.util.Scanner;
 
 public class Main {
-
+	// Mode de jeu
 	public static int modeJeu; 
+	// Nombre de coups
 	public static int nCoups; 
-	public static int nPions; 
-	public static int nCouleurs; 
+	// Nombre de pions
+	public static int nPions;
+	// Nombre de couleurs
+	public static int nCouleurs;
+	// Combinaison de l'ordinateur (mode1)
+	static int combinaisonDefense [];
+	
+	static int CombinaisonAttaque [];
+	
+	static int reponse1 [];
+	
+	
+	
 	
 	public static void main(String[] args) {
 
@@ -23,9 +35,12 @@ public class Main {
 		nPions = entrees.getNPions(); 
 		nCouleurs = entrees.getNCouleurs();
 
-	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
+	//1.2  Création Combinaison secrète de l'ordi. (pour modes 1 & 3):
 
-		CombinaisonSecreteOrdiEntreesJoueur csoj = new CombinaisonSecreteOrdiEntreesJoueur();
+		CombinaisonSecreteOrdi cso = new CombinaisonSecreteOrdi();
+		combinaisonDefense= cso.getCombinaisonDefense();
+		// int getCombinaisonAttaque [] = csoej.getCombinaisonAttaque();
+		// reponse1= csoej.getReponse1();
 
 	// 2 Recherche +/- : 
 	
@@ -45,22 +60,22 @@ public class Main {
 			tour++;
 			System.out.println("\n \n Veuillez entrer votre code:");
 			
-// Code de factorisation du test de l'entrée
+// Ctest de l'entrée
 			
-			TestEntreesJeu entreesJeu = new TestEntreesJeu (csoj.reponse1,nCouleurs);
+			TestEntreesJeu entreesJeu = new TestEntreesJeu (reponse1,nCouleurs);
 			
-			//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur
+			//2.1.1.2 comparatif combiaison secrète / entrée => réponse ordinateur
 			boleenSiGagne = true;
 			
 			for (int i=0; i<nPions; i++) {
-				if ( csoj.reponse1[i]==csoj.combinaisonDefense[i] ) {
+				if ( reponse1[i]==combinaisonDefense[i] ) {
 					correctif[i]="=";
 				}
-				if ( csoj.reponse1[i]<csoj.combinaisonDefense[i] ) {
+				if ( reponse1[i]<combinaisonDefense[i] ) {
 					correctif[i]="-";
 					boleenSiGagne = false;
 				}
-				if ( csoj.reponse1[i]>csoj.combinaisonDefense[i] ) {
+				if ( reponse1[i]>combinaisonDefense[i] ) {
 					correctif[i]="+";
 					boleenSiGagne = false;
 				}
@@ -74,7 +89,7 @@ public class Main {
 			//2.1.1.4 test
 			tourRestant = nCoups - tour;
 			System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-			System.out.println(" TRICHE 2 : reponse1 "+ csoj.reponse1 + " 1 combinaisonDefense "+ csoj.combinaisonDefense);
+			System.out.println(" TRICHE 2 : reponse1 "+ reponse1 + " 1 combinaisonDefense "+ combinaisonDefense);
 			if (tourRestant == 0 &&  !boleenSiGagne ) {
 				verdict = "PERDU!";
 			}
@@ -100,11 +115,11 @@ public class Main {
 	// 2.2.1 Entr�es du joueur (var combinaisonDefense)
 		for (int i = 0 ; i < nPions; i++) {
 			System.out.println("veuillez entrer la couleur du " + (i+1) + " eme pion: ");
-			csoj.combinaisonDefense [i]= sc.nextInt();
+			combinaisonDefense [i]= sc.nextInt();
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
 		for (int i = 0 ; i < nPions; i++) {
-			System.out.print(csoj.combinaisonDefense [i]);
+			System.out.print(combinaisonDefense [i]);
 		}
 		System.out.print("\n ---------------------");
 		

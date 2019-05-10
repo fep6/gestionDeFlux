@@ -1,17 +1,17 @@
 package packageProjetMasterMind;
 
-public class CombinaisonSecreteOrdiEntreesJoueur {
+public class CombinaisonSecreteOrdi {
 
 //1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):	
 	
 // combinaison1 en défense (Mode 1 & 3)
 int combinaisonDefense [] = new int[Main.nPions];
 // combinaison2 en attaque (Mode 2 & 3)
-int combinaisonAttaque []= new int[Main.nPions];
+// int combinaisonAttaque []= new int[Main.nPions];
 // Création variable tampon réponse
 int reponse1 [] = new int [Main.nPions];
 	
-	CombinaisonSecreteOrdiEntreesJoueur(){
+	CombinaisonSecreteOrdi(){
 	
 if ( Main.modeJeu == 1 || Main.modeJeu == 3) {
 		
@@ -28,5 +28,9 @@ if ( Main.modeJeu == 1 || Main.modeJeu == 3) {
 			};
 			System.out.println("\n-------------------------------------");
 		}
+	}
+	//Getters
+	int[] getCombinaisonDefense() {
+		return combinaisonDefense;
 	}	
 }

@@ -197,16 +197,16 @@ public class EntreesConfigJeu {
 	
 	
 	// Getters
-	public int getModeJeu(){
+	int getModeJeu(){
 		return modeJeu;
 	}
-	public int getNCoups(){
+	int getNCoups(){
 		return nCoups;
 	}
-	public int getNPions(){
+	int getNPions(){
 		return nPions;
 	}
-	public int getNCouleurs(){
+	int getNCouleurs(){
 		return nCouleurs;
 	}
 
