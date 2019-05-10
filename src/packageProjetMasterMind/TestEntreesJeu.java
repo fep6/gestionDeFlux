@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TestEntreesJeu {
 	
 	// entrée (tableau 1d)
-	private int reponse1 [];
+	private int reponse1 [] = new int[Main.nPions];
 	// maximum autorisé de chaque élément de 'reponse'
 	private int max;
 	
@@ -14,11 +14,11 @@ public class TestEntreesJeu {
 	
 
 	
-	TestEntreesJeu ( int pReponse [], int pMax ) {
+	TestEntreesJeu () {
 		
 		// Renseignement des variables de classe par les variables d'instance
-		reponse1 = pReponse;
-		max = pMax;
+		// reponse1 = pReponse;
+		max = Main.nCouleurs;
 		// for (int i=0; i<this.reponse.length;i++)
 		/// (i à renommer)
 		for (int i : reponse1) {

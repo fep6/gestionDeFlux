@@ -1,5 +1,6 @@
 package packageProjetMasterMind;
- 
+import java.util.Scanner;
+
 // Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
 
 
@@ -14,33 +15,61 @@ int tour = 0;
 int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
 boolean boleenSiGagne;
-	
+
+Scanner sc = new Scanner(System.in);
+// Tableau pour la saisie d'entrée	
+int reponse1 [] = new int[Main.nPions];
+
+
 	RechercheMode1(){
 		
 	if (Main.modeJeu == 1) {
 			//2.1.1 par tableau (combinaison1, reponse1)
 			while (verdict != "GAGNE!" || verdict != "PERDU!") {
 				
-				//2.1.1.1 entrées du joueur (var reponse1)
+			  //2.1.1.1 entrées du joueur (var reponse1)
+				
 				tour++;
-				System.out.println("\n \n Veuillez entrer votre code:");
 				
-				// test de l'entrée
+				// entrées et tests 
 				
-				TestEntreesJeu entreesJeu = new TestEntreesJeu (Main.reponse1,Main.nCouleurs);
+				TestEntreesJeu tej = new TestEntreesJeu ();
+				
+//				for (int i : reponse1) {
+//					
+//					// A retrouver indexof()
+//					
+//				boolean testEntier = false;
+//				String str;
+//				
+//				do {
+//					System.out.print(i+1 + "eme pion?");
+//					str = sc.nextLine();
+//					
+//					try {
+//						this.reponse1 [i] = Integer.parseInt(str);
+//						testEntier = true;
+//					} catch (NumberFormatException e){
+//						System.out.println(reponse1 [i]);
+//						System.out.println(" : Cette valeur n'est pas une entrée valide!");
+//					}
+//				} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < Main.nCouleurs) );
+//				
+//				}
+//				
 				
 				//2.1.1.2 comparatif combiaison secrète / entrée => réponse ordinateur
 				boleenSiGagne = true;
 				
 				for (int i=0; i<Main.nPions; i++) {
-					if ( Main.reponse1[i]==Main.combinaisonDefense[i] ) {
+					if ( reponse1[i]==Main.combinaisonDefense[i] ) {
 						correctif[i]="=";
 					}
-					if ( Main.reponse1[i]<Main.combinaisonDefense[i] ) {
+					if ( reponse1[i]<Main.combinaisonDefense[i] ) {
 						correctif[i]="-";
 						boleenSiGagne = false;
 					}
-					if ( Main.reponse1[i]>Main.combinaisonDefense[i] ) {
+					if ( reponse1[i]>Main.combinaisonDefense[i] ) {
 						correctif[i]="+";
 						boleenSiGagne = false;
 					}
@@ -54,7 +83,6 @@ boolean boleenSiGagne;
 				//2.1.1.4 test
 				tourRestant = Main.nCoups - tour;
 				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-				System.out.println(" TRICHE 2 : reponse1 "+ Main.reponse1 + " 1 combinaisonDefense "+ Main.combinaisonDefense);
 				if (tourRestant == 0 &&  !boleenSiGagne ) {
 					verdict = "PERDU!";
 				}
