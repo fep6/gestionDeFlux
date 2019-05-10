@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TestEntreesJeu {
 	
 	// entrée (tableau 1d)
-	private int reponse [];
+	private int reponse1 [];
 	// maximum autorisé de chaque élément de 'reponse'
 	private int max;
 	
@@ -17,11 +17,11 @@ public class TestEntreesJeu {
 	TestEntreesJeu ( int pReponse [], int pMax ) {
 		
 		// Renseignement des variables de classe par les variables d'instance
-		reponse = pReponse;
+		reponse1 = pReponse;
 		max = pMax;
 		// for (int i=0; i<this.reponse.length;i++)
 		/// (i à renommer)
-		for (int i : reponse) {
+		for (int i : reponse1) {
 				// A retrouver indexof()
 			boolean testEntier = false;
 			String str;
@@ -31,13 +31,13 @@ public class TestEntreesJeu {
 				str = sc.nextLine();
 				
 				try {
-					this.reponse [i] = Integer.parseInt(str);
+					this.reponse1 [i] = Integer.parseInt(str);
 					testEntier = true;
 				} catch (NumberFormatException e){
-					System.out.println(reponse [i]);
+					System.out.println(reponse1 [i]);
 					System.out.println(" : Cette valeur n'est pas une entrée valide!");
 				}
-			} while (testEntier != true && (reponse [i] >= 0 && reponse [i] < max) );
+			} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < max) );
 		}
 	}
 }

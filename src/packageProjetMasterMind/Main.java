@@ -13,7 +13,7 @@ public class Main {
 	public static int nCouleurs;
 	// Combinaison de l'ordinateur (mode1)
 	static int combinaisonDefense [];
-	
+	// ?
 	static int CombinaisonAttaque [];
 	
 	static int reponse1 [];

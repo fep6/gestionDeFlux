@@ -1,4 +1,7 @@
 package packageProjetMasterMind;
+ 
+// Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
+
 
 public class RechercheMode1 {
 	
