@@ -15,17 +15,12 @@ public class Main {
 		
 // 1 Choix du jeu et du mode
 		
-
-		
-
 	//1.1 Entrée du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
 		EntreesConfigJeu entrees = new EntreesConfigJeu();
 
-
 	//1.2  Création Combinaison secrète de l'ordi., et entrées du joueur (pour modes 1 & 3):
-	
-	
+
 	// combinaison1 en défense (Mode 1 & 3)
 	int combinaisonDefense [] = new int[nPions];
 	// combinaison2 en attaque (Mode 2 & 3)

@@ -51,7 +51,7 @@ public class EntreesConfigJeu {
 	// setters
 	void setModeJeu(){
 
-		// Détermination du mode de jeu (Entier,  0<nCoups<4)
+		// Détermination du mode de jeu (Entier, 0<nCoups<4)
 		// modeJeu = 0;
 		testEntier = false;
 			
@@ -64,16 +64,16 @@ public class EntreesConfigJeu {
 			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
 			
 			
-			// Test si entier
-			setTest(modeJeu);
-			
-			
-			// Factorisation de la gestion d'exeption
+			// factorisation
+			//setTest(modeJeu);
+						
+			// Semi factorisation
 //			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(modeJeu);
 //			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
 //			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
-			// Gestion d'exeption		
+			// Avant factorisation
+//			Scanner sc = new Scanner(System.in);
 //			String str;
 // 			str = sc.nextLine();
 //			try {
@@ -83,7 +83,8 @@ public class EntreesConfigJeu {
 //				System.out.println(modeJeu);
 //				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 //			}
-		} while (testEntier != true || modeJeu < 1 || modeJeu > 3 );
+			
+		} while (testEntier = false || modeJeu < 1 || modeJeu > 3 );
 
 	}
 	
@@ -95,10 +96,16 @@ public class EntreesConfigJeu {
 		do {
 			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
 
-			// Test si entier
-			setTest(nCoups);
+			// Factorisation
+			// setTest(nCoups);
 			
+			// Semi factorisation
+			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCoups);
+			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
+			//Avant factorisation
+//			Scanner sc = new Scanner(System.in);
 //			String str;
 //			str = sc.nextLine();
 //			try {
@@ -108,7 +115,8 @@ public class EntreesConfigJeu {
 //				System.out.println(nCoups);
 //				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 //			}
-		} while (testEntier != true || nCoups < 1 || nCoups > 20 );
+			
+		} while (testEntier =! true || nCoups < 1 || nCoups > 20 );
 	}
 	
 	void setNPions() {
@@ -118,9 +126,16 @@ public class EntreesConfigJeu {
 		do {
 			System.out.println("Veuillez entrer le nombre de pions: ");
 		
-			// Test si entier
-			setTest(nPions);
+			// factorisation
+			//setTest(nPions);
 			
+			// Semi factorisation
+			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nPions);
+			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			
+			// Avant factorisation
+//			Scanner sc = new Scanner(System.in);
 //			String str;
 //			str = sc.nextLine();
 //			try {
@@ -128,9 +143,10 @@ public class EntreesConfigJeu {
 //				testEntier = true;
 //			} catch (NumberFormatException e){
 //				System.out.println(nPions);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+//				System.out.println(" : Cette valeur n'est pas une entrée valide!");	
 //			}
-		} while (testEntier != true || nPions < 1 || nPions > 4 );
+			
+		} while (testEntier = false || nPions < 1 || nPions > 4 );
 	}
 	
 	void setNCouleurs() {		
@@ -141,9 +157,15 @@ public class EntreesConfigJeu {
 		do {
 			System.out.println("Veuillez entrer le nombre de couleurs souhaitées (entre 1 & 4): ");
 			
-			// Test si entier
-			setTest(nCouleurs);
+			// factorisation
+			//setTest(nCouleurs);
 			
+			// Semi factorisation
+			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCouleurs);
+			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			
+			//Avant factorisation
 //			String str;
 //			str = sc.nextLine();
 //			try {
@@ -153,7 +175,7 @@ public class EntreesConfigJeu {
 //				System.out.println(nPions);
 //				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 //			}
-		} while (testEntier != true || nCouleurs < 1 || nCouleurs > 4 );
+		} while (testEntier = false || nCouleurs < 1 || nCouleurs > 4 );
 	}
 	
 	void setTest(int test) {
