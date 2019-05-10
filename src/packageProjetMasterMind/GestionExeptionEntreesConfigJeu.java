@@ -7,8 +7,8 @@ public class GestionExeptionEntreesConfigJeu {
 	private Scanner sc = new Scanner(System.in);
 	static boolean testEntier = false;
 	String str;
-	static int test;
-	static int resultat;
+	int test;
+	int resultat;
 	
 	GestionExeptionEntreesConfigJeu (int test) {
 		//iteration++;
@@ -27,11 +27,11 @@ public class GestionExeptionEntreesConfigJeu {
 	}
 	
 	
-	static int getResultatGestionExeptionEntreesConfigJeu() {
+	int getResultatGestionExeptionEntreesConfigJeu() {
 		return resultat;
 	}
 	
-	static boolean getTestEntierGestionExeptionEntreesConfigJeu() {
+	boolean getTestEntierGestionExeptionEntreesConfigJeu() {
 		return testEntier;
 	}
 

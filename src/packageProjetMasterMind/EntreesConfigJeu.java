@@ -65,9 +65,9 @@ public class EntreesConfigJeu {
 			
 			
 			// factorisation
-			//setTest(modeJeu);
+			setTest(modeJeu);
 						
-			// Semi factorisation
+			// Semi-factorisation
 //			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(modeJeu);
 //			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
 //			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
@@ -84,6 +84,8 @@ public class EntreesConfigJeu {
 //				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 //			}
 			
+			System.out.println("testEntier= "+testEntier);
+			
 		} while (testEntier = false || modeJeu < 1 || modeJeu > 3 );
 
 	}
@@ -99,22 +101,24 @@ public class EntreesConfigJeu {
 			// Factorisation
 			// setTest(nCoups);
 			
-			// Semi factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCoups);
-			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			// Semi-factorisation
+//			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCoups);
+//			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+//			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
 			//Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-//			str = sc.nextLine();
-//			try {
-//				nCoups = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println(nCoups);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//			}
+			Scanner sc = new Scanner(System.in);
+			String str;
+			str = sc.nextLine();
+			try {
+				nCoups = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nCoups);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+			
+			System.out.println("testEntier= "+testEntier);
 			
 		} while (testEntier =! true || nCoups < 1 || nCoups > 20 );
 	}
@@ -127,24 +131,26 @@ public class EntreesConfigJeu {
 			System.out.println("Veuillez entrer le nombre de pions: ");
 		
 			// factorisation
-			//setTest(nPions);
+			// setTest(nPions);
 			
 			// Semi factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nPions);
-			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+//			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nPions);
+//			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+//			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
 			// Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-//			str = sc.nextLine();
-//			try {
-//				nPions = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println(nPions);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");	
-//			}
+			Scanner sc = new Scanner(System.in);
+			String str;
+			str = sc.nextLine();
+			try {
+				nPions = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nPions);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");	
+			}
+			
+			System.out.println("testEntier= "+testEntier);
 			
 		} while (testEntier = false || nPions < 1 || nPions > 4 );
 	}
@@ -158,26 +164,31 @@ public class EntreesConfigJeu {
 			System.out.println("Veuillez entrer le nombre de couleurs souhaitées (entre 1 & 4): ");
 			
 			// factorisation
-			//setTest(nCouleurs);
+			// setTest(nCouleurs);
 			
-			// Semi factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCouleurs);
-			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			// Semi-factorisation
+//			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCouleurs);
+//			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
+//			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
 			//Avant factorisation
-//			String str;
-//			str = sc.nextLine();
-//			try {
-//				nCouleurs = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println(nPions);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//			}
+			Scanner sc = new Scanner(System.in);
+			String str;
+			str = sc.nextLine();
+			try {
+				nCouleurs = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(nPions);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+			
+			System.out.println("testEntier= "+testEntier);
+			
 		} while (testEntier = false || nCouleurs < 1 || nCouleurs > 4 );
 	}
 	
+	//Méthode pour factorisation
 	void setTest(int test) {
 		GestionExeptionEntreesConfigJeu t = new GestionExeptionEntreesConfigJeu(test);
 		modeJeu = t.getResultatGestionExeptionEntreesConfigJeu();
