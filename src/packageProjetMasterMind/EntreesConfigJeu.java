@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class EntreesConfigJeu {
 	//Mode de jeu
-	private static int modeJeu = 0;
+	private int modeJeu;
 	//Nombre de coups
-	private static int nCoups = 0;
+	private int nCoups;
 	//Nombre de pions
-	private static int nPions =0;
+	private int nPions;
 	//Nombre de couleurs
-	private static int nCouleurs = 0;
+	private int nCouleurs;
 	//Entrees clavier
 	// private Scanner sc = new Scanner(System.in);
 	// Variable de test
@@ -27,7 +27,7 @@ public class EntreesConfigJeu {
 		// Nombre de pions
 		this.setNPions();
 		// Nombre de couleurs
-		this.getNCouleurs();	
+		this.setNCouleurs();	
 			
 		// Recapitulatif
 			
@@ -84,7 +84,7 @@ public class EntreesConfigJeu {
 //				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 //			}
 			
-			System.out.println("testEntier= "+testEntier);
+			// System.out.println("testEntier= "+testEntier);
 			
 		} while (testEntier = false || modeJeu < 1 || modeJeu > 3 );
 
@@ -114,11 +114,11 @@ public class EntreesConfigJeu {
 				nCoups = Integer.parseInt(str);
 				testEntier = true;
 			} catch (NumberFormatException e){
-				System.out.println(nCoups);
+				System.out.println("Nombre de coups :"+nCoups);
 				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 			}
 			
-			System.out.println("testEntier= "+testEntier);
+			// System.out.println("testEntier= "+testEntier);
 			
 		} while (testEntier =! true || nCoups < 1 || nCoups > 20 );
 	}
@@ -146,11 +146,11 @@ public class EntreesConfigJeu {
 				nPions = Integer.parseInt(str);
 				testEntier = true;
 			} catch (NumberFormatException e){
-				System.out.println(nPions);
+				System.out.println("Nombre de pions: "+nPions);
 				System.out.println(" : Cette valeur n'est pas une entrée valide!");	
 			}
 			
-			System.out.println("testEntier= "+testEntier);
+			// System.out.println("testEntier= "+testEntier);
 			
 		} while (testEntier = false || nPions < 1 || nPions > 4 );
 	}
@@ -179,11 +179,11 @@ public class EntreesConfigJeu {
 				nCouleurs = Integer.parseInt(str);
 				testEntier = true;
 			} catch (NumberFormatException e){
-				System.out.println(nPions);
+				System.out.println("Nombre de couleurs: "+nCouleurs);
 				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 			}
 			
-			System.out.println("testEntier= "+testEntier);
+			 System.out.println("nCouleurs= "+nCouleurs);
 			
 		} while (testEntier = false || nCouleurs < 1 || nCouleurs > 4 );
 	}
