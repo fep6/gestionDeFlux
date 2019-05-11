@@ -65,7 +65,7 @@ public class EntreesConfigJeu {
 			
 			
 			// factorisation
-			setTest(modeJeu);
+//			setTest(modeJeu);
 						
 			// Semi-factorisation
 //			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(modeJeu);
@@ -73,16 +73,16 @@ public class EntreesConfigJeu {
 //			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
 			
 			// Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-// 			str = sc.nextLine();
-//			try {
-//				modeJeu = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println(modeJeu);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//			}
+			Scanner sc = new Scanner(System.in);
+			String str;
+ 			str = sc.nextLine();
+			try {
+				modeJeu = Integer.parseInt(str);
+				testEntier = true;
+			} catch (NumberFormatException e){
+				System.out.println(modeJeu);
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
 			
 			// System.out.println("testEntier= "+testEntier);
 			

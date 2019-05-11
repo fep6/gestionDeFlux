@@ -7,18 +7,18 @@ import java.util.Scanner;
 public class RechercheMode1 {
 	
 // Renvoie si la partie est gagnée ou non
-String verdict = new String();
+private String verdict = new String();
 // Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
-String correctif []= new String[Main.nPions];
+private String correctif []= new String[Main.nPions];
 // Nombre de tour de jeu
-int tour = 0;
-int tourRestant = Main.nCoups;
+private int tour = 0;
+private int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
-boolean boleenSiGagne;
+private static boolean boleenSiGagne= true;
 
-Scanner sc = new Scanner(System.in);
+private Scanner sc = new Scanner(System.in);
 // Tableau pour la saisie d'entrée	
-int reponse1 [] = new int[Main.nPions];
+private int reponse1 [] = new int[Main.nPions];
 
 
 	RechercheMode1(){
@@ -27,40 +27,26 @@ int reponse1 [] = new int[Main.nPions];
 			//2.1.1 par tableau (combinaison1, reponse1)
 			while (verdict != "GAGNE!" || verdict != "PERDU!") {
 				
-			  //2.1.1.1 entrées du joueur (var reponse1)
+			    //2.1.1.1 entrées du joueur (var reponse1)
 				
 				tour++;
 				
 				// entrées et tests 
+				EntreesEtTestJeu tej = new EntreesEtTestJeu ();
 				
-				TestEntreesJeu tej = new TestEntreesJeu ();
+				// Rapatriement des données de l'instance tej dans la variable de classe reponse1
+				for (int i=0;i<Main.nPions;i++) {
+					
+					reponse1[i]=tej.getReponse1(i);
+					
+					//tests
+					System.out.println("test: tej.getReponse1(" + i + ")= " + tej.getReponse1(i));
+					System.out.println("test: RechercheMode1.reponse1[" + i + "]= " + reponse1[i]);
+					
+				}
 				
-//				for (int i : reponse1) {
-//					
-//					// A retrouver indexof()
-//					
-//				boolean testEntier = false;
-//				String str;
-//				
-//				do {
-//					System.out.print(i+1 + "eme pion?");
-//					str = sc.nextLine();
-//					
-//					try {
-//						this.reponse1 [i] = Integer.parseInt(str);
-//						testEntier = true;
-//					} catch (NumberFormatException e){
-//						System.out.println(reponse1 [i]);
-//						System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//					}
-//				} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < Main.nCouleurs) );
-//				
-//				}
-//				
-				
-				//2.1.1.2 comparatif combiaison secrète / entrée => réponse ordinateur
-				boleenSiGagne = true;
-				
+				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+
 				for (int i=0; i<Main.nPions; i++) {
 					if ( reponse1[i]==Main.combinaisonDefense[i] ) {
 						correctif[i]="=";

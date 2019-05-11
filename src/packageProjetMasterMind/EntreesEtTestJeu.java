@@ -3,24 +3,20 @@ import java.util.Scanner;
 
 //Test de l'entrée de l'utilisateur
 
-public class TestEntreesJeu {
+public class EntreesEtTestJeu {
 	
-	// entrée (tableau 1d)
+	// entrée (tableau 1d) à la taille du nommbre de pions
 	private int reponse1 [] = new int[Main.nPions];
-	// maximum autorisé de chaque élément de 'reponse'
-	private int max;
+	// maximum autorisé de chaque élément de 'reponse'( dépend du nombre de couleurs )
+	private int max = Main.nCouleurs;;
 	
 	private Scanner sc = new Scanner(System.in);
 	
 
 	
-	TestEntreesJeu () {
-		
+	EntreesEtTestJeu () {
 		// Renseignement des variables de classe par les variables d'instance
-		// reponse1 = pReponse;
-		max = Main.nCouleurs;
-		// for (int i=0; i<this.reponse.length;i++)
-		/// (i à renommer)
+
 		for (int i : reponse1) {
 				// A retrouver indexof()
 			boolean testEntier = false;
@@ -31,13 +27,19 @@ public class TestEntreesJeu {
 				str = sc.nextLine();
 				
 				try {
-					this.reponse1 [i] = Integer.parseInt(str);
+					reponse1 [i] = Integer.parseInt(str);
 					testEntier = true;
+					//test
+					System.out.println("test: de validation de l'entrée : EntreesEtTestJeu.reponse1["+i+"]= "+reponse1[i]);
+					
 				} catch (NumberFormatException e){
 					System.out.println(reponse1 [i]);
 					System.out.println(" : Cette valeur n'est pas une entrée valide!");
 				}
 			} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < max) );
 		}
+	}
+	int getReponse1(int p){
+		return reponse1[p];
 	}
 }

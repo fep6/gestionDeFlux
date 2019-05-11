@@ -27,12 +27,12 @@ public class Main {
 		
 	//1.1 Entrée du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
 
-		EntreesConfigJeu entrees = new EntreesConfigJeu();
-		modeJeu = entrees.getModeJeu(); 
-		nCoups = entrees.getNCoups(); 
-		nPions = entrees.getNPions(); 
-		nCouleurs = entrees.getNCouleurs();
-
+		EntreesConfigJeu ecj = new EntreesConfigJeu();
+		modeJeu = ecj.getModeJeu(); 
+		nCoups = ecj.getNCoups(); 
+		nPions = ecj.getNPions(); 
+		nCouleurs = ecj.getNCouleurs();
+		
 	//1.2  Création Combinaison secrète de l'ordi. (pour modes 1 & 3):
 
 		CombinaisonSecreteOrdi cso = new CombinaisonSecreteOrdi();
