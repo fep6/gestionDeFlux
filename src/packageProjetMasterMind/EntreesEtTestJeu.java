@@ -8,7 +8,7 @@ public class EntreesEtTestJeu {
 	// entrée (tableau 1d) à la taille du nommbre de pions
 	private int reponse1 [] = new int[Main.nPions];
 	// maximum autorisé de chaque élément de 'reponse'( dépend du nombre de couleurs )
-	private int max = Main.nCouleurs;;
+//	private int max = Main.nCouleurs;;
 	
 	private Scanner sc = new Scanner(System.in);
 	
@@ -36,7 +36,8 @@ public class EntreesEtTestJeu {
 					System.out.println(reponse1 [i]);
 					System.out.println(" : Cette valeur n'est pas une entrée valide!");
 				}
-			} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < max) );
+//			} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < max) );
+			} while (testEntier != true && (reponse1 [i] >= 0 && reponse1 [i] < 10) );
 		}
 	}
 	int getReponse1(int p){

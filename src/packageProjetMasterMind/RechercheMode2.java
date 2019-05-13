@@ -6,14 +6,14 @@ public class RechercheMode2 {
 
 // Renvoie si la partie est gagnée ou non	 
 String verdict = new String();
-// Nombre de tours
-int tour = 0;
 // Création tableau 2d réponse (/joueur) j->position pion, k->N coup.
 String tableauReponseJoueur [][]=new String [Main.nPions][Main.nCoups];
 // Création tableau 2d (/ordi)  i->position pion, j->N coup.
 int tableauJeu [][] = new int [Main.nPions][Main.nCoups];
 //Entrée clavier
 Scanner sc = new Scanner(System.in);
+//Nombre de tours
+int tour = 0;
 	
 RechercheMode2(){
 	

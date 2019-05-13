@@ -15,10 +15,10 @@ private int tour = 0;
 private int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
 private static boolean boleenSiGagne= true;
-
-private Scanner sc = new Scanner(System.in);
 // Tableau pour la saisie d'entrée	
 private int reponse1 [] = new int[Main.nPions];
+
+private Scanner sc = new Scanner(System.in);
 
 
 	RechercheMode1(){
