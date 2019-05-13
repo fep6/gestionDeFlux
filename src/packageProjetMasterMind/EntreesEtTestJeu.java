@@ -17,7 +17,7 @@ public class EntreesEtTestJeu {
 	EntreesEtTestJeu () {
 		// Renseignement des variables de classe par les variables d'instance
 
-		for (int i : reponse1) {
+		for (int i=0; i<reponse1.length ; i++) {
 				// A retrouver indexof()
 			boolean testEntier = false;
 			String str;
