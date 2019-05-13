@@ -14,7 +14,7 @@ private String correctif []= new String[Main.nPions];
 private int tour = 0;
 private int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
-private static boolean boleenSiGagne= true;
+private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée	
 private int reponse1 [] = new int[Main.nPions];
 //Entrées clavier
@@ -25,24 +25,18 @@ private Scanner sc = new Scanner(System.in);
 		
 	if (Main.modeJeu == 1) {
 			//2.1.1 par tableau (combinaison1, reponse1)
-			while (verdict != "GAGNE!" || verdict != "PERDU!") {
-				
-			    //2.1.1.1 entrées du joueur (var reponse1)
+			while (verdict != "GAGNE!") {
 				
 				tour++;
+				boleenSiGagne= true;
 				
-				// entrées et tests 
+			    //2.1.1.1 entrées du joueur (var reponse1)
+ 
 				EntreesEtTestJeu tej = new EntreesEtTestJeu ();
 				
 				// Rapatriement des données de l'instance tej dans la variable de classe reponse1
-				for (int i=0;i<Main.nPions;i++) {
-					
-					reponse1[i]=tej.getReponse1(i);
-					
-					//tests
-					System.out.println("test: tej.getReponse1(" + i + ")= " + tej.getReponse1(i));
-					System.out.println("test: RechercheMode1.reponse1[" + i + "]= " + reponse1[i]);
-					
+				for (int i=0;i<Main.nPions;i++) {				
+					reponse1[i]=tej.getReponse1(i);	
 				}
 				
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
@@ -61,22 +55,23 @@ private Scanner sc = new Scanner(System.in);
 					}
 				}
 				//2.1.1.3 Affichage & tests
-				System.out.println("Réponse:");
+				System.out.print("REPONSE: ");
 				for (int i=0; i<Main.nPions; i++) {
 					System.out.print(correctif[i]);
 				}
 				
 				//2.1.1.4 test
-				tourRestant = Main.nCoups - tour;
-				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-				if (tourRestant == 0 &&  !boleenSiGagne ) {
+				if (tourRestant == 0 && !boleenSiGagne ) {
 					verdict = "PERDU!";
 				}
-				else if (boleenSiGagne) {
+				else if (boleenSiGagne==true) {
 					verdict = "GAGNE!";
 				}
+				tourRestant = Main.nCoups - tour;
+				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+				
 			}
-			System.out.println(verdict);
+			System.out.println("...Mais c'est "+verdict);
 		}
 	}
 }
