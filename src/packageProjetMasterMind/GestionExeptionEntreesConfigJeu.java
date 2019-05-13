@@ -5,6 +5,7 @@ public class GestionExeptionEntreesConfigJeu {
 	
 	// private static int iteration=0;
 	private Scanner sc = new Scanner(System.in);
+	//Variable de test
 	static boolean testEntier = false;
 	// Variable d'entrée
 	String str;

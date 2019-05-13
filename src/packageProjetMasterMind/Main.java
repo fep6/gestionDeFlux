@@ -10,7 +10,7 @@ public class Main {
 	// Nombre de pions
 	public static int nPions;
 	// Nombre de couleurs
-	public static int nCouleurs;
+	// public static int nCouleurs;
 	// Combinaison de l'ordinateur (mode1)
 	static int combinaisonDefense [];
 	
@@ -31,7 +31,7 @@ public class Main {
 		modeJeu = ecj.getModeJeu(); 
 		nCoups = ecj.getNCoups(); 
 		nPions = ecj.getNPions(); 
-		nCouleurs = ecj.getNCouleurs();
+//		nCouleurs = ecj.getNCouleurs();
 		
 	//1.2  Création Combinaison secrète de l'ordi. (pour modes 1 & 3):
 

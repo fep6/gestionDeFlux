@@ -40,7 +40,8 @@ RechercheMode2(){
 				// 1er coup: On donne une couleur aléatoire differente à chaque pion
 				if (tour==1) {
 					for (int i=0;i<Main.nPions;i++) {
-					tableauJeu[i][0]=(int)(Math.random()*Main.nCouleurs);
+//					tableauJeu[i][0]=(int)(Math.random()*Main.nCouleurs);
+					tableauJeu[i][0]=(int)(Math.random()*9);
 					System.out.println("Pion "+ i + " : " + tableauJeu[i][0]);
 					}
 				// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant
@@ -52,7 +53,8 @@ RechercheMode2(){
 						continue;
 						}			
 					if (tableauReponseJoueur[i][j-1]=="+") {
-						tableauJeu[i][j]=(tableauJeu[i][j-1]+Main.nCouleurs)/2;
+//						tableauJeu[i][j]=(tableauJeu[i][j-1]+Main.nCouleurs)/2;
+						tableauJeu[i][j]=(tableauJeu[i][j-1]+9)/2;
 						System.out.println("Pion "+ i + " : " + tableauJeu[i][j]);
 						continue;
 						}			
