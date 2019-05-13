@@ -17,7 +17,7 @@ private int tourRestant = Main.nCoups;
 private static boolean boleenSiGagne= true;
 // Tableau pour la saisie d'entrée	
 private int reponse1 [] = new int[Main.nPions];
-
+//Entrées clavier
 private Scanner sc = new Scanner(System.in);
 
 

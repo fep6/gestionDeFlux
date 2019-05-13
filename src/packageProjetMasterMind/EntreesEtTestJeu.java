@@ -30,7 +30,7 @@ public class EntreesEtTestJeu {
 					reponse1 [i] = Integer.parseInt(str);
 					testEntier = true;
 					//test
-					System.out.println("test: de validation de l'entrée : EntreesEtTestJeu.reponse1["+i+"]= "+reponse1[i]);
+					System.out.println("Test EntreesEtTestJeu valide: de validation de l'entrée : EntreesEtTestJeu.reponse1["+i+"]= "+reponse1[i]);
 					
 				} catch (NumberFormatException e){
 					System.out.println(reponse1 [i]);
