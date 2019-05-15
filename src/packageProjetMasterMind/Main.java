@@ -45,7 +45,7 @@ public class Main {
 		}	
 			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secrète
 		if ( modeJeu == 2) {
-			RechercheMode2 rm2 = new RechercheMode2();
+			RechercheMode21 rm2 = new RechercheMode21();
 		}	
 	
 			// 2.3 Recherche +/- : mode 3

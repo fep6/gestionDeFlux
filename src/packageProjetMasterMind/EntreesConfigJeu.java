@@ -30,7 +30,8 @@ public class EntreesConfigJeu {
 //		this.setNCouleurs();	
 			
 		// Recapitulatif
-			
+		
+		System.out.println("\n _____________________________________________ \n ");	
 		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
 		System.out.println("Avec " + nPions + " pions, à retrouver en " 
 		+ nCoups +" coups maximum.");
@@ -45,7 +46,7 @@ public class EntreesConfigJeu {
 			System.out.println("  \' Duel \' où l'ordinateur et vous jouez tour à tour,\n" + 
 					"le premier à trouver la combinaison secr�te de l'autre a gagné");
 		}
-		
+		System.out.println("\n _____________________________________________ \n ");	
 	}
 	
 	// setters
@@ -155,38 +156,7 @@ public class EntreesConfigJeu {
 		} while (testEntier == false || nPions < 1 || nPions > 4 );
 	}
 	
-//	void setNCouleurs() {		
-//		
-//		// Détermination du nombre de couleurs (Entier, 1<nPions<4)
-//		testEntier = false;
-//			
-//		do {
-//			System.out.println("Veuillez entrer le nombre de couleurs souhaitées (entre 1 & 4): ");
-//			
-//			// factorisation
-//			// setTest(nCouleurs);
-//			
-//			// Semi-factorisation
-//			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCouleurs);
-//			nCouleurs = test.getResultatGestionExeptionEntreesConfigJeu();
-//			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
-//			
-//			//Avant factorisation
-////			Scanner sc = new Scanner(System.in);
-////			String str;
-////			str = sc.nextLine();
-////			try {
-////				nCouleurs = Integer.parseInt(str);
-////				testEntier = true;
-////			} catch (NumberFormatException e){
-////				System.out.println("Nombre de couleurs: "+nCouleurs);
-////				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-////			}
-//			
-//			 System.out.println("nCouleurs= "+nCouleurs);
-//			
-//		} while (testEntier == false || nCouleurs < 1 || nCouleurs > 4 );
-//	}
+
 	
 	//Méthode pour factorisation
 	void setTest(int test) {

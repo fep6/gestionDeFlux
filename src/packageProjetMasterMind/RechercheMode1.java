@@ -23,9 +23,8 @@ private Scanner sc = new Scanner(System.in);
 
 	RechercheMode1(){
 		
-	if (Main.modeJeu == 1) {
 			//2.1.1 par tableau (combinaison1, reponse1)
-			while (verdict != "GAGNE!") {
+			while (verdict != "GAGNE!" && verdict != "PERDU!") {
 				
 				tour++;
 				boleenSiGagne= true;
@@ -72,6 +71,5 @@ private Scanner sc = new Scanner(System.in);
 				
 			}
 			System.out.println("...Mais c'est "+verdict);
-		}
 	}
 }
