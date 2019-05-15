@@ -7,8 +7,6 @@ public class EntreesEtTestJeuMode1 {
 	
 	// entrée (tableau 1d) à la taille du nommbre de pions
 	private int reponse1 [] = new int[Main.nPions];
-	// maximum autorisé de chaque élément de 'reponse'( dépend du nombre de couleurs )
-//	private int max = Main.nCouleurs;;
 // Entrée clavier	
 	private Scanner sc = new Scanner(System.in);
 	

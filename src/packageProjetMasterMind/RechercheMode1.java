@@ -15,7 +15,7 @@ private int tour = 0;
 private int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
 private boolean boleenSiGagne;
-// Tableau pour la saisie d'entrée	
+// Tableau pour la saisie d'entrée du joueur
 private int reponse1 [] = new int[Main.nPions];
 //Entrées clavier
 private Scanner sc = new Scanner(System.in);

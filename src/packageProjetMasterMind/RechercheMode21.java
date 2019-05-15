@@ -43,10 +43,9 @@ RechercheMode21(){
 			for (int j=0;j<(Main.nCoups-1);j++) {
 				tour++;
 				System.out.println("\n Nous sommes au tour :" + tour);
-				// 1er coup: On donne une couleur aléatoire differente à chaque pion
+				// 1er coup: On donne un code aléatoire differente à chaque pion
 				if (tour==1) {
 					for (int i=0;i<Main.nPions;i++) {
-//					tableauJeu[i][0]=(int)(Math.random()*Main.nCouleurs);
 					tableauJeu[i][0]=(int)(Math.random()*9);
 					System.out.println("Pion "+ i + " : " + tableauJeu[i][0]);
 					}

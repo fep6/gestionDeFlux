@@ -39,16 +39,16 @@ public class Main {
 		
 	// 2 Recherche +/- : 
 	
-	// 2.1 Recherche +/- Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
+		// 2.1 Recherche +/- Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
 		if ( modeJeu == 1) {
 			RechercheMode1 rm1 = new RechercheMode1();
 		}	
-			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secrète
+		// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secrète
 		if ( modeJeu == 2) {
-			RechercheMode21 rm2 = new RechercheMode21();
+			RechercheMode2 rm2 = new RechercheMode2();
 		}	
 	
-			// 2.3 Recherche +/- : mode 3
+		// 2.3 Recherche +/- : mode 3
 	
 		if ( modeJeu == 3) {
 			
