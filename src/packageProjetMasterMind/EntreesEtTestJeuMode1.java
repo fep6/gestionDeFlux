@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 //Test de l'entrée de l'utilisateur
 
-public class EntreesEtTestJeu {
+public class EntreesEtTestJeuMode1 {
 	
 	// entrée (tableau 1d) à la taille du nommbre de pions
 	private int reponse1 [] = new int[Main.nPions];
@@ -14,7 +14,7 @@ public class EntreesEtTestJeu {
 	
 
 	
-	EntreesEtTestJeu () {
+	EntreesEtTestJeuMode1 () {
 		// Renseignement des variables de classe par les variables d'instance
 
 		for (int i=0; i<reponse1.length ; i++) {

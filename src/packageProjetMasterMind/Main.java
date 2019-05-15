@@ -15,7 +15,7 @@ public class Main {
 	static int combinaisonDefense [];
 	
 	static int CombinaisonAttaque [];
-	
+	// Réponse de l'ordinateur en mode 1
 	static int reponse1 [];
 
 	Scanner sc = new Scanner(System.in);
@@ -31,7 +31,6 @@ public class Main {
 		modeJeu = ecj.getModeJeu(); 
 		nCoups = ecj.getNCoups(); 
 		nPions = ecj.getNPions(); 
-//		nCouleurs = ecj.getNCouleurs();
 		
 	//1.2  Création Combinaison secrète de l'ordi. (pour modes 1 & 3):
 
@@ -41,19 +40,19 @@ public class Main {
 	// 2 Recherche +/- : 
 	
 	// 2.1 Recherche +/- Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
-	
-		RechercheMode1 rm1 = new RechercheMode1();
-			
+		if ( modeJeu == 1) {
+			RechercheMode1 rm1 = new RechercheMode1();
+		}	
 			// 2.2 Recherche +/- : mode 2 : A l'ordinateur de trouver votre combinaison secrète
-
-		RechercheMode2 rm2 = new RechercheMode2();
-			
+		if ( modeJeu == 2) {
+			RechercheMode2 rm2 = new RechercheMode2();
+		}	
 	
 			// 2.3 Recherche +/- : mode 3
 	
-	if ( modeJeu == 3) {
-		
-	}
+		if ( modeJeu == 3) {
+			
+		}
 			
 			
 			

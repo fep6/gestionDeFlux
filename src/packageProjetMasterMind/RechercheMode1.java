@@ -32,7 +32,7 @@ private Scanner sc = new Scanner(System.in);
 				
 			    //2.1.1.1 entrées du joueur (var reponse1)
  
-				EntreesEtTestJeu tej = new EntreesEtTestJeu ();
+				EntreesEtTestJeuMode1 tej = new EntreesEtTestJeuMode1 ();
 				
 				// Rapatriement des données de l'instance tej dans la variable de classe reponse1
 				for (int i=0;i<Main.nPions;i++) {				

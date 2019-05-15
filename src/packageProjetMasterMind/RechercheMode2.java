@@ -21,7 +21,12 @@ RechercheMode2(){
 		
 	// 2.2.1 Entrées du joueur (var combinaisonDefense)
 		for (int i = 0 ; i < Main.nPions; i++) {
-			System.out.println("veuillez entrer la couleur du " + (i+1) + " eme pion: ");
+			if (i==0) {
+				System.out.println("veuillez entrer la couleur du " + (i+1) + " er pion: ");
+			}
+			else {
+				System.out.println("veuillez entrer la couleur du " + (i+1) + " eme pion: ");
+			}
 			Main.combinaisonDefense [i]= sc.nextInt();
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
