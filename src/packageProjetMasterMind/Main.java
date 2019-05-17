@@ -9,8 +9,6 @@ public class Main {
 	public static int nCoups; 
 	// Nombre de pions
 	public static int nPions;
-	// Nombre de couleurs
-	// public static int nCouleurs;
 	// Combinaison de l'ordinateur (mode1)
 	static int combinaisonDefense [];
 	
@@ -49,14 +47,9 @@ public class Main {
 		}	
 	
 		// 2.3 Recherche +/- : mode 3
-	
 		if ( modeJeu == 3) {
 			
 		}
-			
-			
-			
-
 // System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
 System.out.println("fin du jeu");
 

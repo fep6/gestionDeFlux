@@ -31,7 +31,7 @@ public class RechercheMode2 {
 		
 		
 		//on instancie les entrées de la combinaison du joueur ...		
-		TestEntreesManuellesDuJeu tejMode2 = new TestEntreesManuellesDuJeu ();
+		EntreesManuellesDuJeu tejMode2 = new EntreesManuellesDuJeu ();
 		
 		System.out.println("veuillez entrer la combinaison: ");
 		for (int i = 0 ; i < Main.nPions; i++) {

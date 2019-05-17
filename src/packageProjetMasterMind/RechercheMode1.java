@@ -30,7 +30,7 @@ private int reponse [] = new int[Main.nPions];
 			    //2.1.1.1 entrées du joueur (var reponse)
 				
 				System.out.print("Veuillez entrer votre code: ");
-				TestEntreesManuellesDuJeu tejMode1 = new TestEntreesManuellesDuJeu ();
+				EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 				
 				// Rapatriement des données de l'instance tej dans la variable de classe reponse
 				for (int i=0;i<Main.nPions;i++) {				

@@ -9,9 +9,6 @@ public class EntreesConfigJeu {
 	private int nCoups;
 	//Nombre de pions
 	private int nPions;
-	// Variable de test
-//	private boolean testEntier;
-
 
 	// Entrées des données du jeu 
 	EntreesConfigJeu () {
@@ -44,12 +41,7 @@ public class EntreesConfigJeu {
 	}
 	
 	// setters
-	void setModeJeu(){
-
-		// Détermination du mode de jeu (Entier, 0<nCoups<4)
-		// modeJeu = 0;
-//		testEntier = false;
-			
+	void setModeJeu(){	
 
 		do {
 			System.out.println("veuillez entrer le mode à choisir:\n"
@@ -88,52 +80,29 @@ public class EntreesConfigJeu {
 	
 	
 	void setNCoups() {
-		// Détermination du nombre de coups (Entier, 0<nCoups<20)
-//		testEntier = false;
 			
 		do {
 			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
-
-			// Factorisation
-//			 setTest(nCoups);
-			
 			// Semi-factorisation
 			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nCoups);
-			nCoups = test.getResultatGestionExeptionEntreesGlobales();
-//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
-			
-//		} while (testEntier == false || nCoups < 1 || nCoups > 20 );		
+			nCoups = test.getResultatGestionExeptionEntreesGlobales();		
 		} while ( nCoups < 1 || nCoups > 20 );
 	}
 	
 	void setNPions() {
-		// Détermination du nombre pions (Entier, 1<nPions<4)
-//		testEntier = false;
-			
-		do {
-			System.out.println("Veuillez entrer le nombre de pions: ");
-		
-			// factorisation
-//			setTest(nPions);
-			
-			// Semi factorisation
-			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nPions);
-			nPions = test.getResultatGestionExeptionEntreesGlobales();
-//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
-			
-//		} while (testEntier == false || nPions < 1 || nPions > 20 );			
-		} while (nPions < 1 || nPions > 20 );
+		System.out.println("Veuillez entrer le nombre de pions: ");
+		// Semi factorisation
+		GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nPions);
+		nPions = test.getResultatGestionExeptionEntreesGlobales();	
 	}
 	
 	//Setter pour factorisation
 	void setTest(int test) {
 		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
 		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
-//		testEntier=t.getTestEntierGestionExeptionEntreesGlobales();
 		
 		//test
 		System.out.println("test: mode de jeu =" + modeJeu);
-//		System.out.println("test: testEntier =" + testEntier);
 	}
 	
 	

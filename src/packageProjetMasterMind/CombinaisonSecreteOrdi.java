@@ -6,10 +6,8 @@ public class CombinaisonSecreteOrdi {
 	
 // combinaison1 en défense (Mode 1 & 3)
 int combinaisonDefense [] = new int[Main.nPions];
-// combinaison2 en attaque (Mode 2 & 3)
-// int combinaisonAttaque []= new int[Main.nPions];
 // Création variable tampon réponse
-int reponse1 [] = new int [Main.nPions];
+int reponse[] = new int [Main.nPions];
 	
 	CombinaisonSecreteOrdi(){
 	
