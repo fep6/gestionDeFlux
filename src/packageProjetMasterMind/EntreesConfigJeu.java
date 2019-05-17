@@ -49,36 +49,13 @@ public class EntreesConfigJeu {
 			+ "2-> Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète \n" 
 			+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
 			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
-			
-			
-			// factorisation
-//			setTest(modeJeu);
 						
 			// Semi-factorisation
 			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(modeJeu);
-			modeJeu = test.getResultatGestionExeptionEntreesGlobales();
-//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
-			
-			// Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-// 			str = sc.nextLine();
-//			try {
-//				modeJeu = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println(modeJeu);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//			}
-			
-			// System.out.println("testEntier= "+testEntier);
-			
-//		} while (testEntier == false || modeJeu < 1 || modeJeu > 3 );			
+			modeJeu = test.getResultatGestionExeptionEntreesGlobales();			
 		} while ( modeJeu < 1 || modeJeu > 3 );
-
 	}
-	
-	
+
 	void setNCoups() {
 			
 		do {
@@ -94,13 +71,13 @@ public class EntreesConfigJeu {
 		// Semi factorisation
 		GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nPions);
 		nPions = test.getResultatGestionExeptionEntreesGlobales();	
+		System.out.println("test: Nombre de pions =" + nPions);
 	}
 	
 	//Setter pour factorisation
 	void setTest(int test) {
 		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
 		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
-		
 		//test
 		System.out.println("test: mode de jeu =" + modeJeu);
 	}

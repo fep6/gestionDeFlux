@@ -15,10 +15,6 @@ public class GestionExeptionEntreesGlobales {
 	private int resultat;
 	
 	GestionExeptionEntreesGlobales (int test) {
-		//iteration++;
-		//System.out.println("Numéro d'itération de test de gestion d'exeption = " + iteration);
-		
-		
 		str = sc.nextLine();
 		try {
 			test = Integer.parseInt(str);
@@ -30,13 +26,8 @@ public class GestionExeptionEntreesGlobales {
 		}
 	}
 	
-	
 	int getResultatGestionExeptionEntreesGlobales() {
 		return resultat;
 	}
-	
-//	boolean getTestEntierGestionExeptionEntreesGlobales() {
-//		return testEntier;
-//	}
 
 }

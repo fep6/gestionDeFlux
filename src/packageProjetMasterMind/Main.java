@@ -1,7 +1,5 @@
 package packageProjetMasterMind;
 
-import java.util.Scanner;
-
 public class Main {
 	// Mode de jeu
 	public static int modeJeu; 
@@ -11,12 +9,8 @@ public class Main {
 	public static int nPions;
 	// Combinaison de l'ordinateur (mode1)
 	static int combinaisonDefense [];
-	
-	static int CombinaisonAttaque [];
 	// Réponse de l'ordinateur en mode 1
 	static int reponse1 [];
-
-	Scanner sc = new Scanner(System.in);
 	
 	
 	public static void main(String[] args) {
@@ -45,14 +39,10 @@ public class Main {
 		if ( modeJeu == 2) {
 			RechercheMode2 rm2 = new RechercheMode2();
 		}	
-	
 		// 2.3 Recherche +/- : mode 3
 		if ( modeJeu == 3) {
-			
-		}
-// System.out.println("jeu = "+ typeJeu + "modeJeu = "+modeJeu);	
+		}	
 System.out.println("fin du jeu");
-
    }
 	
 }
