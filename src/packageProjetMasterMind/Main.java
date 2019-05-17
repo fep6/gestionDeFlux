@@ -9,9 +9,6 @@ public class Main {
 	public static int nPions;
 	// Combinaison de l'ordinateur (mode1)
 	static int combinaisonDefense [];
-	// Réponse de l'ordinateur en mode 1
-	static int reponse1 [];
-	
 	
 	public static void main(String[] args) {
 		

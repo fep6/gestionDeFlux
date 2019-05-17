@@ -40,6 +40,17 @@ public class EntreesConfigJeu {
 		System.out.println("\n _____________________________________________ \n ");	
 	}
 	
+	// Getters 
+	int getModeJeu(){
+		return modeJeu;
+	}
+	int getNCoups(){
+		return nCoups;
+	}
+	int getNPions(){
+		return nPions;
+	}
+	
 	// setters
 	void setModeJeu(){	
 
@@ -80,18 +91,6 @@ public class EntreesConfigJeu {
 		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
 		//test
 		System.out.println("test: mode de jeu =" + modeJeu);
-	}
-	
-	
-	// Getters
-	int getModeJeu(){
-		return modeJeu;
-	}
-	int getNCoups(){
-		return nCoups;
-	}
-	int getNPions(){
-		return nPions;
 	}
 
 }

@@ -11,8 +11,8 @@ private String verdict = new String();
 // Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 private String correctif []= new String[Main.nPions];
 // Nombre de tour de jeu
-private int tour = 0;
-private int tourRestant = Main.nCoups;
+private static int tour = 0;
+private static int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
 private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur

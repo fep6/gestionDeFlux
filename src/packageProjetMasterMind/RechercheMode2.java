@@ -17,8 +17,8 @@ public class RechercheMode2 {
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String();
 	// Nombre de tour de jeu
-	private int tour = 0;
-	private int tourRestant = Main.nCoups;
+	private static int tour = 0;
+	private static int tourRestant = Main.nCoups;
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
 

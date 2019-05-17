@@ -5,12 +5,8 @@ public class GestionExeptionEntreesGlobales {
 	
 	// private static int iteration=0;
 	private Scanner sc = new Scanner(System.in);
-	//Variable de test
-	private static boolean testEntier = false;
 	// Variable d'entrée
 	private String str;
-	// Tampon de test
-	private int test;
 	// Résultat
 	private int resultat;
 	
@@ -18,7 +14,6 @@ public class GestionExeptionEntreesGlobales {
 		str = sc.nextLine();
 		try {
 			test = Integer.parseInt(str);
-			testEntier = true;
 			System.out.println("Vous avez entré :" + test);
 			resultat = test;
 		} catch (NumberFormatException e){
