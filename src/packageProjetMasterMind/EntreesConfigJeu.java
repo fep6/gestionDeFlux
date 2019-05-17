@@ -153,7 +153,7 @@ public class EntreesConfigJeu {
 			
 			// System.out.println("testEntier= "+testEntier);
 			
-		} while (testEntier == false || nPions < 1 || nPions > 4 );
+		} while (testEntier == false || nPions < 1 || nPions > 20 );
 	}
 	
 
@@ -180,8 +180,5 @@ public class EntreesConfigJeu {
 	int getNPions(){
 		return nPions;
 	}
-//	int getNCouleurs(){
-//		return nCouleurs;
-//	}
 
 }

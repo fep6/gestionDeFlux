@@ -8,14 +8,15 @@ public class RechercheMode2 {
 	//combinaison de la défense du joueur
 	private int combinaisonDefense[] = new int [Main.nPions];
 	// Tableau pour la saisie de l'ordinateur, avec son historique
-	private int tableauJeu [][] = new int[Main.nPions][Main.nCoups];
+	private int tableauJeu [][] = new int[Main.nCoups][Main.nPions];
 	// Tableau de réponse du joueur, avec son historique
-	private String  tableauReponseJoueur [][] = new String [Main.nPions][Main.nCoups];
+	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	// Valeur max du chiffre limite
+	private int chiffreMax = 10;
+	
 	
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String();
-	// Variable réponse corrective du joueur en fonction du jeu de l'ordinateur
-	// private String correctif []= new String[Main.nPions];
 	// Nombre de tour de jeu
 	private int tour = 0;
 	private int tourRestant = Main.nCoups;
@@ -47,10 +48,10 @@ public class RechercheMode2 {
 	// 2.2. Recherche et affichage de l'ordi.
 			
 		//2.2.1 Recherche  (combinaison1, reponse2)
-		while (verdict != "GAGNE!" && verdict != "PERDU!") {
+		while (verdict != "GAGNE!" || verdict != "PERDU" ) {
 			
 
-		    //2.2.1.1 Entrées de l'ordinateur (var reponse2) et recherche dichotomique : 
+		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
 			// reponse2 [j][i] : j -> Coup, i -> pion 
 			for (int j=0;j<(Main.nCoups);j++) {
 				
@@ -59,34 +60,30 @@ public class RechercheMode2 {
 				System.out.println("\n Nous sommes au tour N° :" + tour);
 				
 				
-				// 1er coup: On donne un code aléatoire differente à chaque pion
+				// 1er coup: On donne la valeur 5 au début
 				if (tour==1) {
-					for (int i=0;i<Main.nPions;i++) {
-						tableauJeu[0][i]=(int)(Math.random()*9);
+					for (int i=0;i<Main.nPions;i++) {	
+						tableauJeu[0][i]=chiffreMax/2;
 					System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
 					}
 				// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 				} else {
 					for (int i=0;i<Main.nPions;i++) {
 						
-						// 
-						
-						
 						if (tableauReponseJoueur[j-1][i]=="=") {
 							tableauJeu[j][i]=tableauJeu[j-1][i];
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
-							continue;
 							}			
-						if (tableauReponseJoueur[j-1][i]=="+") {
+						else if (tableauReponseJoueur[j-1][i]=="+") {
+							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax (9)
+
+								tableauJeu[j][i]=( tableauJeu[j-1][i] + chiffreMax )/2;
+								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
+							}			
+						else if (tableauReponseJoueur[j-1][i]=="-") {
+							// Si c'est "-", on divise par 2
 							tableauJeu[j][i]=(tableauJeu[j-1][i])/2;
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
-							continue;
-							}			
-						if (tableauReponseJoueur[j-1][i]=="-") {
-							tableauJeu[j][i]=(tableauJeu[j-1][i]+9)/2;
-							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
-							
-							
 						}
 					}
 				}
@@ -100,32 +97,32 @@ public class RechercheMode2 {
 						tableauReponseJoueur[j][i]="=";
 					}
 					if ( tableauJeu[j][i]<combinaisonDefense[i] ) {
-						tableauReponseJoueur[j][i]="-";
-						boleenSiGagne = false;
-					}
-					if ( tableauJeu[j][i]>combinaisonDefense[i] ) {
 						tableauReponseJoueur[j][i]="+";
 						boleenSiGagne = false;
 					}
+					if ( tableauJeu[j][i]>combinaisonDefense[i] ) {
+						tableauReponseJoueur[j][i]="-";
+						boleenSiGagne = false;
+					}
 				}
-			//2.1.1.3 Affichage & tests
-			System.out.print("REPONSE: ");
-			for (int i=0; i<Main.nPions; i++) {
-				System.out.print(tableauReponseJoueur[j][i]);
-			}
-			
-			//2.1.1.4 test
-			if (tourRestant == 0 && !boleenSiGagne ) {
-				verdict = "PERDU!";
-			}
-			else if (boleenSiGagne==true) {
-				verdict = "GAGNE!";
-			}
-			tourRestant = Main.nCoups - tour;
-			System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-			
+				//2.1.1.3 Affichage & tests
+				System.out.print("REPONSE: ");
+				for (int i=0; i<Main.nPions; i++) {
+					System.out.print(tableauReponseJoueur[j][i]);
+				}
+				
+				//2.1.1.4 test
+				if (tourRestant == 0 && !boleenSiGagne ) {
+					verdict = "PERDU!";
+				}
+				else if (boleenSiGagne==true) {
+					verdict = "GAGNE!";
+				}
+				tourRestant = Main.nCoups - tour;
+				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+				
 			}
 		}
-		System.out.println("...Mais c'est "+verdict);
+		System.out.println("...Fin de la partie : L'ordinateur a "+verdict);
 	}
 }
