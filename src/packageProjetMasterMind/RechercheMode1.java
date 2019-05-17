@@ -16,39 +16,39 @@ private int tourRestant = Main.nCoups;
 // Variable true si la partie est gagnée
 private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
-private int reponse1 [] = new int[Main.nPions];
+private int reponse [] = new int[Main.nPions];
 //Entrées clavier
 private Scanner sc = new Scanner(System.in);
 
 
 	RechercheMode1(){
 		
-			//2.1.1 par tableau (combinaison1, reponse1)
+			//2.1.1 par tableau (combinaison1, reponse)
 			while (verdict != "GAGNE!" && verdict != "PERDU!") {
 				
 				tour++;
 				boleenSiGagne= true;
 				
-			    //2.1.1.1 entrées du joueur (var reponse1)
+			    //2.1.1.1 entrées du joueur (var reponse)
  
-				EntreesEtTestJeuMode1 tej = new EntreesEtTestJeuMode1 ();
+				TestEntreesManuellesDuJeu tejMode1 = new TestEntreesManuellesDuJeu ();
 				
-				// Rapatriement des données de l'instance tej dans la variable de classe reponse1
+				// Rapatriement des données de l'instance tej dans la variable de classe reponse
 				for (int i=0;i<Main.nPions;i++) {				
-					reponse1[i]=tej.getReponse1(i);	
+					reponse[i]=tejMode1.getEntree(i);	
 				}
 				
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 
 				for (int i=0; i<Main.nPions; i++) {
-					if ( reponse1[i]==Main.combinaisonDefense[i] ) {
+					if ( reponse[i]==Main.combinaisonDefense[i] ) {
 						correctif[i]="=";
 					}
-					if ( reponse1[i]<Main.combinaisonDefense[i] ) {
+					if ( reponse[i]<Main.combinaisonDefense[i] ) {
 						correctif[i]="-";
 						boleenSiGagne = false;
 					}
-					if ( reponse1[i]>Main.combinaisonDefense[i] ) {
+					if ( reponse[i]>Main.combinaisonDefense[i] ) {
 						correctif[i]="+";
 						boleenSiGagne = false;
 					}

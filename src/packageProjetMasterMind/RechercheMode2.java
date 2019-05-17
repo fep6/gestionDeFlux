@@ -12,7 +12,7 @@ public class RechercheMode2 {
 	// Tableau de réponse du joueur, avec son historique
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	// Valeur max du chiffre limite
-	private int chiffreMax = 10;
+	private double chiffreMax = 10;
 	
 	
 	// Renvoie si la partie est gagnée ou non
@@ -23,21 +23,23 @@ public class RechercheMode2 {
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
 	//Entrées clavier
-	private Scanner sc = new Scanner(System.in);
+	//private Scanner sc = new Scanner(System.in);
 
 
 	RechercheMode2(){
 			
 	//2.1 Entrées de la combinaison du joueur 
 		// 2.1.1 Entrées de la combinaison secrète du joueur (var combinaisonDefense)
+		
+		
+		
+		//on instancie les entrées de la combinaison du joueur ...		
+		TestEntreesManuellesDuJeu tejMode2 = new TestEntreesManuellesDuJeu ();
+		
+		System.out.println("veuillez entrer la combinaison: ");
 		for (int i = 0 ; i < Main.nPions; i++) {
-			if (i==0) {
-				System.out.println("veuillez entrer le chiffre du " + (i+1) + " er pion: ");
-			}
-			else {
-				System.out.println("veuillez entrer le chiffre du " + (i+1) + " eme pion: ");
-			}
-			combinaisonDefense [i]= sc.nextInt();
+			// ..Et on va chercher le retour
+			combinaisonDefense [i]= tejMode2.getEntree(i);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
 		for (int i = 0 ; i < Main.nPions; i++) {
@@ -48,9 +50,8 @@ public class RechercheMode2 {
 	// 2.2. Recherche et affichage de l'ordi.
 			
 		//2.2.1 Recherche  (combinaison1, reponse2)
-		while (verdict != "GAGNE!" || verdict != "PERDU" ) {
+		do {
 			
-
 		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
 			// reponse2 [j][i] : j -> Coup, i -> pion 
 			for (int j=0;j<(Main.nCoups);j++) {
@@ -63,7 +64,7 @@ public class RechercheMode2 {
 				// 1er coup: On donne la valeur 5 au début
 				if (tour==1) {
 					for (int i=0;i<Main.nPions;i++) {	
-						tableauJeu[0][i]=chiffreMax/2;
+						tableauJeu[0][i]=(int) (chiffreMax/2);
 					System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
 					}
 				// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
@@ -75,10 +76,14 @@ public class RechercheMode2 {
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="+") {
-							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax (9)
+							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax
 
-								tableauJeu[j][i]=( tableauJeu[j-1][i] + chiffreMax )/2;
+							
+							
+								tableauJeu[j][i]=(int)((Math.round( tableauJeu[j-1][i] + chiffreMax )/2));
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
+								
+								
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="-") {
 							// Si c'est "-", on divise par 2
@@ -122,7 +127,7 @@ public class RechercheMode2 {
 				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
 				
 			}
-		}
+		} while  (verdict != "GAGNE!" || verdict != "PERDU") ;
 		System.out.println("...Fin de la partie : L'ordinateur a "+verdict);
 	}
 }
