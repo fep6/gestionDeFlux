@@ -1,7 +1,7 @@
 package packageProjetMasterMind;
 import java.util.Scanner;
 
-public class GestionExeptionEntreesConfigJeu {
+public class GestionExeptionEntreesGlobales {
 	
 	// private static int iteration=0;
 	private Scanner sc = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class GestionExeptionEntreesConfigJeu {
 	// Résultat
 	private int resultat;
 	
-	GestionExeptionEntreesConfigJeu (int test) {
+	GestionExeptionEntreesGlobales (int test) {
 		//iteration++;
 		//System.out.println("Numéro d'itération de test de gestion d'exeption = " + iteration);
 		
@@ -31,12 +31,12 @@ public class GestionExeptionEntreesConfigJeu {
 	}
 	
 	
-	int getResultatGestionExeptionEntreesConfigJeu() {
+	int getResultatGestionExeptionEntreesGlobales() {
 		return resultat;
 	}
 	
-	boolean getTestEntierGestionExeptionEntreesConfigJeu() {
-		return testEntier;
-	}
+//	boolean getTestEntierGestionExeptionEntreesGlobales() {
+//		return testEntier;
+//	}
 
 }

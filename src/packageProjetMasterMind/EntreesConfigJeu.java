@@ -9,12 +9,8 @@ public class EntreesConfigJeu {
 	private int nCoups;
 	//Nombre de pions
 	private int nPions;
-	//Nombre de couleurs
-//	private int nCouleurs;
-	//Entrees clavier
-	// private Scanner sc = new Scanner(System.in);
 	// Variable de test
-	private boolean testEntier;
+//	private boolean testEntier;
 
 
 	// Entrées des données du jeu 
@@ -25,9 +21,7 @@ public class EntreesConfigJeu {
 		// Nombre de coups
 		this.setNCoups();
 		// Nombre de pions
-		this.setNPions();
-//		// Nombre de couleurs
-//		this.setNCouleurs();	
+		this.setNPions();	
 			
 		// Recapitulatif
 		
@@ -54,7 +48,7 @@ public class EntreesConfigJeu {
 
 		// Détermination du mode de jeu (Entier, 0<nCoups<4)
 		// modeJeu = 0;
-		testEntier = false;
+//		testEntier = false;
 			
 
 		do {
@@ -69,9 +63,9 @@ public class EntreesConfigJeu {
 //			setTest(modeJeu);
 						
 			// Semi-factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(modeJeu);
-			modeJeu = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(modeJeu);
+			modeJeu = test.getResultatGestionExeptionEntreesGlobales();
+//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
 			
 			// Avant factorisation
 //			Scanner sc = new Scanner(System.in);
@@ -87,14 +81,15 @@ public class EntreesConfigJeu {
 			
 			// System.out.println("testEntier= "+testEntier);
 			
-		} while (testEntier == false || modeJeu < 1 || modeJeu > 3 );
+//		} while (testEntier == false || modeJeu < 1 || modeJeu > 3 );			
+		} while ( modeJeu < 1 || modeJeu > 3 );
 
 	}
 	
 	
 	void setNCoups() {
 		// Détermination du nombre de coups (Entier, 0<nCoups<20)
-		testEntier = false;
+//		testEntier = false;
 			
 		do {
 			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
@@ -103,30 +98,17 @@ public class EntreesConfigJeu {
 //			 setTest(nCoups);
 			
 			// Semi-factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nCoups);
-			nCoups = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nCoups);
+			nCoups = test.getResultatGestionExeptionEntreesGlobales();
+//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
 			
-			//Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-//			str = sc.nextLine();
-//			try {
-//				nCoups = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println("Nombre de coups :"+nCoups);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");
-//			}
-			
-			// System.out.println("testEntier= "+testEntier);
-			
-		} while (testEntier == false || nCoups < 1 || nCoups > 20 );
+//		} while (testEntier == false || nCoups < 1 || nCoups > 20 );		
+		} while ( nCoups < 1 || nCoups > 20 );
 	}
 	
 	void setNPions() {
 		// Détermination du nombre pions (Entier, 1<nPions<4)
-		testEntier = false;
+//		testEntier = false;
 			
 		do {
 			System.out.println("Veuillez entrer le nombre de pions: ");
@@ -135,38 +117,23 @@ public class EntreesConfigJeu {
 //			setTest(nPions);
 			
 			// Semi factorisation
-			GestionExeptionEntreesConfigJeu test = new GestionExeptionEntreesConfigJeu(nPions);
-			nPions = test.getResultatGestionExeptionEntreesConfigJeu();
-			testEntier=test.getTestEntierGestionExeptionEntreesConfigJeu();
+			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nPions);
+			nPions = test.getResultatGestionExeptionEntreesGlobales();
+//			testEntier=test.getTestEntierGestionExeptionEntreesGlobales();
 			
-			// Avant factorisation
-//			Scanner sc = new Scanner(System.in);
-//			String str;
-//			str = sc.nextLine();
-//			try {
-//				nPions = Integer.parseInt(str);
-//				testEntier = true;
-//			} catch (NumberFormatException e){
-//				System.out.println("Nombre de pions: "+nPions);
-//				System.out.println(" : Cette valeur n'est pas une entrée valide!");	
-//			}
-			
-			// System.out.println("testEntier= "+testEntier);
-			
-		} while (testEntier == false || nPions < 1 || nPions > 20 );
+//		} while (testEntier == false || nPions < 1 || nPions > 20 );			
+		} while (nPions < 1 || nPions > 20 );
 	}
 	
-
-	
-	//Méthode pour factorisation
+	//Setter pour factorisation
 	void setTest(int test) {
-		GestionExeptionEntreesConfigJeu t = new GestionExeptionEntreesConfigJeu(test);
-		modeJeu = t.getResultatGestionExeptionEntreesConfigJeu();
-		testEntier=t.getTestEntierGestionExeptionEntreesConfigJeu();
+		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
+		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
+//		testEntier=t.getTestEntierGestionExeptionEntreesGlobales();
 		
 		//test
 		System.out.println("test: mode de jeu =" + modeJeu);
-		System.out.println("test: testEntier =" + testEntier);
+//		System.out.println("test: testEntier =" + testEntier);
 	}
 	
 	

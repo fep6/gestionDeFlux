@@ -17,8 +17,6 @@ private int tourRestant = Main.nCoups;
 private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
 private int reponse [] = new int[Main.nPions];
-//Entrées clavier
-private Scanner sc = new Scanner(System.in);
 
 
 	RechercheMode1(){
@@ -30,7 +28,8 @@ private Scanner sc = new Scanner(System.in);
 				boleenSiGagne= true;
 				
 			    //2.1.1.1 entrées du joueur (var reponse)
- 
+				
+				System.out.print("Veuillez entrer votre code: ");
 				TestEntreesManuellesDuJeu tejMode1 = new TestEntreesManuellesDuJeu ();
 				
 				// Rapatriement des données de l'instance tej dans la variable de classe reponse
@@ -38,18 +37,18 @@ private Scanner sc = new Scanner(System.in);
 					reponse[i]=tejMode1.getEntree(i);	
 				}
 				
-				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+				//2.1.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 
 				for (int i=0; i<Main.nPions; i++) {
 					if ( reponse[i]==Main.combinaisonDefense[i] ) {
 						correctif[i]="=";
 					}
 					if ( reponse[i]<Main.combinaisonDefense[i] ) {
-						correctif[i]="-";
+						correctif[i]="+";
 						boleenSiGagne = false;
 					}
 					if ( reponse[i]>Main.combinaisonDefense[i] ) {
-						correctif[i]="+";
+						correctif[i]="-";
 						boleenSiGagne = false;
 					}
 				}

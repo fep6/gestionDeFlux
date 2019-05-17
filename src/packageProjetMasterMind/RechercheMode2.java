@@ -1,5 +1,4 @@
 package packageProjetMasterMind;
-import java.util.Scanner;
 
 // Mode 2 : A l'ordinateur de trouver votre combinaison secrète
 
@@ -22,8 +21,6 @@ public class RechercheMode2 {
 	private int tourRestant = Main.nCoups;
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
-	//Entrées clavier
-	//private Scanner sc = new Scanner(System.in);
 
 
 	RechercheMode2(){
