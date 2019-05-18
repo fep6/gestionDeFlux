@@ -1,6 +1,6 @@
 package packageProjetMasterMind;
 
-// Mode 2 : A l'ordinateur de trouver votre combinaison secrète
+// Mode 2 "Défenseur": Le joueur a le rôle d’attaquant et doit faire une proposition d’une combinaison de X chiffres.
 
 public class RechercheMode2 {
 

@@ -39,7 +39,7 @@ public class Main {
 		// 2.3 Recherche +/- : mode 3
 		if ( modeJeu == 3) {
 		}	
-System.out.println("fin du jeu");
+	System.out.println("fin du jeu");
    }
 	
 }

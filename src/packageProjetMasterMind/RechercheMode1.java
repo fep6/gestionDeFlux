@@ -1,7 +1,8 @@
 package packageProjetMasterMind;
 import java.util.Scanner;
 
-// Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
+// Mode 1 "Challenger" : L'intelligence artificielle de l’ordinateur joue le rôle de défenseur. 
+//			Elle définit une combinaison de X chiffres aléatoirement.
 
 public class RechercheMode1 {
 	
