@@ -11,7 +11,7 @@ public class RechercheMode2 {
 	// Tableau de réponse du joueur, avec son historique
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	// Valeur max du chiffre limite
-	private double chiffreMax = 10;
+	private int chiffreMax = 10;
 	
 	
 	// Renvoie si la partie est gagnée ou non
@@ -77,7 +77,7 @@ public class RechercheMode2 {
 
 							
 							
-								tableauJeu[j][i]=(int)((Math.round( tableauJeu[j-1][i] + chiffreMax )/2));
+								tableauJeu[j][i]=( tableauJeu[j-1][i] + chiffreMax )/2;
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 								
 								
@@ -93,6 +93,7 @@ public class RechercheMode2 {
 		
 				
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+
 
 				for (int i=0; i<Main.nPions; i++) {
 					if ( tableauJeu[j][i]==combinaisonDefense[i] ) {
@@ -113,6 +114,10 @@ public class RechercheMode2 {
 					System.out.print(tableauReponseJoueur[j][i]);
 				}
 				
+				tourRestant = Main.nCoups - tour;
+				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+				
+				
 				//2.1.1.4 test
 				if (tourRestant == 0 && !boleenSiGagne ) {
 					verdict = "PERDU!";
@@ -120,11 +125,9 @@ public class RechercheMode2 {
 				else if (boleenSiGagne==true) {
 					verdict = "GAGNE!";
 				}
-				tourRestant = Main.nCoups - tour;
-				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
-				
 			}
-		} while  (verdict != "GAGNE!" || verdict != "PERDU") ;
+			System.out.println("verdict =" + verdict);
+		} while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) ;
 		System.out.println("...Fin de la partie : L'ordinateur a "+verdict);
 	}
 }
