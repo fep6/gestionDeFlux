@@ -46,11 +46,11 @@ public class RechercheMode2 {
 		
 	// 2.2. Recherche et affichage de l'ordi.
 			
-		//2.2.1 Recherche  (combinaison1, reponse2)
+		//2.2.1 Recherche 
 		do {
 			
 		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
-			// reponse2 [j][i] : j -> Coup, i -> pion 
+			// tableauJeu [j][i] : j -> Coup, i -> pion 
 			for (int j=0;j<(Main.nCoups);j++) {
 				
 				boleenSiGagne= true;
@@ -76,8 +76,8 @@ public class RechercheMode2 {
 							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax
 
 							
-							
-								tableauJeu[j][i]=( tableauJeu[j-1][i] + chiffreMax )/2;
+							//faux
+								tableauJeu[j][i]=(tableauJeu[j-1][i] *3/2);
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 								
 								
