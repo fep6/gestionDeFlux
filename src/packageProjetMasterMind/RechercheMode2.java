@@ -13,7 +13,6 @@ public class RechercheMode2 {
 	// Valeur max du chiffre limite
 	private int chiffreMax = 10;
 	
-	
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String();
 	// Nombre de tour de jeu
@@ -22,20 +21,26 @@ public class RechercheMode2 {
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
 
-
 	RechercheMode2(){
-			
+		
 	//2.1 Entrées de la combinaison du joueur 
-		// 2.1.1 Entrées de la combinaison secrète du joueur (var combinaisonDefense)
+		entreesJoueur();
 		
+	// 2.2. Recherche et affichage de l'ordi.
 		
-		
-		//on instancie les entrées de la combinaison du joueur ...		
+		rechercheAffichageOrdi();			
+
+	}
+	
+	void entreesJoueur(){
+	// 2.1.1 Entrées de la combinaison secrète du joueur (var combinaisonDefense)
+		//on instancie les entrées de la combinaison du joueur ...
 		EntreesManuellesDuJeu tejMode2 = new EntreesManuellesDuJeu ();
 		
 		System.out.println("veuillez entrer la combinaison: ");
+
+		// ..Et on va chercher le retour
 		for (int i = 0 ; i < Main.nPions; i++) {
-			// ..Et on va chercher le retour
 			combinaisonDefense [i]= tejMode2.getEntree(i);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
@@ -43,12 +48,11 @@ public class RechercheMode2 {
 			System.out.print(combinaisonDefense [i]);
 		}
 		System.out.print("\n ---------------------");
-		
-	// 2.2. Recherche et affichage de l'ordi.
-			
-		//2.2.1 Recherche 
+	}
+	
+	void rechercheAffichageOrdi(){
+	//2.2.1 Recherche 
 		do {
-			
 		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
 			// tableauJeu [j][i] : j -> Coup, i -> pion 
 			for (int j=0;j<(Main.nCoups);j++) {
@@ -56,7 +60,6 @@ public class RechercheMode2 {
 				boleenSiGagne= true;
 				tour++;
 				System.out.println("\n Nous sommes au tour N° :" + tour);
-				
 				
 				// 1er coup: On donne la valeur 5 au début
 				if (tour==1) {
@@ -74,13 +77,11 @@ public class RechercheMode2 {
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="+") {
 							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax
-
-							
+		
 							//faux
 								tableauJeu[j][i]=(tableauJeu[j-1][i] *3/2);
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
-								
-								
+											
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="-") {
 							// Si c'est "-", on divise par 2
@@ -89,12 +90,7 @@ public class RechercheMode2 {
 						}
 					}
 				}
-			
-		
-				
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-
-
 				for (int i=0; i<Main.nPions; i++) {
 					if ( tableauJeu[j][i]==combinaisonDefense[i] ) {
 						tableauReponseJoueur[j][i]="=";

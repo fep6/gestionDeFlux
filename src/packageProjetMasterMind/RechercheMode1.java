@@ -30,7 +30,7 @@ private int reponse [] = new int[Main.nPions];
 				reponse[i]=tejMode1.getEntree(i);	
 			}
 			//2.1.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-			comparatifCombinaisonSecrète();
+			comparatifCombinaisonSecrete();
 			//2.1.1.3 Affichage & tests
 			affichageEtTest();
 		}
@@ -38,7 +38,7 @@ private int reponse [] = new int[Main.nPions];
 	}
 	
 	//2.1.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-	void comparatifCombinaisonSecrète(){
+	void comparatifCombinaisonSecrete(){
 		for (int i=0; i<Main.nPions; i++) {
 			if ( reponse[i]==Main.combinaisonDefense[i] ) {
 				correctif[i]="=";
@@ -56,18 +56,18 @@ private int reponse [] = new int[Main.nPions];
 	
 	//Affichage & tests
 	void affichageEtTest(){
-			System.out.print("REPONSE: ");
-			for (int i=0; i<Main.nPions; i++) {
-				System.out.print(correctif[i]);
-			}
-			//2.1.1.4 test
-			if (tourRestant == 0 && !boleenSiGagne ) {
-				verdict = "PERDU!";
-			}
-			else if (boleenSiGagne==true) {
-				verdict = "GAGNE!";
-			}
-			tourRestant = Main.nCoups - tour;
-			System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+		System.out.print("REPONSE: ");
+		for (int i=0; i<Main.nPions; i++) {
+			System.out.print(correctif[i]);
+		}
+		//2.1.1.4 test
+		if (tourRestant == 0 && !boleenSiGagne ) {
+			verdict = "PERDU!";
+		}
+		else if (boleenSiGagne==true) {
+			verdict = "GAGNE!";
+		}
+		tourRestant = Main.nCoups - tour;
+		System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
 	}
 }
