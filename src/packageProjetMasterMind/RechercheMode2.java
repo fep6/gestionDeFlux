@@ -12,6 +12,8 @@ public class RechercheMode2 {
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	// Valeur max du chiffre limite
 	private int chiffreMax = 10;
+	// Recherche dichotomique 'vers le haut'
+	private int dichoPlus = chiffreMax;
 	
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String();
@@ -76,14 +78,18 @@ public class RechercheMode2 {
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="+") {
-							// Si c'est "+", au deuxième tour on tend la recherche vers chiffreMax
-		
-							//faux
-								tableauJeu[j][i]=(tableauJeu[j-1][i] *3/2);
+							// Si c'est "+", au deuxième tour on tend la recherche vers dichoPlus
+								
+							//recherche dichotomique 'vers le haut')
+								tableauJeu[j][i]=((tableauJeu[j-1][i] +dichoPlus)/2);
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 											
 							}			
 						else if (tableauReponseJoueur[j-1][i]=="-") {
+							// La recherche se fera vers le '-', tableauJeu[j-1][i] deviendra donc la borne supérieure de la recherche dichotomique
+							// dichoPlus = dichoPlus/2;
+							dichoPlus = tableauJeu[j-1][i];
+							
 							// Si c'est "-", on divise par 2
 							tableauJeu[j][i]=(tableauJeu[j-1][i])/2;
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
@@ -104,6 +110,7 @@ public class RechercheMode2 {
 						boleenSiGagne = false;
 					}
 				}
+				
 				//2.1.1.3 Affichage & tests
 				System.out.print("REPONSE: ");
 				for (int i=0; i<Main.nPions; i++) {
@@ -115,6 +122,7 @@ public class RechercheMode2 {
 				
 				
 				//2.1.1.4 test
+				
 				if (tourRestant == 0 && !boleenSiGagne ) {
 					verdict = "PERDU!";
 				}
