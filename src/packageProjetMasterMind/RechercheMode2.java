@@ -25,7 +25,7 @@ public class RechercheMode2 {
 	
 	//Boucles
 	// Pions
-	int i;
+	// int i;
 	// Coups
 	int j;
 	// while
@@ -51,11 +51,11 @@ public class RechercheMode2 {
 		System.out.println("veuillez entrer la combinaison: ");
 
 		// ..Et on va chercher le retour
-		for (i = 0 ; i < Main.nPions; i++) {
+		for (int i = 0 ; i < Main.nPions; i++) {
 			combinaisonDefense [i]= tejMode2.getEntree(i);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
-		for (i = 0 ; i < Main.nPions; i++) {
+		for (int i = 0 ; i < Main.nPions; i++) {
 			System.out.print(combinaisonDefense [i]);
 		}
 		System.out.print("\n ---------------------");
@@ -74,30 +74,32 @@ public class RechercheMode2 {
 				
 				// 1er coup: On donne la valeur 5 au début
 				if (tour==1) {
-					for (i=0;i<Main.nPions;i++) {	
+					for (int i=0;i<Main.nPions;i++) {	
 						tableauJeu[0][i]=(int) (chiffreMax/2);
 					System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
 					}
 				// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 				} else {
-					for (i=0;i<Main.nPions;i++) {
+					for (int i=0;i<Main.nPions;i++) {
 						
-						if (tableauReponseJoueur[j-1][i]=="=") {
+						if (tableauReponseJoueur[j-1][i].equals("=")) {
 							tableauJeu[j][i]=tableauJeu[j-1][i];
 							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 							}			
-						else if (tableauReponseJoueur[j-1][i]=="+") {
+						else if (tableauReponseJoueur[j-1][i].equals("+")) {
 							// Si c'est "+", au deuxième tour on tend la recherche vers dichoPlus
-								
+							dichoPlus = tableauJeu[j-1][i];
+							
 							//recherche dichotomique 'vers le haut')
 								tableauJeu[j][i]=((tableauJeu[j-1][i] +dichoPlus)/2);
 								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 											
-							}			
-						else if (tableauReponseJoueur[j-1][i]=="-") {
+							}
+						// (tableauReponseJoueur[j-1][i].equals("-"))
+						else  {
 							// La recherche se fera vers le '-', tableauJeu[j-1][i] deviendra donc la borne supérieure de la recherche dichotomique
 							// dichoPlus = dichoPlus/2;
-							dichoPlus = tableauJeu[j-1][i];
+							// dichoPlus = tableauJeu[j-1][i];
 							
 							// Si c'est "-", on divise par 2
 							tableauJeu[j][i]=(tableauJeu[j-1][i])/2;
@@ -106,7 +108,7 @@ public class RechercheMode2 {
 					}
 				}
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-				for (i=0; i<Main.nPions; i++) {
+				for (int i=0; i<Main.nPions; i++) {
 					if ( tableauJeu[j][i]==combinaisonDefense[i] ) {
 						tableauReponseJoueur[j][i]="=";
 					}
@@ -122,7 +124,7 @@ public class RechercheMode2 {
 				
 				//2.1.1.3 Affichage & tests
 				System.out.print("REPONSE: ");
-				for (i=0; i<Main.nPions; i++) {
+				for (int i=0; i<Main.nPions; i++) {
 					System.out.print(tableauReponseJoueur[j][i]);
 				}
 
@@ -134,7 +136,7 @@ public class RechercheMode2 {
 					verdict = "PERDU!";
 				}
 				else if (boleenSiGagne==true) {
-					// Ne sors pas du while ...(?)
+					// Ne sors pas du while quand l'ordi perd...(?)
 					verdict = "GAGNE!";
 					//test
 					while1 = !verdict.equals("GAGNE!") && !verdict.equals("PERDU!");
