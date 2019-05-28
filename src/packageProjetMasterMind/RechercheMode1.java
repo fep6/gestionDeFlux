@@ -11,8 +11,8 @@ private String verdict = new String();
 // Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 private String correctif []= new String[Main.nPions];
 // Nombre de tour de jeu
-private static int tour = 0;
-private static int tourRestant = Main.nCoups;
+private static int tourMode1 = 0;
+private static int tourRestantMode1 = Main.nCoups;
 // Variable true si la partie est gagnée
 private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
@@ -21,7 +21,7 @@ private int reponse [] = new int[Main.nPions];
 	RechercheMode1(){
 		//2.1.1 par tableau (combinaison1, reponse)
 		while (verdict != "GAGNE!" && verdict != "PERDU!") {
-			tour++;
+			tourMode1++;
 			boleenSiGagne= true;
 		    //2.1.1.1 entrées du joueur (var reponse)
 			System.out.print("Veuillez entrer votre code: ");
@@ -62,13 +62,13 @@ private int reponse [] = new int[Main.nPions];
 			System.out.print(correctif[i]);
 		}
 		//2.1.1.4 test
-		if (tourRestant == 0 && !boleenSiGagne ) {
+		if (tourRestantMode1 == 0 && !boleenSiGagne ) {
 			verdict = "PERDU!";
 		}
 		else if (boleenSiGagne==true) {
 			verdict = "GAGNE!";
 		}
-		tourRestant = Main.nCoups - tour;
-		System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+		tourRestantMode1 = Main.nCoups - tourMode1;
+		System.out.println(" -> Il vous reste: "+ tourRestantMode1 + " coups!");
 	}
 }

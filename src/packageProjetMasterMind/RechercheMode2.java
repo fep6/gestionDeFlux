@@ -18,21 +18,12 @@ public class RechercheMode2 {
 	private int[] dichoMoins = new int [Main.nPions] ;
 	
 	// Renvoie si la partie est gagnée ou non
-	private String verdict = new String();
+	private String verdict = new String(); 
 	// Nombre de tour de jeu
-	private int tour = 0;
-	private int tourRestant = Main.nCoups;
+	private int tourMode2 = 0;
+	private int tourRestantMode2 = Main.nCoups;
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
-	
-	//Boucles
-	// Pions
-	// int i;
-	// Coups
-	// int j;
-	// while
-	
-	boolean while1;
 	
 	RechercheMode2(){
 		
@@ -40,7 +31,6 @@ public class RechercheMode2 {
 		entreesJoueur();
 		
 	// 2.2. Recherche et affichage de l'ordi.
-		
 		rechercheAffichageOrdi();			
 
 	}
@@ -79,11 +69,11 @@ public class RechercheMode2 {
 			for (int j=0;j<(Main.nCoups);j++) {
 				
 				boleenSiGagne= true;
-				tour++;
-				System.out.println("\n Nous sommes au tour N° :" + tour);
+				tourMode2++;
+				System.out.println("\n Nous sommes au tour N° :" + tourMode2);
 				
 				// 1er coup: On donne la valeur 5 au début
-				if (tour==1) {
+				if (tourMode2==1) {
 					for (int i=0;i<Main.nPions;i++) {	
 						tableauJeu[0][i]=(int) (chiffreMax/2);
 					System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
@@ -136,16 +126,21 @@ public class RechercheMode2 {
 				
 				//2.1.1.4 test
 				
-				tourRestant = Main.nCoups - tour;
-				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+				tourRestantMode2 = Main.nCoups - tourMode2;
+				System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
 				
-				if (tourRestant == 1 && !boleenSiGagne ) {
+				if (tourRestantMode2 == 0 && !boleenSiGagne ) {
 					verdict = "PERDU!";
 				}
 				else if (boleenSiGagne==true) {
-					// Ne sors pas du while quand l'ordi gagne...(?)
+					// Ne sort pas du while quand l'ordi gagne...(?)
 					verdict = "GAGNE!";
 				}
+				
+				//tests conditions du while
+				System.out.println("boleenSiGagne = " + boleenSiGagne);
+				System.out.println("verdict dans while = " + verdict);
+				
 			}
 			System.out.println("verdict = " + verdict);
 			
