@@ -98,20 +98,15 @@ public class RechercheMode2 {
 						
 						else if (tableauReponseJoueur[j-1][i].equals("+")) {
 							// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-							dichoMoins [i] = tableauJeu[j-1][i];
-							
-							// On fait la moyenne des deux bornes
-							tableauJeu[j][i]=(dichoPlus[i] + dichoMoins[i])/2;
-											
+							dichoMoins [i] = tableauJeu[j-1][i];			
 							}
 						// (tableauReponseJoueur[j-1][i].equals("-"))
 						else  {
 							// La recherche se fera vers le '-', on divise dichoPlus par 2
 							dichoPlus [i]= tableauJeu[j-1][i];
-							
-							// On fait la moyenne des deux bornes
-							tableauJeu[j][i]=(dichoPlus[i] + dichoMoins[i])/2;
 						}
+						// On fait la moyenne des deux bornes
+						tableauJeu[j][i]=(dichoPlus[i] + dichoMoins[i])/2;
 						System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
 						
 					}

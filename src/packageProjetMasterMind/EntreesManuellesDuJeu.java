@@ -18,12 +18,11 @@ private int reponse [] = new int[Main.nPions];
 				else {
 					System.out.print(i+1 + "eme entrée?");
 				}
-				while (reponse[i]!= 0) {
 					//instanciation du test try/catch 
 					GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales(reponse [i]);
 					// retour des données
 					reponse [i] = geeg.getResultatGestionExeptionEntreesGlobales();
-				}
+				
 		}
 	}
 	int getEntree(int p){
