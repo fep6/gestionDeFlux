@@ -1,5 +1,4 @@
 package packageProjetMasterMind;
-import java.util.Scanner;
 
 // Mode 1 "Challenger" : L'intelligence artificielle de l’ordinateur joue le rôle de défenseur. 
 //			Elle définit une combinaison de X chiffres aléatoirement.
@@ -18,15 +17,14 @@ private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
 private int reponse [] = new int[Main.nPions];
 // Combinaison de l'ordinateur (mode1)
-static int combinaisonDefense [];
+static int combinaisonOrdi [];
 
 	RechercheMode1(){
 		//2.1  Entrée de la combinaison de l'ordi.:
-
-		CombinaisonSecreteOrdi cso = new CombinaisonSecreteOrdi();
-		combinaisonDefense= cso.getCombinaisonDefense();
+		CombinaisonSecrete cso = new CombinaisonSecrete();
+		combinaisonOrdi= cso.getcombinaisonSecreteOrdi();
 		
-		//2.2.1 par tableau (combinaison1, reponse)
+		//2.2.1 recherche +/- et affichage	
 		while (verdict != "GAGNE!" && verdict != "PERDU!") {
 			tourMode1++;
 			boleenSiGagne= true;
@@ -53,14 +51,14 @@ static int combinaisonDefense [];
 	//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	void comparatifCombinaisonSecrete(){
 		for (int i=0; i<Main.nPions; i++) {
-			if ( reponse[i]==combinaisonDefense[i] ) {
+			if ( reponse[i]==combinaisonOrdi[i] ) {
 				correctif[i]="=";
 			}
-			if ( reponse[i]<combinaisonDefense[i] ) {
+			if ( reponse[i]<combinaisonOrdi[i] ) {
 				correctif[i]="+";
 				boleenSiGagne = false;
 			}
-			if ( reponse[i]>combinaisonDefense[i] ) {
+			if ( reponse[i]>combinaisonOrdi[i] ) {
 				correctif[i]="-";
 				boleenSiGagne = false;
 			}

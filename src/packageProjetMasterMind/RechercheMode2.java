@@ -5,13 +5,13 @@ package packageProjetMasterMind;
 public class RechercheMode2 {
 
 	//combinaison de la défense du joueur
-	private int combinaisonDefense[] = new int [Main.nPions];
+	private int combinaisonJoueur[] = new int [Main.nPions];
 	// Tableau pour la saisie de l'ordinateur, avec son historique
 	private int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
 	// Tableau de réponse du joueur, avec son historique
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
-	// Valeur max du chiffre limite
-	private int chiffreMax = 10;
+	// Valeur max du nombre limite
+	private int Max = 10;
 	// Recherche dichotomique 'vers le haut'
 	private int[] dichoPlus = new int [Main.nPions] ;
 	// Recherche dichotomique 'vers le bas'
@@ -33,14 +33,16 @@ public class RechercheMode2 {
 	RechercheMode2(){
 		
 	//3.1 Entrées de la combinaison du joueur 
-		entreesCombinaisonJoueur();
+		//entreesCombinaisonJoueur();
+		CombinaisonSecrete csj = new CombinaisonSecrete();
+		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
 		
 	// 3.2. Recherche et affichage de l'ordi.
-	//3.2.1 Recherche
+	//3.2.1 Recherche +/-
 		
 		//Initialisation des variables dichotomiques
 		for (int i =0; i<Main.nPions; i++) {
-			dichoPlus[i]=chiffreMax;
+			dichoPlus[i]=Max;
 			dichoMoins[i]=0;
 		}
 		
@@ -52,8 +54,7 @@ public class RechercheMode2 {
 				tourMode2++;
 				System.out.println("\n Nous sommes au tour N° :" + tourMode2);
 				
-					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique : 
-					// tableauJeu [j][i] : j -> Coup, i -> pion 
+					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
 					entreesJeuOrdi();
 					//3.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 					comparatifCombinaisonSecrete();
@@ -71,31 +72,15 @@ public class RechercheMode2 {
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdict);			
 
 	}
-
-	// 3.1.1 Entrées de la combinaison secrète du joueur (var combinaisonDefense)
-		//on instancie les entrées de la combinaison du joueur ...
-	void entreesCombinaisonJoueur(){
-		EntreesManuellesDuJeu emjMode2 = new EntreesManuellesDuJeu ();
-		System.out.println("veuillez entrer la combinaison: ");
-
-		// ..Et on va chercher le retour
-		for (int i = 0 ; i < Main.nPions; i++) {
-			combinaisonDefense [i]= emjMode2.getEntree(i);
-		}
-		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
-		for (int i = 0 ; i < Main.nPions; i++) {
-			System.out.print(combinaisonDefense [i]);
-		}
-		System.out.print("\n ---------------------");
-	}
 	
-	//3.2.1.1 Entrées de l'ordi
+	//3.2.1.1 Entrées de l'ordi 
+	// tableauJeu [j][i] : j -> Coup, i -> pion 
 	void entreesJeuOrdi(){
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (tourMode2==1) {
 			for (int i=0;i<Main.nPions;i++) {	
-				tableauJeu[0][i]=(int) (chiffreMax/2);
+				tableauJeu[0][i]=(int) (Max/2);
 			System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
 			}
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
@@ -126,14 +111,14 @@ public class RechercheMode2 {
 	//3.1.1.2 comparatif combinaison secrète / entrée 
 	void comparatifCombinaisonSecrete() {
 		for (int i=0; i<Main.nPions; i++) {
-			if ( tableauJeu[j][i]==combinaisonDefense[i] ) {
+			if ( tableauJeu[j][i]==combinaisonJoueur[i] ) {
 				tableauReponseJoueur[j][i]="=";
 			}
-			if ( tableauJeu[j][i]<combinaisonDefense[i] ) {
+			if ( tableauJeu[j][i]<combinaisonJoueur[i] ) {
 				tableauReponseJoueur[j][i]="+";
 				boleenSiGagne = false;
 			}
-			if ( tableauJeu[j][i]>combinaisonDefense[i] ) {
+			if ( tableauJeu[j][i]>combinaisonJoueur[i] ) {
 				tableauReponseJoueur[j][i]="-";
 				boleenSiGagne = false;
 			}

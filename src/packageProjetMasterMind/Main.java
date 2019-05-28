@@ -10,16 +10,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-// 1 Choix du jeu et du mode
-		
-	//1.1 Entrée du mode, du nombre de pions, nombre de couleurs, du nombre de coups,
+// 1 Entrée du mode, du nombre de pions, du nombre de coups,
 
 		EntreesConfigJeu ecj = new EntreesConfigJeu();
 		modeJeu = ecj.getModeJeu(); 
 		nCoups = ecj.getNCoups(); 
 		nPions = ecj.getNPions(); 
 		
-	// 2 Recherche +/- : 
+// 2 Recherche +/- : 
 	
 		// 2.1 Recherche +/- Mode 1 : 'Challenger' où vous devez trouver la combinaison secréte de l'ordinateur
 		if ( modeJeu == 1) {
