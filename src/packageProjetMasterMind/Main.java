@@ -7,8 +7,6 @@ public class Main {
 	public static int nCoups; 
 	// Nombre de pions
 	public static int nPions;
-	// Combinaison de l'ordinateur (mode1)
-	static int combinaisonDefense [];
 	
 	public static void main(String[] args) {
 		
@@ -20,11 +18,6 @@ public class Main {
 		modeJeu = ecj.getModeJeu(); 
 		nCoups = ecj.getNCoups(); 
 		nPions = ecj.getNPions(); 
-		
-	//1.2  Création Combinaison secrète de l'ordi. (pour modes 1 & 3):
-
-		CombinaisonSecreteOrdi cso = new CombinaisonSecreteOrdi();
-		combinaisonDefense= cso.getCombinaisonDefense();
 		
 	// 2 Recherche +/- : 
 	

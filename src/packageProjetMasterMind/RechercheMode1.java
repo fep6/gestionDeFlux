@@ -17,45 +17,57 @@ private static int tourRestantMode1 = Main.nCoups;
 private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
 private int reponse [] = new int[Main.nPions];
+// Combinaison de l'ordinateur (mode1)
+static int combinaisonDefense [];
 
 	RechercheMode1(){
-		//2.1.1 par tableau (combinaison1, reponse)
+		//2.1  Entrée de la combinaison de l'ordi.:
+
+		CombinaisonSecreteOrdi cso = new CombinaisonSecreteOrdi();
+		combinaisonDefense= cso.getCombinaisonDefense();
+		
+		//2.2.1 par tableau (combinaison1, reponse)
 		while (verdict != "GAGNE!" && verdict != "PERDU!") {
 			tourMode1++;
 			boleenSiGagne= true;
-		    //2.1.1.1 entrées du joueur (var reponse)
-			System.out.print("Veuillez entrer votre code: ");
-			EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
-			// Rapatriement des données de l'instance tej dans la variable de classe reponse
-			for (int i=0;i<Main.nPions;i++) {				
-				reponse[i]=tejMode1.getEntree(i);	
-			}
-			//2.1.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+		    //2.2.1.1 entrées du joueur (var reponse)
+			entreesJoueur();
+			//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 			comparatifCombinaisonSecrete();
-			//2.1.1.3 Affichage & tests
+			//2.2.1.3 Affichage & tests
 			affichageEtTest();
 		}
 		System.out.println("...Mais c'est "+verdict);
 	}
 	
-	//2.1.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+	//2.2.1.1 entrées du joueur (var reponse)
+	void entreesJoueur() {
+		System.out.print("Veuillez entrer votre code: ");
+		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
+		// Rapatriement des données de l'instance tej dans la variable de classe reponse
+		for (int i=0;i<Main.nPions;i++) {				
+			reponse[i]=tejMode1.getEntree(i);	
+		}
+	}
+	
+	//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	void comparatifCombinaisonSecrete(){
 		for (int i=0; i<Main.nPions; i++) {
-			if ( reponse[i]==Main.combinaisonDefense[i] ) {
+			if ( reponse[i]==combinaisonDefense[i] ) {
 				correctif[i]="=";
 			}
-			if ( reponse[i]<Main.combinaisonDefense[i] ) {
+			if ( reponse[i]<combinaisonDefense[i] ) {
 				correctif[i]="+";
 				boleenSiGagne = false;
 			}
-			if ( reponse[i]>Main.combinaisonDefense[i] ) {
+			if ( reponse[i]>combinaisonDefense[i] ) {
 				correctif[i]="-";
 				boleenSiGagne = false;
 			}
 		}
 	}
 	
-	//Affichage & tests
+	//2.2.1.3 Affichage & tests
 	void affichageEtTest(){
 		System.out.print("REPONSE: ");
 		for (int i=0; i<Main.nPions; i++) {
