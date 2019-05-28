@@ -17,7 +17,7 @@ private boolean boleenSiGagne;
 // Tableau pour la saisie d'entrée du joueur
 private int reponse [] = new int[Main.nPions];
 // Combinaison de l'ordinateur (mode1)
-static int combinaisonOrdi [];
+private int combinaisonOrdi [];
 
 	RechercheMode1(){
 		//2.1  Entrée de la combinaison de l'ordi.:

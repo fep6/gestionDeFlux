@@ -1,7 +1,5 @@
 package packageProjetMasterMind;
 
-import java.util.Scanner;
-
 public class EntreesConfigJeu {
 	//Mode de jeu
 	private int modeJeu;
@@ -86,11 +84,11 @@ public class EntreesConfigJeu {
 	}
 	
 	//Setter pour factorisation
-	void setTest(int test) {
-		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
-		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
-		//test
-		System.out.println("test: mode de jeu =" + modeJeu);
-	}
+//	void setTest(int test) {
+//		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
+//		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
+//		//test
+//		System.out.println("test: mode de jeu =" + modeJeu);
+//	}
 
 }
