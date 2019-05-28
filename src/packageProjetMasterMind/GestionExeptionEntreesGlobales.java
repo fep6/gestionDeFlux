@@ -11,14 +11,16 @@ public class GestionExeptionEntreesGlobales {
 	private int resultat;
 	
 	GestionExeptionEntreesGlobales (int test) {
-		str = sc.nextLine();
-		try {
-			test = Integer.parseInt(str);
-			System.out.println("Vous avez entré :" + test);
-			resultat = test;
-		} catch (NumberFormatException e){
-			System.out.println(" : Cette valeur n'est pas une entrée valide!");
-		}
+		
+			str = sc.nextLine();
+			try {
+				test = Integer.parseInt(str);
+				System.out.println("Vous avez entré :" + test);
+				resultat = test;
+			} catch (NumberFormatException e){
+				System.out.println(" : Cette valeur n'est pas une entrée valide!");
+			}
+		
 	}
 	
 	int getResultatGestionExeptionEntreesGlobales() {

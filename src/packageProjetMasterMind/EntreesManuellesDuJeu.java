@@ -12,17 +12,18 @@ private int reponse [] = new int[Main.nPions];
 
 		for (int i=0; i<reponse.length ; i++) {
 
-				if (i==0) {
+				if (i == 0) {
 					System.out.print(i+1 + "ère entrée?");
 				}
 				else {
 					System.out.print(i+1 + "eme entrée?");
 				}
-				
-				//instanciation du test try/catch 
-				GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales(reponse [i]);
-				// retour des données
-				reponse [i] = geeg.getResultatGestionExeptionEntreesGlobales();
+				while (reponse[i]!= 0) {
+					//instanciation du test try/catch 
+					GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales(reponse [i]);
+					// retour des données
+					reponse [i] = geeg.getResultatGestionExeptionEntreesGlobales();
+				}
 		}
 	}
 	int getEntree(int p){
