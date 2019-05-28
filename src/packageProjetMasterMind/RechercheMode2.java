@@ -7,13 +7,15 @@ public class RechercheMode2 {
 	//combinaison de la défense du joueur
 	private int combinaisonDefense[] = new int [Main.nPions];
 	// Tableau pour la saisie de l'ordinateur, avec son historique
-	private int tableauJeu [][] = new int[Main.nCoups][Main.nPions];
+	private int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
 	// Tableau de réponse du joueur, avec son historique
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	// Valeur max du chiffre limite
 	private int chiffreMax = 10;
 	// Recherche dichotomique 'vers le haut'
-	private int dichoPlus = chiffreMax;
+	private int[] dichoPlus = new int [Main.nPions] ;
+	// Recherche dichotomique 'vers le bas'
+	private int[] dichoMoins = new int [Main.nPions] ;
 	
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String();
@@ -27,7 +29,7 @@ public class RechercheMode2 {
 	// Pions
 	// int i;
 	// Coups
-	int j;
+	// int j;
 	// while
 	
 	boolean while1;
@@ -46,13 +48,13 @@ public class RechercheMode2 {
 	void entreesJoueur(){
 	// 2.1.1 Entrées de la combinaison secrète du joueur (var combinaisonDefense)
 		//on instancie les entrées de la combinaison du joueur ...
-		EntreesManuellesDuJeu tejMode2 = new EntreesManuellesDuJeu ();
+		EntreesManuellesDuJeu emjMode2 = new EntreesManuellesDuJeu ();
 		
 		System.out.println("veuillez entrer la combinaison: ");
 
 		// ..Et on va chercher le retour
 		for (int i = 0 ; i < Main.nPions; i++) {
-			combinaisonDefense [i]= tejMode2.getEntree(i);
+			combinaisonDefense [i]= emjMode2.getEntree(i);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
 		for (int i = 0 ; i < Main.nPions; i++) {
@@ -62,11 +64,19 @@ public class RechercheMode2 {
 	}
 	
 	void rechercheAffichageOrdi(){
-	//2.2.1 Recherche 
+	//2.2.1 Recherche
+		
+		//Initialisation des variables dichotomiques
+		for (int i =0; i<Main.nPions; i++) {
+			dichoPlus[i]=chiffreMax;
+			dichoMoins[i]=0;
+		}
+		
+		//Recherche
 		do {
 		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
 			// tableauJeu [j][i] : j -> Coup, i -> pion 
-			for (j=0;j<(Main.nCoups);j++) {
+			for (int j=0;j<(Main.nCoups);j++) {
 				
 				boleenSiGagne= true;
 				tour++;
@@ -84,27 +94,26 @@ public class RechercheMode2 {
 						
 						if (tableauReponseJoueur[j-1][i].equals("=")) {
 							tableauJeu[j][i]=tableauJeu[j-1][i];
-							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
-							}			
+							}
+						
 						else if (tableauReponseJoueur[j-1][i].equals("+")) {
-							// Si c'est "+", au deuxième tour on tend la recherche vers dichoPlus
-							dichoPlus = tableauJeu[j-1][i];
+							// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
+							dichoMoins [i] = tableauJeu[j-1][i];
 							
-							//recherche dichotomique 'vers le haut')
-								tableauJeu[j][i]=((tableauJeu[j-1][i] +dichoPlus)/2);
-								System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
+							// On fait la moyenne des deux bornes
+							tableauJeu[j][i]=(dichoPlus[i] + dichoMoins[i])/2;
 											
 							}
 						// (tableauReponseJoueur[j-1][i].equals("-"))
 						else  {
-							// La recherche se fera vers le '-', tableauJeu[j-1][i] deviendra donc la borne supérieure de la recherche dichotomique
-							// dichoPlus = dichoPlus/2;
-							// dichoPlus = tableauJeu[j-1][i];
+							// La recherche se fera vers le '-', on divise dichoPlus par 2
+							dichoPlus [i]= dichoPlus[i]/2;
 							
-							// Si c'est "-", on divise par 2
-							tableauJeu[j][i]=(tableauJeu[j-1][i])/2;
-							System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
+							// On fait la moyenne des deux bornes
+							tableauJeu[j][i]=(dichoPlus[i] + dichoMoins[i])/2;
 						}
+						System.out.println("Pion "+ i + " : " + tableauJeu[j][i]);
+						
 					}
 				}
 				//2.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
@@ -132,7 +141,10 @@ public class RechercheMode2 {
 				
 				//2.1.1.4 test
 				
-				if (tourRestant == 0 && !boleenSiGagne ) {
+				tourRestant = Main.nCoups - tour;
+				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+				
+				if (tourRestant == 1 && !boleenSiGagne ) {
 					verdict = "PERDU!";
 				}
 				else if (boleenSiGagne==true) {
@@ -142,13 +154,11 @@ public class RechercheMode2 {
 					while1 = !verdict.equals("GAGNE!") && !verdict.equals("PERDU!");
 					
 					//test
-					System.out.println("while (dans boucle test) = " + while1);
+					//System.out.println("while (dans boucle test) = " + while1);
 				}
 				//test
-				System.out.println("while (fin boucle test)= " + while1);
+				// System.out.println("while (fin boucle test)= " + while1);
 				
-				tourRestant = Main.nCoups - tour;
-				System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
 			}
 			System.out.println("verdict =" + verdict);
 			
