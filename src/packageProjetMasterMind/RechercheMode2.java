@@ -73,7 +73,7 @@ public class RechercheMode2 {
 		}
 		
 		//Recherche
-		do {
+		while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) {
 		    //2.2.1.1 Entrées de l'ordinateur (var tableauJeu[][]) et recherche dichotomique : 
 			// tableauJeu [j][i] : j -> Coup, i -> pion 
 			for (int j=0;j<(Main.nCoups);j++) {
@@ -148,21 +148,13 @@ public class RechercheMode2 {
 					verdict = "PERDU!";
 				}
 				else if (boleenSiGagne==true) {
-					// Ne sors pas du while quand l'ordi perd...(?)
+					// Ne sors pas du while quand l'ordi gagne...(?)
 					verdict = "GAGNE!";
-					//test
-					while1 = !verdict.equals("GAGNE!") && !verdict.equals("PERDU!");
-					
-					//test
-					//System.out.println("while (dans boucle test) = " + while1);
 				}
-				//test
-				// System.out.println("while (fin boucle test)= " + while1);
-				
 			}
-			System.out.println("verdict =" + verdict);
+			System.out.println("verdict = " + verdict);
 			
-		} while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) ;
+		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdict);
 	}
 }
