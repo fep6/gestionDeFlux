@@ -19,9 +19,8 @@ public class RechercheMode2 {
 	private static int[] dichoMoins = new int [Main.nPions] ;
 	
 	// Renvoie si la partie est gagnée ou non
-	private static String verdict = new String(); 
+	private static String verdict; 
 	// Nombre de tour de jeu
-	// private static int tourMode2 = 0;
 	private static int tourRestantMode2 = Main.nCoups;
 	// Variable true si la partie est gagnée
 	private static boolean boleenSiGagne;
@@ -44,11 +43,10 @@ public class RechercheMode2 {
 		initVariablesDicho();
 		
 		//Entrées de l'ordi et comparaison
-		 do {
-
-			coup++;
+		while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) {
 				boleenSiGagne= true;
-				System.out.println("\n Nous sommes au tour N° :" +(int) (coup) );
+				coup++;
+				System.out.println("\n Nous sommes au tour N° :" + coup);
 				
 					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
 					entreesJeuOrdi();
@@ -56,16 +54,14 @@ public class RechercheMode2 {
 					comparatifCombinaisonSecreteMode2();
 					//3.1.1.3 Affichage & tests
 					affichageEtTest();
-
-			System.out.println("verdict = " + verdict);
 			
-		} while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!"));
+		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdict);			
 
 	}
 	
 	//3.2.1.1 Entrées de l'ordi 
-	// tableauJeu [j][i] : j -> coup, i -> pion 
+	// tableauJeu [j][i] : j -> Coup, i -> pion 
 	static void entreesJeuOrdi(){
 		
 		// 1er coup: On donne la valeur 5 au début
@@ -127,12 +123,13 @@ public class RechercheMode2 {
 		
 		//test
 		tourRestantMode2 = Main.nCoups - coup;
-		System.out.println(" -> Il me reste: "+ (int)(tourRestantMode2+1) + " coups!");
+		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
 		
 		if (tourRestantMode2 == 0 && !boleenSiGagne ) {
 			verdict = "PERDU!";
 		}
 		else if (boleenSiGagne==true) {
+			// Ne sort pas du while quand l'ordi gagne...(?)
 			verdict = "GAGNE!";
 		}
 	}

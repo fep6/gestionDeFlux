@@ -9,28 +9,22 @@ public class RechercheMode3 {
 	private int combinaisonJoueur[] = new int [Main.nPions];
 	// Combinaison de l'ordinateur (mode1)
 	private int combinaisonOrdi [];	
-	// Recherche dichotomique 'vers le haut'
-	private int[] dichoPlus = new int [Main.nPions] ;
-	// Recherche dichotomique 'vers le bas'
-	private int[] dichoMoins = new int [Main.nPions] ;	
 	// Verdict du jeu
 	private String verdict;
-	// Comptage de tour
-	private static int tourMode3 = 0;
 	// condition de sortie du while
 	private boolean boleenSiGagne;
 	
-	//Boucles de coup (n° de coup à l'instant t)
-	private int coup;
+	//Comptage de coup (n° de coup à l'instant t)
+	private static int coup;
 	
 	
 	RechercheMode3(){
 		
 		//4.1 Entrées des combinaisons secrètes 
 		CombinaisonSecrete cs = new CombinaisonSecrete();
-			//4.1.1 Entrées de la combinaison du joueur 
+			//4.1.1 Retour de la combinaison du joueur  mode(2)
 			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
-			//4.1.2  Entrée de la combinaison de l'ordi.:
+			//4.1.2 Retour de la combinaison de l'ordi.(mode1):
 			combinaisonOrdi= cs.getcombinaisonSecreteOrdi();
 
 		
@@ -39,23 +33,23 @@ public class RechercheMode3 {
 			//4.2.1 Init des bornes de recherche dichotomiques pour le mode 2
 			RechercheMode2.initVariablesDicho();
 			
-			//4.2.2 recherche +/- et affichage	
+			//4.2.2 Recherche +/- et affichage	
 			while (verdict != "GAGNE!" && verdict != "PERDU!") {
-				//tourMode3++;
 				boleenSiGagne= true;
-			    //4.2.1.1 entrées du joueur (var reponse)
+			    //Entrées du joueur (var reponse)
 				RechercheMode1.entreesJoueur();					
-				//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
+				//Entrées de l'ordi
 				RechercheMode2.entreesJeuOrdi();
-				//4.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 				RechercheMode1.comparatifCombinaisonSecreteMode1();						
-				//3.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 				RechercheMode2.comparatifCombinaisonSecreteMode2();
-				//4.2.1.3 Affichage & tests
+				//Affichage & tests
 				RechercheMode1.affichageEtTest();						
-				//3.1.1.3 Affichage & tests
-					
-				}
+				//Affichage & tests
+				RechercheMode2.affichageEtTest();	
+				}				
+			System.out.println("verdict = " + verdict);
 		}	
 }
 
