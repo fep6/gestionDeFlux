@@ -27,6 +27,9 @@ public class RechercheMode2 {
 	
 	//Boucles de coup (n° de coup à l'instant t)
 	static int coup;
+	
+	//Numero de pion
+	static int pion;
 
 	
 	
@@ -57,35 +60,35 @@ public class RechercheMode2 {
 	}
 	
 	//3.2.1.1 Entrées de l'ordi 
-	// tableauJeu [j][i] : j -> Coup, i -> pion 
+	// tableauJeu [j][i] : j -> coup, i -> pion 
 	static void entreesJeuOrdi(){
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coup==1) {
-			for (int i=0;i<Main.nPions;i++) {	
-				tableauJeu[0][i]=(int) (Max/2);
-			System.out.println("Pion "+ i + " : " + tableauJeu[0][i]);
+			for (pion=0;pion<Main.nPions;pion++) {	
+				tableauJeu[0][pion]=(int) (Max/2);
+			System.out.println("Pion "+ pion + " : " + tableauJeu[0][pion]);
 			}
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 		} else {
-			for (int i=0;i<Main.nPions;i++) {
+			for (pion=0;pion<Main.nPions;pion++) {
 				
-				if (tableauReponseJoueur[coup-1][i].equals("=")) {
-					tableauJeu[coup][i]=tableauJeu[coup-1][i];
+				if (tableauReponseJoueur[coup-1][pion].equals("=")) {
+					tableauJeu[coup][pion]=tableauJeu[coup-1][pion];
 					}
 				
-				else if (tableauReponseJoueur[coup-1][i].equals("+")) {
+				else if (tableauReponseJoueur[coup-1][pion].equals("+")) {
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-					dichoMoins [i] = tableauJeu[coup-1][i];			
+					dichoMoins [pion] = tableauJeu[coup-1][pion];			
 					}
 				// (tableauReponseJoueur[coup-1][i].equals("-"))
 				else  {
 					// La recherche se fera vers le '-', on divise dichoPlus par 2
-					dichoPlus [i]= tableauJeu[coup-1][i];
+					dichoPlus [pion]= tableauJeu[coup-1][pion];
 				}
 				// On fait la moyenne des deux bornes
-				tableauJeu[coup][i]=(dichoPlus[i] + dichoMoins[i])/2;
-				System.out.println("Pion "+ i + " : " + tableauJeu[coup][i]);
+				tableauJeu[coup][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
+				System.out.println("Pion "+ pion + " : " + tableauJeu[coup][pion]);
 				
 			}
 		}
@@ -93,16 +96,16 @@ public class RechercheMode2 {
 	
 	//3.1.1.2 comparatif combinaison secrète / entrée 
 	static void comparatifCombinaisonSecreteMode2() {
-		for (int i=0; i<Main.nPions; i++) {
-			if ( tableauJeu[coup][i]==combinaisonJoueur[i] ) {
-				tableauReponseJoueur[coup][i]="=";
+		for (pion=0; pion<Main.nPions; pion++) {
+			if ( tableauJeu[coup][pion]==combinaisonJoueur[pion] ) {
+				tableauReponseJoueur[coup][pion]="=";
 			}
-			if ( tableauJeu[coup][i]<combinaisonJoueur[i] ) {
-				tableauReponseJoueur[coup][i]="+";
+			if ( tableauJeu[coup][pion]<combinaisonJoueur[pion] ) {
+				tableauReponseJoueur[coup][pion]="+";
 				boleenSiGagne = false;
 			}
-			if ( tableauJeu[coup][i]>combinaisonJoueur[i] ) {
-				tableauReponseJoueur[coup][i]="-";
+			if ( tableauJeu[coup][pion]>combinaisonJoueur[pion] ) {
+				tableauReponseJoueur[coup][pion]="-";
 				boleenSiGagne = false;
 			}
 		}		
@@ -112,8 +115,8 @@ public class RechercheMode2 {
 	static void affichageEtTest(){
 		//Affichage réponse
 		System.out.print("REPONSE: ");
-		for (int i=0; i<Main.nPions; i++) {
-			System.out.print(tableauReponseJoueur[coup][i]);
+		for (pion=0; pion<Main.nPions; pion++) {
+			System.out.print(tableauReponseJoueur[coup][pion]);
 		}
 		System.out.println("");
 		
@@ -132,9 +135,9 @@ public class RechercheMode2 {
 	
 	
 	static void initVariablesDicho() {
-		for (int i =0; i<Main.nPions; i++) {
-			dichoPlus[i]=Max;
-			dichoMoins[i]=0;
+		for (pion =0; pion<Main.nPions; pion++) {
+			dichoPlus[pion]=Max;
+			dichoMoins[pion]=0;
 		}
 		
 	}

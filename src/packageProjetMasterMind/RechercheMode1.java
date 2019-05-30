@@ -10,7 +10,8 @@ private static String verdict = new String();
 // Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 private static String correctif []= new String[Main.nPions];
 // Nombre de tour de jeu
-private static int coup = 0;
+private static int coup =0;
+//tour restant
 private static int tourRestantMode1 = Main.nCoups;
 // Variable true si la partie est gagnée
 private static boolean boleenSiGagne;
@@ -18,7 +19,9 @@ private static boolean boleenSiGagne;
 private static int reponse [] = new int[Main.nPions];
 // Combinaison de l'ordinateur (mode1)
 private static int combinaisonOrdi [];
-
+//N° de pion
+private static int pion;
+ 
 
 
 	RechercheMode1(){
@@ -48,23 +51,23 @@ private static int combinaisonOrdi [];
 		System.out.print("Veuillez entrer votre code: ");
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe reponse
-		for (int i=0;i<Main.nPions;i++) {				
-			reponse[i]=tejMode1.getEntree(i);	
+		for (pion=0;pion<Main.nPions;pion++) {				
+			reponse[pion]=tejMode1.getEntree(pion);	
 		}
 	}
 	
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecreteMode1(){
-		for (int i=0; i<Main.nPions; i++) {
-			if ( reponse[i]==combinaisonOrdi[i] ) {
-				correctif[i]="=";
+		for (int pion=0; pion<Main.nPions; pion++) {
+			if ( reponse[pion]==combinaisonOrdi[pion] ) {
+				correctif[pion]="=";
 			}
-			if ( reponse[i]<combinaisonOrdi[i] ) {
-				correctif[i]="+";
+			if ( reponse[pion]<combinaisonOrdi[pion] ) {
+				correctif[pion]="+";
 				boleenSiGagne = false;
 			}
-			if ( reponse[i]>combinaisonOrdi[i] ) {
-				correctif[i]="-";
+			if ( reponse[pion]>combinaisonOrdi[pion] ) {
+				correctif[pion]="-";
 				boleenSiGagne = false;
 			}
 		}
@@ -73,8 +76,8 @@ private static int combinaisonOrdi [];
 	//Affichage & tests
 	static void affichageEtTest(){
 		System.out.print("REPONSE: ");
-		for (int i=0; i<Main.nPions; i++) {
-			System.out.print(correctif[i]);
+		for (int pion=0; pion<Main.nPions; pion++) {
+			System.out.print(correctif[pion]);
 		}
 		//2.1.1.4 test
 		if (tourRestantMode1 == 0 && !boleenSiGagne ) {
