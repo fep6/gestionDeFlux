@@ -13,9 +13,8 @@ public class RechercheMode3 {
 	private String verdict;
 	// condition de sortie du while
 	private boolean boleenSiGagne;
-	
 	//Comptage de coup (n° de coup à l'instant t)
-	private static int coup;
+	private static int coup=0;
 	
 	
 	RechercheMode3(){
@@ -30,13 +29,15 @@ public class RechercheMode3 {
 		
 		//4.2 Entrées / Comparatif / test
 
-			//4.2.1 Init des bornes de recherche dichotomiques pour le mode 2
+			//4.2.1 Initialisation des bornes de recherche dichotomiques pour le mode 2
 			RechercheMode2.initVariablesDicho();
 			
 			//4.2.2 Recherche +/- et affichage	
 			while (verdict != "GAGNE!" && verdict != "PERDU!") {
 				boleenSiGagne= true;
-			    //Entrées du joueur (var reponse)
+				coup++;
+				System.out.println("\n Nous sommes au tour N° :" + coup);
+			    //Entrées du joueur
 				RechercheMode1.entreesJoueur();					
 				//Entrées de l'ordi
 				RechercheMode2.entreesJeuOrdi();

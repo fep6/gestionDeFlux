@@ -31,28 +31,24 @@ public class RechercheMode2 {
 	
 	
 	RechercheMode2(){
+		//Initialisation du bornage dichotomique
+		initVariablesDicho();
 		
-	//3.1 Entrées de la combinaison du joueur 
+		//3.1 Entrées de la combinaison du joueur 
 		CombinaisonSecrete csj = new CombinaisonSecrete();
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
 		
-	// 3.2. Recherche et affichage de l'ordi.
-	//3.2.1 Recherche +/-
-		
-		//Initialisation des variables dichotomiques
-		initVariablesDicho();
-		
-		//Entrées de l'ordi et comparaison
+		// 3.2. recherche +/- et affichage
 		while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) {
 				boleenSiGagne= true;
 				coup++;
 				System.out.println("\n Nous sommes au tour N° :" + coup);
 				
-					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
+					//3.2.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
 					entreesJeuOrdi();
-					//3.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+					//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 					comparatifCombinaisonSecreteMode2();
-					//3.1.1.3 Affichage & tests
+					//3.1.3 Affichage & tests
 					affichageEtTest();
 			
 		} 

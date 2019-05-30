@@ -22,25 +22,28 @@ private static int combinaisonOrdi [];
 
 
 	RechercheMode1(){
+		
 		//2.1  Entrée de la combinaison de l'ordi.:
 		CombinaisonSecrete cso = new CombinaisonSecrete();
 		combinaisonOrdi= cso.getcombinaisonSecreteOrdi();
 		
-		//2.2.1 recherche +/- et affichage	
+		//2.2 recherche +/- et affichage	
 		while (verdict != "GAGNE!" && verdict != "PERDU!") {
 			coup++;
 			boleenSiGagne= true;
-		    //2.2.1.1 entrées du joueur (var reponse)
-			entreesJoueur();
-			//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-			comparatifCombinaisonSecreteMode1();
-			//2.2.1.3 Affichage & tests
-			affichageEtTest();
+			
+			    //2.2.1 entrées du joueur (var reponse)
+				entreesJoueur();
+				//2.2.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+				comparatifCombinaisonSecreteMode1();
+				//2.2.3 Affichage & tests
+				affichageEtTest();
+				
 		}
 		System.out.println("...Mais c'est "+verdict);
 	}
 	
-	//2.2.1.1 entrées du joueur (var reponse)
+	//entrées du joueur (var reponse)
 	static void entreesJoueur() {
 		System.out.print("Veuillez entrer votre code: ");
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
@@ -50,7 +53,7 @@ private static int combinaisonOrdi [];
 		}
 	}
 	
-	//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecreteMode1(){
 		for (int i=0; i<Main.nPions; i++) {
 			if ( reponse[i]==combinaisonOrdi[i] ) {
@@ -67,7 +70,7 @@ private static int combinaisonOrdi [];
 		}
 	}
 	
-	//2.2.1.3 Affichage & tests
+	//Affichage & tests
 	static void affichageEtTest(){
 		System.out.print("REPONSE: ");
 		for (int i=0; i<Main.nPions; i++) {
