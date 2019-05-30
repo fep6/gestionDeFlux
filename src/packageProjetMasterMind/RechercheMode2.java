@@ -7,9 +7,10 @@ public class RechercheMode2 {
 	//combinaison de la défense du joueur
 	private int combinaisonJoueur[] = new int [Main.nPions];
 	// Tableau pour la saisie de l'ordinateur, avec son historique
-	private int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
+	private static int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
 	// Tableau de réponse du joueur, avec son historique
-	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	private static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	
 	// Valeur max du nombre limite
 	private static int Max = 10;
 	// Recherche dichotomique 'vers le haut'
@@ -20,13 +21,13 @@ public class RechercheMode2 {
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String(); 
 	// Nombre de tour de jeu
-	private int tourMode2 = 0;
+	private static int tourMode2 = 0;
 	private int tourRestantMode2 = Main.nCoups;
 	// Variable true si la partie est gagnée
 	private boolean boleenSiGagne;
 	
 	//Boucles de coup
-	int j;
+	static int j;
 
 	
 	
@@ -53,7 +54,7 @@ public class RechercheMode2 {
 					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
 					entreesJeuOrdi();
 					//3.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-					comparatifCombinaisonSecrete();
+					comparatifCombinaisonSecreteMode2();
 					//3.1.1.3 Affichage & tests
 					affichageEtTest();
 	
@@ -71,7 +72,7 @@ public class RechercheMode2 {
 	
 	//3.2.1.1 Entrées de l'ordi 
 	// tableauJeu [j][i] : j -> Coup, i -> pion 
-	void entreesJeuOrdi(){
+	static void entreesJeuOrdi(){
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (tourMode2==1) {
@@ -105,7 +106,7 @@ public class RechercheMode2 {
 	}
 	
 	//3.1.1.2 comparatif combinaison secrète / entrée 
-	void comparatifCombinaisonSecrete() {
+	void comparatifCombinaisonSecreteMode2() {
 		for (int i=0; i<Main.nPions; i++) {
 			if ( tableauJeu[j][i]==combinaisonJoueur[i] ) {
 				tableauReponseJoueur[j][i]="=";
