@@ -57,13 +57,7 @@ public class RechercheMode2 {
 					comparatifCombinaisonSecreteMode2();
 					//3.1.1.3 Affichage & tests
 					affichageEtTest();
-	
-				//tests: bug des conditions du while 
-					// En mode gagnant : Ne sort pas du while!!!
-				System.out.println("boleenSiGagne = " + boleenSiGagne);
-				System.out.println("verdict dans while = " + verdict);
-				
-			
+
 			System.out.println("verdict = " + verdict);
 			
 		} 
@@ -140,7 +134,6 @@ public class RechercheMode2 {
 			verdict = "PERDU!";
 		}
 		else if (boleenSiGagne==true) {
-			// Ne sort pas du while quand l'ordi gagne...(?)
 			verdict = "GAGNE!";
 		}
 	}
