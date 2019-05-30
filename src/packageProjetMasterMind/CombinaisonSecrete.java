@@ -13,6 +13,10 @@ int combinaisonSecreteJoueur [] = new int[Main.nPions];
 		if (Main.modeJeu == 2) {
 			setCombinaisonSecreteJoueur();
 		}
+		if (Main.modeJeu == 3) {
+			setCombinaisonSecreteOrdi();
+			setCombinaisonSecreteJoueur();
+		}
 	}
 	
 	//Setters
