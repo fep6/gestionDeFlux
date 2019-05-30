@@ -11,11 +11,11 @@ public class RechercheMode2 {
 	// Tableau de réponse du joueur, avec son historique
 	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	// Valeur max du nombre limite
-	private int Max = 10;
+	private static int Max = 10;
 	// Recherche dichotomique 'vers le haut'
-	private int[] dichoPlus = new int [Main.nPions] ;
+	private static int[] dichoPlus = new int [Main.nPions] ;
 	// Recherche dichotomique 'vers le bas'
-	private int[] dichoMoins = new int [Main.nPions] ;
+	private static int[] dichoMoins = new int [Main.nPions] ;
 	
 	// Renvoie si la partie est gagnée ou non
 	private String verdict = new String(); 
@@ -33,7 +33,6 @@ public class RechercheMode2 {
 	RechercheMode2(){
 		
 	//3.1 Entrées de la combinaison du joueur 
-		//entreesCombinaisonJoueur();
 		CombinaisonSecrete csj = new CombinaisonSecrete();
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
 		
@@ -41,10 +40,7 @@ public class RechercheMode2 {
 	//3.2.1 Recherche +/-
 		
 		//Initialisation des variables dichotomiques
-		for (int i =0; i<Main.nPions; i++) {
-			dichoPlus[i]=Max;
-			dichoMoins[i]=0;
-		}
+		initVariablesDicho();
 		
 		//Entrées de l'ordi et comparaison
 		while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) {
@@ -145,5 +141,14 @@ public class RechercheMode2 {
 			// Ne sort pas du while quand l'ordi gagne...(?)
 			verdict = "GAGNE!";
 		}
+	}
+	
+	
+	static void initVariablesDicho() {
+		for (int i =0; i<Main.nPions; i++) {
+			dichoPlus[i]=Max;
+			dichoMoins[i]=0;
+		}
+		
 	}
 }
