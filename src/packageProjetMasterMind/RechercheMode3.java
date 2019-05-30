@@ -16,38 +16,65 @@ public class RechercheMode3 {
 	// Verdict du jeu
 	private String verdict;
 	// Comptage de tour
-	private int tourMode3;
+	private static int tourMode3 = 0;
 	// condition de sortie du while
 	private boolean boleenSiGagne;
+	
+	//Boucles de coup (n° de coup à l'instant t)
+	private int coup;
 	
 	
 	RechercheMode3(){
 		
-		//4.1 Entrées des combinaisons secrètes 
-		CombinaisonSecrete csjo = new CombinaisonSecrete();
-			//4.1.1 Entrées de la combinaison du joueur 
-			combinaisonJoueur= csjo.getCombinaisonSecreteJoueur();
-			//4.1.2  Entrée de la combinaison de l'ordi.:
-			combinaisonOrdi= csjo.getcombinaisonSecreteOrdi();
-
-		
-		//4.2 Entrées / Comparatif / test
-
-			//4.2.1 Init variables dichotomiques pour le mode 2
-			RechercheMode2.initVariablesDicho();
-			
-			//4.2.2 recherche +/- et affichage	
-			while (verdict != "GAGNE!" && verdict != "PERDU!") {
-				tourMode3++;
-				boleenSiGagne= true;
-			    //2.2.1.1 entrées du joueur (var reponse)
-				RechercheMode1.entreesJoueur();
-				//2.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-				RechercheMode1.comparatifCombinaisonSecreteMode1();
-				//2.2.1.3 Affichage & tests
-				RechercheMode1.affichageEtTest();
-			}
-			System.out.println("...Mais c'est "+verdict);
+//		//4.1 Entrées des combinaisons secrètes 
+//		CombinaisonSecrete cs = new CombinaisonSecrete();
+//			//4.1.1 Entrées de la combinaison du joueur 
+//			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
+//			//4.1.2  Entrée de la combinaison de l'ordi.:
+//			combinaisonOrdi= cs.getcombinaisonSecreteOrdi();
+//
+//		
+//		//4.2 Entrées / Comparatif / test
+//
+//			//4.2.1 Init des bornes de recherche dichotomiques pour le mode 2
+//			RechercheMode2.initVariablesDicho();
+//			
+//			//4.2.2 recherche +/- et affichage	
+//			while (verdict != "GAGNE!" && verdict != "PERDU!") {
+//				//tourMode3++;
+//				boleenSiGagne= true;
+//			    //4.2.1.1 entrées du joueur (var reponse)
+//				RechercheMode1.entreesJoueur();
+//				//4.2.1.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+//				RechercheMode1.comparatifCombinaisonSecreteMode1();
+//				//4.2.1.3 Affichage & tests
+//				RechercheMode1.affichageEtTest();
+//				
+//				for (coup=0;coup<(Main.nCoups);coup++) {
+//					boleenSiGagne= true;
+//					tourMode3++;
+//					System.out.println("\n Nous sommes au tour N° :" + tourMode3);
+//					
+//						//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
+//					RechercheMode2.entreesJeuOrdi();
+//						
+//						//3.1.1.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+//					RechercheMode2.comparatifCombinaisonSecreteMode2();
+//						
+//						//3.1.1.3 Affichage & tests
+//					RechercheMode2.affichageEtTest();
+//		
+//					//tests: bug des conditions du while 
+//						// En mode gagnant : Ne sort pas du while!!!
+//					System.out.println("boleenSiGagne = " + boleenSiGagne);
+//					System.out.println("verdict dans while = " + verdict);
+//					
+//				}
+//				
+//				
+//				
+//			}
+//			System.out.println("...Mais c'est "+verdict);
 		
 	}
 
