@@ -5,29 +5,29 @@ package packageProjetMasterMind;
 public class RechercheMode2 {
 
 	//combinaison de la défense du joueur
-	private int combinaisonJoueur[] = new int [Main.nPions];
+	private static int combinaisonJoueur[] = new int [Main.nPions];
 	// Tableau pour la saisie de l'ordinateur, avec son historique
-	private int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
+	private static int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
 	// Tableau de réponse du joueur, avec son historique
-	private String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	private static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 	
 	// Valeur max du nombre limite
-	private int Max = 10;
+	private static int Max = 10;
 	// Recherche dichotomique 'vers le haut'
-	private int[] dichoPlus = new int [Main.nPions] ;
+	private static int[] dichoPlus = new int [Main.nPions] ;
 	// Recherche dichotomique 'vers le bas'
-	private int[] dichoMoins = new int [Main.nPions] ;
+	private static int[] dichoMoins = new int [Main.nPions] ;
 	
 	// Renvoie si la partie est gagnée ou non
-	private String verdict = new String(); 
+	private static String verdict = new String(); 
 	// Nombre de tour de jeu
 	// private static int tourMode2 = 0;
-	private int tourRestantMode2 = Main.nCoups;
+	private static int tourRestantMode2 = Main.nCoups;
 	// Variable true si la partie est gagnée
-	private boolean boleenSiGagne;
+	private static boolean boleenSiGagne;
 	
 	//Boucles de coup (n° de coup à l'instant t)
-	int coup;
+	static int coup;
 
 	
 	
@@ -44,11 +44,10 @@ public class RechercheMode2 {
 		initVariablesDicho();
 		
 		//Entrées de l'ordi et comparaison
-		while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!")) {
+		 do {
 
 			coup++;
 				boleenSiGagne= true;
-				// tourMode2++;
 				System.out.println("\n Nous sommes au tour N° :" +(int) (coup) );
 				
 					//3.2.1.1 Entrées de l'ordi(var tableauJeu[][]) et recherche dichotomique :
@@ -60,14 +59,14 @@ public class RechercheMode2 {
 
 			System.out.println("verdict = " + verdict);
 			
-		} 
+		} while (!verdict.equals("GAGNE!") && !verdict.equals("PERDU!"));
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdict);			
 
 	}
 	
 	//3.2.1.1 Entrées de l'ordi 
 	// tableauJeu [j][i] : j -> coup, i -> pion 
-	void entreesJeuOrdi(){
+	static void entreesJeuOrdi(){
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coup==1) {
@@ -101,7 +100,7 @@ public class RechercheMode2 {
 	}
 	
 	//3.1.1.2 comparatif combinaison secrète / entrée 
-	void comparatifCombinaisonSecreteMode2() {
+	static void comparatifCombinaisonSecreteMode2() {
 		for (int i=0; i<Main.nPions; i++) {
 			if ( tableauJeu[coup][i]==combinaisonJoueur[i] ) {
 				tableauReponseJoueur[coup][i]="=";
@@ -118,7 +117,7 @@ public class RechercheMode2 {
 	}
 
 	//3.1.1.3 Affichage & tests
-	void affichageEtTest(){
+	static void affichageEtTest(){
 		//Affichage réponse
 		System.out.print("REPONSE: ");
 		for (int i=0; i<Main.nPions; i++) {
@@ -128,7 +127,7 @@ public class RechercheMode2 {
 		
 		//test
 		tourRestantMode2 = Main.nCoups - coup;
-		System.out.println(" -> Il vous reste: "+ (int)(tourRestantMode2) + " coups!");
+		System.out.println(" -> Il me reste: "+ (int)(tourRestantMode2+1) + " coups!");
 		
 		if (tourRestantMode2 == 0 && !boleenSiGagne ) {
 			verdict = "PERDU!";
@@ -139,7 +138,7 @@ public class RechercheMode2 {
 	}
 	
 	
-	void initVariablesDicho() {
+	static void initVariablesDicho() {
 		for (int i =0; i<Main.nPions; i++) {
 			dichoPlus[i]=Max;
 			dichoMoins[i]=0;
