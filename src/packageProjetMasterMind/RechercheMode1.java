@@ -58,7 +58,7 @@ private static int pion;
 	
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecreteMode1(){
-		for (int pion=0; pion<Main.nPions; pion++) {
+		for (pion=0; pion<Main.nPions; pion++) {
 			if ( reponse[pion]==combinaisonOrdi[pion] ) {
 				correctif[pion]="=";
 			}
@@ -76,7 +76,7 @@ private static int pion;
 	//Affichage & tests
 	static void affichageEtTestMode1(){
 		System.out.print("REPONSE: ");
-		for (int pion=0; pion<Main.nPions; pion++) {
+		for (pion=0; pion<Main.nPions; pion++) {
 			System.out.print(correctif[pion]);
 		}
 		//2.1.1.4 test
