@@ -3,37 +3,37 @@ package packageProjetMasterMind;
 public class ComparatifAffichageTest {
 	
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-	static void comparatifCombinaisonSecrete(int pion, int reponse[],int combinaisonOrdi[], String correctif [], boolean boleenSiGagne){
-		for (pion=0; pion<Main.nPions; pion++) {
-			if ( reponse[pion]==combinaisonOrdi[pion] ) {
-				correctif[pion]="=";
+	static void comparatifCombinaisonSecrete(int ppion, int preponse[],int pcombinaisonOrdi[], String pcorrectif [], boolean pboleenSiGagne){
+		for (ppion=0; ppion<Main.nPions; ppion++) {
+			if ( preponse[ppion]==pcombinaisonOrdi[ppion] ) {
+				pcorrectif[ppion]="=";
 			}
-			if ( reponse[pion]<combinaisonOrdi[pion] ) {
-				correctif[pion]="+";
-				boleenSiGagne = false;
+			if ( preponse[ppion]<pcombinaisonOrdi[ppion] ) {
+				pcorrectif[ppion]="+";
+				pboleenSiGagne = false;
 			}
-			if ( reponse[pion]>combinaisonOrdi[pion] ) {
-				correctif[pion]="-";
-				boleenSiGagne = false;
+			if ( preponse[ppion]>pcombinaisonOrdi[ppion] ) {
+				pcorrectif[ppion]="-";
+				pboleenSiGagne = false;
 			}
 		}
 	}
 	
 	//Affichage & tests
-	static void affichageEtTest(int pion, String correctif [], int tourRestant, boolean boleenSiGagne, String verdict, int coup){
-		System.out.print("REPONSE: ");
-		for (pion=0; pion<Main.nPions; pion++) {
-			System.out.print(correctif[pion]);
+	static void affichageEtTest(int ppion, String pcorrectif [], int ptourRestant, boolean pboleenSiGagne, String pverdict, int coup){
+		System.out.print("preponse: ");
+		for (ppion=0; ppion<Main.nPions; ppion++) {
+			System.out.print(pcorrectif[ppion]);
 		}
 		//2.1.1.4 test
-		if (tourRestant == 0 && !boleenSiGagne ) {
-			verdict = "PERDU!";
+		if (ptourRestant == 0 && !pboleenSiGagne ) {
+			pverdict = "PERDU!";
 		}
-		else if (boleenSiGagne==true) {
-			verdict = "GAGNE!";
+		else if (pboleenSiGagne==true) {
+			pverdict = "GAGNE!";
 		}
-		tourRestant = Main.nCoups - coup;
-		System.out.println(" -> Il vous reste: "+ tourRestant + " coups!");
+		ptourRestant = Main.nCoups - coup;
+		System.out.println(" -> Il vous reste: "+ ptourRestant + " coups!");
 	}	
 	
 }

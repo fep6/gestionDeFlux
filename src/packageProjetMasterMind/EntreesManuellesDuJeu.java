@@ -4,8 +4,8 @@ package packageProjetMasterMind;
 
 public class EntreesManuellesDuJeu {
 	
-// entrée (tableau 1d) à la taille du nombre de pions
-private int reponse [] = new int[Main.nPions];
+// entrée (tableau 2d à cause factorisation mode 1 / mode 2) à la taille du nombre de pions
+private int[] reponse = new int[Main.nPions];
 	
 	EntreesManuellesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
@@ -25,7 +25,7 @@ private int reponse [] = new int[Main.nPions];
 				
 		}
 	}
-	int getEntree(int p){
+	 int getEntree(int p){
 		return reponse[p];
 	}
 }
