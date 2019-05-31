@@ -46,9 +46,9 @@ public class RechercheMode3 {
 				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 				RechercheMode2.comparatifCombinaisonSecreteMode2();
 				//Affichage & tests
-				RechercheMode1.affichageEtTest();						
+				RechercheMode1.affichageEtTestMode1();						
 				//Affichage & tests
-				RechercheMode2.affichageEtTest();	
+				RechercheMode2.affichageEtTestMode2();	
 				}				
 			System.out.println("verdict = " + verdict);
 		}	

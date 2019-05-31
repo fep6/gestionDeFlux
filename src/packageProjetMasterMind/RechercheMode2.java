@@ -4,32 +4,31 @@ package packageProjetMasterMind;
 
 public class RechercheMode2 {
 
-	//combinaison de la défense du joueur
-	private static int combinaisonJoueur[] = new int [Main.nPions];
-	// Tableau pour la saisie de l'ordinateur, avec son historique
-	private static int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
-	// Tableau de réponse du joueur, avec son historique
-	private static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
-	
-	// Valeur max du nombre limite
-	private static int Max = 10;
-	// Recherche dichotomique 'vers le haut'
-	private static int[] dichoPlus = new int [Main.nPions] ;
-	// Recherche dichotomique 'vers le bas'
-	private static int[] dichoMoins = new int [Main.nPions] ;
-	
-	// Renvoie si la partie est gagnée ou non
-	private static String verdict; 
-	// Nombre de tour de jeu
-	private static int tourRestantMode2 = Main.nCoups;
-	// Variable true si la partie est gagnée
-	private static boolean boleenSiGagne;
-	
-	//Boucles de coup (n° de coup à l'instant t)
-	static int coup;
-	
-	//Numero de pion
-	static int pion;
+//combinaison de la défense du joueur
+private static int combinaisonJoueur[] = new int [Main.nPions];
+// Tableau pour la saisie de l'ordinateur, avec son historique
+private static int[][] tableauJeu = new int[Main.nCoups][Main.nPions];
+// Tableau de réponse du joueur, avec son historique
+private static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+
+// Valeur max du nombre limite
+private static int Max = 10;
+// Recherche dichotomique 'vers le haut'
+private static int[] dichoPlus = new int [Main.nPions] ;
+// Recherche dichotomique 'vers le bas'
+private static int[] dichoMoins = new int [Main.nPions] ;
+
+// Renvoie si la partie est gagnée ou non
+private static String verdict; 
+// Nombre de tour de jeu
+private static int tourRestantMode2 = Main.nCoups;
+// Variable true si la partie est gagnée
+private static boolean boleenSiGagne;
+
+//Boucles de coup (n° de coup à l'instant t)
+static int coup;
+//Numero de pion
+static int pion;
 
 	
 	
@@ -52,7 +51,7 @@ public class RechercheMode2 {
 					//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 					comparatifCombinaisonSecreteMode2();
 					//3.1.3 Affichage & tests
-					affichageEtTest();
+					affichageEtTestMode2();
 			
 		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdict);			
@@ -72,11 +71,9 @@ public class RechercheMode2 {
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 		} else {
 			for (pion=0;pion<Main.nPions;pion++) {
-				
 				if (tableauReponseJoueur[coup-1][pion].equals("=")) {
 					tableauJeu[coup][pion]=tableauJeu[coup-1][pion];
-					}
-				
+					}	
 				else if (tableauReponseJoueur[coup-1][pion].equals("+")) {
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
 					dichoMoins [pion] = tableauJeu[coup-1][pion];			
@@ -89,7 +86,6 @@ public class RechercheMode2 {
 				// On fait la moyenne des deux bornes
 				tableauJeu[coup][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
 				System.out.println("Pion "+ pion + " : " + tableauJeu[coup][pion]);
-				
 			}
 		}
 	}
@@ -112,7 +108,7 @@ public class RechercheMode2 {
 	}
 
 	//3.1.1.3 Affichage & tests
-	static void affichageEtTest(){
+	static void affichageEtTestMode2(){
 		//Affichage réponse
 		System.out.print("REPONSE: ");
 		for (pion=0; pion<Main.nPions; pion++) {
@@ -128,7 +124,6 @@ public class RechercheMode2 {
 			verdict = "PERDU!";
 		}
 		else if (boleenSiGagne==true) {
-			// Ne sort pas du while quand l'ordi gagne...(?)
 			verdict = "GAGNE!";
 		}
 	}
