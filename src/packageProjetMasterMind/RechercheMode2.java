@@ -90,50 +90,57 @@ static int pion;
 		}
 	}
 	
-	//3.1.1.2 comparatif combinaison secrète / entrée 
-	static void comparatifCombinaisonSecreteMode2() {
-		for (pion=0; pion<Main.nPions; pion++) {
-			if ( tableauJeu[coup][pion]==combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coup][pion]="=";
-			}
-			if ( tableauJeu[coup][pion]<combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coup][pion]="+";
-				boleenSiGagne = false;
-			}
-			if ( tableauJeu[coup][pion]>combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coup][pion]="-";
-				boleenSiGagne = false;
-			}
-		}		
-	}
-
-	//3.1.1.3 Affichage & tests
-	static void affichageEtTestMode2(){
-		//Affichage réponse
-		System.out.print("REPONSE: ");
-		for (pion=0; pion<Main.nPions; pion++) {
-			System.out.print(tableauReponseJoueur[coup][pion]);
-		}
-		System.out.println("");
-		
-		//test
-		tourRestantMode2 = Main.nCoups - coup;
-		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
-		
-		if (tourRestantMode2 == 0 && !boleenSiGagne ) {
-			verdict = "PERDU!";
-		}
-		else if (boleenSiGagne==true) {
-			verdict = "GAGNE!";
-		}
-	}
-	
-	
 	static void initVariablesDicho() {
 		for (pion =0; pion<Main.nPions; pion++) {
 			dichoPlus[pion]=Max;
 			dichoMoins[pion]=0;
 		}
-		
 	}
+	
+	
+	
+	
+	
+	
+//	//3.1.1.2 comparatif combinaison secrète / entrée 
+//	static void comparatifCombinaisonSecreteMode2() {
+//		for (pion=0; pion<Main.nPions; pion++) {
+//			if ( tableauJeu[coup][pion]==combinaisonJoueur[pion] ) {
+//				tableauReponseJoueur[coup][pion]="=";
+//			}
+//			if ( tableauJeu[coup][pion]<combinaisonJoueur[pion] ) {
+//				tableauReponseJoueur[coup][pion]="+";
+//				boleenSiGagne = false;
+//			}
+//			if ( tableauJeu[coup][pion]>combinaisonJoueur[pion] ) {
+//				tableauReponseJoueur[coup][pion]="-";
+//				boleenSiGagne = false;
+//			}
+//		}		
+//	}
+//
+//	//3.1.1.3 Affichage & tests
+//	static void affichageEtTestMode2(){
+//		//Affichage réponse
+//		System.out.print("REPONSE: ");
+//		for (pion=0; pion<Main.nPions; pion++) {
+//			System.out.print(tableauReponseJoueur[coup][pion]);
+//		}
+//		System.out.println("");
+//		
+//		//test
+//		tourRestantMode2 = Main.nCoups - coup;
+//		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
+//		
+//		if (tourRestantMode2 == 0 && !boleenSiGagne ) {
+//			verdict = "PERDU!";
+//		}
+//		else if (boleenSiGagne==true) {
+//			verdict = "GAGNE!";
+//		}
+//	}	
+	
 }
+
+
+

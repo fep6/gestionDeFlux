@@ -6,7 +6,7 @@ package packageProjetMasterMind;
 public class RechercheMode1 {
 	
 // Renvoie si la partie est gagnée ou non
-private static String verdict = new String();
+private String verdictMode1 = new String();
 // Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 private static String correctif []= new String[Main.nPions];
 // Nombre de tour de jeu
@@ -14,9 +14,9 @@ private static int coup =0;
 //tour restant
 private static int tourRestant= Main.nCoups;
 // Variable true si la partie est gagnée
-private static boolean boleenSiGagne;
+private static boolean boleenSiGagneMode1;
 // Tableau pour la saisie d'entrée du joueur
-private static int reponse [] = new int[Main.nPions];
+private static int reponseMode1 [] = new int[Main.nPions];
 // Combinaison de l'ordinateur
 private static int combinaisonOrdi [];
 //N° de pion
@@ -31,23 +31,25 @@ private static int pion;
 		combinaisonOrdi= cso.getcombinaisonSecreteOrdi();
 		
 		//2.2 recherche +/- et affichage	
-		while (verdict != "GAGNE!" && verdict != "PERDU!") {
+		while (verdictMode1 != "GAGNE!" && verdictMode1 != "PERDU!") {
 			coup++;
-			boleenSiGagne= true;
+			boleenSiGagneMode1= true;
 			
 			    //2.2.1 entrées du joueur (var reponse)
 				entreesJoueur();
-				//2.2.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	
+				//2.2.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	et affichage et test
+					
+					//Après factorisation dans ComparatifAffichageTest
+				ComparatifAffichageTestMode1();
+				
 					// Avant factorisation dans ComparatifAffichageTest: 
 					// comparatifCombinaisonSecreteMode1();
-				ComparatifAffichageTest.comparatifCombinaisonSecrete(pion,reponse,combinaisonOrdi, correctif, boleenSiGagne);
 				//2.2.3 Affichage & tests
 					// Avant factorisation dans ComparatifAffichageTest:
 					// affichageEtTestMode1();
-				ComparatifAffichageTest.affichageEtTest(pion,correctif,tourRestant,boleenSiGagne,verdict,coup);
 				
 		}
-		System.out.println("...Mais c'est "+verdict);
+		System.out.println("...Mais c'est "+verdictMode1);
 	}
 	
 	//entrées du joueur (var reponse)
@@ -56,10 +58,18 @@ private static int pion;
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe reponse
 		for (pion=0;pion<Main.nPions;pion++) {				
-			reponse[pion]=tejMode1.getEntree(pion);	
+			reponseMode1[pion]=tejMode1.getEntree(pion);	
 		}
 	}
 
+	// après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+	static void ComparatifAffichageTestMode1(){
+		// comparatifCombinaisonSecreteMode1();
+		ComparatifAffichageTest.comparatifCombinaisonSecrete(pion,reponseMode1,combinaisonOrdi, correctif, boleenSiGagneMode1);
+		// Affichage & tests
+		ComparatifAffichageTest.affichageEtTest(pion,correctif,tourRestant,boleenSiGagneMode1,verdictMode1,coup);
+	}
+	
 	
 	// Avant factorisation
 	
@@ -88,10 +98,10 @@ private static int pion;
 //		}
 //		//2.1.1.4 test
 //		if (tourRestantMode1 == 0 && !boleenSiGagne ) {
-//			verdict = "PERDU!";
+//			verdictMode1 = "PERDU!";
 //		}
 //		else if (boleenSiGagne==true) {
-//			verdict = "GAGNE!";
+//			verdictMode1 = "GAGNE!";
 //		}
 //		tourRestantMode1 = Main.nCoups - coup;
 //		System.out.println(" -> Il vous reste: "+ tourRestantMode1 + " coups!");
