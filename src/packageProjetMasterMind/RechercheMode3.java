@@ -47,7 +47,7 @@ public class RechercheMode3 {
 				//Pour Mode 1
 				RechercheMode1.ComparatifAffichageTestMode1();
 				//Pour Mode 2
-				// RechercheMode1.ComparatifAffichageTestMode2();
+				RechercheMode2.ComparatifAffichageTestMode2();
 				
 				
 				

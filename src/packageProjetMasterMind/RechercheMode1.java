@@ -63,7 +63,7 @@ public class RechercheMode1 {
 	static void entreesJoueur() {
 		System.out.print("Veuillez entrer votre code: ");
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
-		// Rapatriement des données de l'instance tej dans la variable de classe reponse
+		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
 		for (pionMode1=0;pionMode1<Main.nPions;pionMode1++) {				
 			tableauJeuMode1[Main.nCoups][pionMode1]=tejMode1.getEntree(pionMode1);	
 		}
@@ -72,6 +72,7 @@ public class RechercheMode1 {
 
 	
 	// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+	
 	static void ComparatifAffichageTestMode1(){
 		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode1, coupMode1,tableauJeuMode1,combinaisonOrdi, tableauReponseOrdi, boleenSiGagneMode1);
 		ComparatifAffichageTest.affichageEtTest(pionMode1, coupMode1, tableauReponseOrdi, tourRestantMode1, boleenSiGagneMode1, verdictMode1);
@@ -96,7 +97,6 @@ public class RechercheMode1 {
 			}
 		}
 	}
-	
 	//Affichage & tests
 	static void affichageEtTestMode1(){
 		System.out.print("REPONSE: ");

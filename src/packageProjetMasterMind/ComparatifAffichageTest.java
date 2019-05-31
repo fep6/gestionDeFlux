@@ -35,6 +35,5 @@ public class ComparatifAffichageTest {
 		pTourRestant = Main.nCoups - pCoup;
 		System.out.println(" -> Il vous reste: "+ pTourRestant + " coups!");
 	}	
-	
 }
 
