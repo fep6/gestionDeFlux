@@ -1,6 +1,6 @@
 package packageProjetMasterMind;
 
-// Mode 2 "Défenseur": Le joueur a le rôle d’attaquant et doit faire une proposition d’une combinaison de X chiffres.
+// Mode 2 "Défenseur": L'ordinateur a le rôle d’attaquant et doit faire une proposition d’une combinaison de X chiffres.
 
 public class RechercheMode2 {
 
@@ -56,7 +56,8 @@ public class RechercheMode2 {
 					entreesJeuOrdi();
 					
 					
-					
+					//Après factorisation
+					ComparatifAffichageTestMode2();
 					
 					
 					// Avant factorisation
@@ -109,70 +110,53 @@ public class RechercheMode2 {
 		}
 	}
 	
-	// après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
-	static void ComparatifAffichageTestMode2(){
+
 		
+	// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+	static void ComparatifAffichageTestMode2(){
+		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode2, coupMode2,tableauJeuMode2,combinaisonJoueur, tableauReponseJoueur, boleenSiGagneMode2);
+		ComparatifAffichageTest.affichageEtTest(pionMode2, coupMode2, tableauReponseJoueur, tourRestantMode2, boleenSiGagneMode2, verdictMode2);
 	}
 	
-	
-	
-	
-	
+
 	// Avant factorisation
-//	//3.1.1.2 comparatif combinaison secrète / entrée 
-//	static void comparatifCombinaisonSecreteMode2() {
-//		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
-//			if ( tableauJeuMode2[coupMode2][pionMode2]==combinaisonJoueur[pionMode2] ) {
-//				tableauReponseJoueur[coupMode2][pionMode2]="=";
-//			}
-//			if ( tableauJeuMode2[coupMode2][pionMode2]<combinaisonJoueur[pionMode2] ) {
-//				tableauReponseJoueur[coupMode2][pionMode2]="+";
-//				boleenSiGagne = false;
-//			}
-//			if ( tableauJeuMode2[coupMode2][pionMode2]>combinaisonJoueur[pionMode2] ) {
-//				tableauReponseJoueur[coupMode2][pionMode2]="-";
-//				boleenSiGagne = false;
-//			}
-//		}		
-//	}
-	
-//	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-//	static void comparatifCombinaisonSecreteMode1(){
-//		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
-//			if ( reponse[pion]==combinaisonOrdi[pionMode2] ) {
-//				correctif[pionMode2]="=";
-//			}
-//			if ( reponse[pionMode2]<combinaisonOrdi[pionMode2] ) {
-//				correctif[pionMode2]="+";
-//				boleenSiGagne = false;
-//			}
-//			if ( reponse[pion]>combinaisonOrdi[pionMode2] ) {
-//				correctif[pionMode2]="-";
-//				boleenSiGagne = false;
-//			}
-//		}
-//	}
-//
-//	//3.1.1.3 Affichage & tests
-//	static void affichageEtTestMode2(){
-//		//Affichage réponse
-//		System.out.print("REPONSE: ");
-//		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
-//			System.out.print(tableauReponseJoueur[coupMode2][pionMode2]);
-//		}
-//		System.out.println("");
-//		
-//		//test
-//		tourRestantMode2 = Main.nCoups - coupMode2;
-//		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
-//		
-//		if (tourRestantMode2 == 0 && !boleenSiGagne ) {
-//			verdictMode2 = "PERDU!";
-//		}
-//		else if (boleenSiGagne==true) {
-//			verdictMode2 = "GAGNE!";
-//		}
-//	}	
+	//3.1.1.2 comparatif combinaison secrète / entrée 
+	static void comparatifCombinaisonSecreteMode2() {
+		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
+			if ( tableauJeuMode2[coupMode2][pionMode2]==combinaisonJoueur[pionMode2] ) {
+				tableauReponseJoueur[coupMode2][pionMode2]="=";
+			}
+			if ( tableauJeuMode2[coupMode2][pionMode2]<combinaisonJoueur[pionMode2] ) {
+				tableauReponseJoueur[coupMode2][pionMode2]="+";
+				boleenSiGagneMode2 = false;
+			}
+			if ( tableauJeuMode2[coupMode2][pionMode2]>combinaisonJoueur[pionMode2] ) {
+				tableauReponseJoueur[coupMode2][pionMode2]="-";
+				boleenSiGagneMode2 = false;
+			}
+		}		
+	}
+
+	//3.1.1.3 Affichage & tests
+	static void affichageEtTestMode2(){
+		//Affichage réponse
+		System.out.print("REPONSE: ");
+		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
+			System.out.print(tableauReponseJoueur[coupMode2][pionMode2]);
+		}
+		System.out.println("");
+		
+		//test
+		tourRestantMode2 = Main.nCoups - coupMode2;
+		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
+		
+		if (tourRestantMode2 == 0 && !boleenSiGagneMode2 ) {
+			verdictMode2 = "PERDU!";
+		}
+		else if (boleenSiGagneMode2==true) {
+			verdictMode2 = "GAGNE!";
+		}
+	}	
 	
 }
 

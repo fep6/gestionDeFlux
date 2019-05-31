@@ -44,7 +44,10 @@ public class RechercheMode3 {
 				
 				
 				//Après factorisation par ComparatifAffichageTest
+				//Pour Mode 1
 				RechercheMode1.ComparatifAffichageTestMode1();
+				//Pour Mode 2
+				// RechercheMode1.ComparatifAffichageTestMode2();
 				
 				
 				

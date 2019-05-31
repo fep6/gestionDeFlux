@@ -27,7 +27,7 @@ public class RechercheMode1 {
 	//N° de pionMode1
 	private static int pionMode1;
 	// Renvoie si la partie est gagnée ou non
-	private String verdictMode1;
+	private static String verdictMode1;
  
 
 
@@ -69,44 +69,48 @@ public class RechercheMode1 {
 		}
 	}
 
-	// après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+
+	
+	// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
 	static void ComparatifAffichageTestMode1(){
+		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode1, coupMode1,tableauJeuMode1,combinaisonOrdi, tableauReponseOrdi, boleenSiGagneMode1);
+		ComparatifAffichageTest.affichageEtTest(pionMode1, coupMode1, tableauReponseOrdi, tourRestantMode1, boleenSiGagneMode1, verdictMode1);
 	}
 	
 	
 	// Avant factorisation
 	
-//	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-//	static void comparatifCombinaisonSecreteMode1(){
-//		for (pionMode1=0; pionMode1<Main.npionMode1s; pionMode1++) {
-//			if ( reponse[pionMode1]==combinaisonOrdi[pionMode1] ) {
-//				tableauReponseOrdi[pionMode1]="=";
-//			}
-//			if ( reponse[pionMode1]<combinaisonOrdi[pionMode1] ) {
-//				tableauReponseOrdi[pionMode1]="+";
-//				boleenSiGagne = false;
-//			}
-//			if ( reponse[pionMode1]>combinaisonOrdi[pionMode1] ) {
-//				tableauReponseOrdi[pionMode1]="-";
-//				boleenSiGagne = false;
-//			}
-//		}
-//	}
-//	
-//	//Affichage & tests
-//	static void affichageEtTestMode1(){
-//		System.out.print("REPONSE: ");
-//		for (pionMode1=0; pionMode1<Main.npionMode1s; pionMode1++) {
-//			System.out.print(tableauReponseOrdi[pionMode1]);
-//		}
-//		//2.1.1.4 test
-//		if (tourRestantMode1 == 0 && !boleenSiGagne ) {
-//			verdictMode1 = "PERDU!";
-//		}
-//		else if (boleenSiGagne==true) {
-//			verdictMode1 = "GAGNE!";
-//		}
-//		tourRestantMode1 = Main.nCoups - coupMode1;
-//		System.out.println(" -> Il vous reste: "+ tourRestantMode1 + " coups!");
-//	}
+	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+	static void comparatifCombinaisonSecreteMode1(){
+		for (pionMode1=0; pionMode1<Main.nPions; pionMode1++) {
+			if ( tableauJeuMode1[Main.nCoups][pionMode1]==combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[Main.nCoups][pionMode1]="=";
+			}
+			if ( tableauJeuMode1[Main.nCoups][pionMode1]<combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[Main.nCoups][pionMode1]="+";
+				boleenSiGagneMode1 = false;
+			}
+			if ( tableauJeuMode1[Main.nCoups][pionMode1]>combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[Main.nCoups][pionMode1]="-";
+				boleenSiGagneMode1 = false;
+			}
+		}
+	}
+	
+	//Affichage & tests
+	static void affichageEtTestMode1(){
+		System.out.print("REPONSE: ");
+		for (pionMode1=0; pionMode1<Main.nPions; pionMode1++) {
+			System.out.print(tableauReponseOrdi[Main.nCoups][pionMode1]);
+		}
+		//2.1.1.4 test
+		if (tourRestantMode1 == 0 && !boleenSiGagneMode1 ) {
+			verdictMode1 = "PERDU!";
+		}
+		else if (boleenSiGagneMode1==true) {
+			verdictMode1 = "GAGNE!";
+		}
+		tourRestantMode1 = Main.nCoups - coupMode1;
+		System.out.println(" -> Il vous reste: "+ tourRestantMode1 + " coups!");
+	}
 }
