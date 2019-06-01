@@ -27,7 +27,7 @@ public class RechercheMode1 {
 	//N° de pionMode1
 	private static int pionMode1;
 	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode1;
+	private static String verdictMode1="";
  
 
 
@@ -50,7 +50,8 @@ public class RechercheMode1 {
 				 			// ComparatifAffichageTestMode1();
 				 
 				 		//Avec instanciation  ComparatifAffichageTest2
-				 			ComparatifAffichageTest2 cat = new ComparatifAffichageTest2(pionMode1,coupMode1,tableauJeuMode1,combinaisonOrdi,tableauReponseOrdi,boleenSiGagneMode1,tableauReponseOrdi,tourRestantMode1,verdictMode1 );
+				 			ComparatifAffichageTest2 cat = new ComparatifAffichageTest2(pionMode1,tableauJeuMode1,coupMode1,combinaisonOrdi,tableauReponseOrdi,
+				 					boleenSiGagneMode1,tourRestantMode1,verdictMode1);
 				 	
 				 	// Avant factorisation dans ComparatifAffichageTest: 
 						// 2.2.2.1 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	et affichage et test

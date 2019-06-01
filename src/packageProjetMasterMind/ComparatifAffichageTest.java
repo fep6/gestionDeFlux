@@ -2,24 +2,26 @@ package packageProjetMasterMind;
 
 public class ComparatifAffichageTest {
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-	static void comparatifCombinaisonSecrete(int pPion, int pCoup,int pTableauJeu[][],int pCombinaison[], String tableauReponse[][], boolean pBoleenSiGagne){
+	static void comparatifCombinaisonSecrete(int pPion, int pCoup,int pTableauJeu[][],
+			int pCombinaison[], String pTableauReponse[][], boolean pBoleenSiGagne){
 		for (pPion=0; pPion<Main.nPions; pPion++) {
 			if ( pTableauJeu[pCoup][pPion]==pCombinaison[pPion] ) {
-				tableauReponse[pCoup][pPion]="=";
+				pTableauReponse[pCoup][pPion]="=";
 			}
 			if ( pTableauJeu[pCoup][pPion]<pCombinaison[pPion] ) {
-				tableauReponse[pCoup][pPion]="+";
+				pTableauReponse[pCoup][pPion]="+";
 				pBoleenSiGagne = false;
 			}
 			if ( pTableauJeu[pCoup][pPion]>pCombinaison[pPion] ) {
-				tableauReponse[pCoup][pPion]="-";
+				pTableauReponse[pCoup][pPion]="-";
 				pBoleenSiGagne = false;
 			}
 		}
 	}
 
 	//Affichage & tests
-	static void affichageEtTest(int pPion, int pCoup, String pTableauReponse[][], int pTourRestant, boolean pBoleenSiGagne, String pVerdict){
+	static void affichageEtTest(int pPion, int pCoup, String pTableauReponse[][], 
+			int pTourRestant, boolean pBoleenSiGagne, String pVerdict){
 		//Affichage réponse
 		System.out.print("Reponse: ");
 		for (pPion=0; pPion<Main.nPions; pPion++) {
