@@ -46,10 +46,10 @@ public class RechercheMode1 {
 				entreesJoueur();
 				//2.2.2 Jeux
 
-				 		//Avec instanciation  ComparatifAffichageTest2
-				 			ComparatifAffichageTest2 cat = new ComparatifAffichageTest2();
-				 			verdictMode1=cat.getVerdict();
-				
+		 		//Avec instanciation  ComparatifAffichageTest2
+	 			ComparatifAffichageTest2 cat1 = new ComparatifAffichageTest2();
+	 			verdictMode1=cat1.getVerdict();
+			
 		}
 		System.out.println("...Mais c'est "+verdictMode1);
 	}
