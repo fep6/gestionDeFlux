@@ -26,7 +26,7 @@ public class RechercheMode2 {
 	//Numero de pion
 	static int pionMode2;
 	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode2;
+	private static String verdictMode2 = "";
 
 // Variables pour recherche dichotomique
 	//Valeur max du nombre limite
@@ -57,14 +57,14 @@ public class RechercheMode2 {
 					
 					
 					//Après factorisation
-					ComparatifAffichageTestMode2();
+					// ComparatifAffichageTestMode2();
 					
 					
 					// Avant factorisation
-//					//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-//					comparatifCombinaisonSecreteMode2();
-//					//3.1.3 Affichage & tests
-//					affichageEtTestMode2();
+					//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
+					comparatifCombinaisonSecreteMode2();
+					//3.1.3 Affichage & tests
+					affichageEtTestMode2();
 			
 		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);			

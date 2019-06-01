@@ -35,7 +35,7 @@ public class RechercheMode1 {
 		
 		//2.1  Entrée de la combinaison de l'ordi.:
 		CombinaisonSecrete cso = new CombinaisonSecrete();
-		combinaisonOrdi= cso.getcombinaisonSecreteOrdi();
+		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 		
 		//2.2 recherche +/- et affichage	
 		while (verdictMode1 != "GAGNE!" && verdictMode1 != "PERDU!") {
@@ -50,10 +50,10 @@ public class RechercheMode1 {
 				// ComparatifAffichageTestMode1();
 				
 					// Avant factorisation dans ComparatifAffichageTest: 
-					comparatifCombinaisonSecreteMode1();
+					 comparatifCombinaisonSecreteMode1();
 				//2.2.3 Affichage & tests
 					// Avant factorisation dans ComparatifAffichageTest:
-					affichageEtTestMode1();
+					 affichageEtTestMode1();
 				
 		}
 		System.out.println("...Mais c'est "+verdictMode1);

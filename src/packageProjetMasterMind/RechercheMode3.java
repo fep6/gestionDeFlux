@@ -24,7 +24,7 @@ public class RechercheMode3 {
 			//4.1.1 Retour de la combinaison du joueur  mode(2)
 			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
 			//4.1.2 Retour de la combinaison de l'ordi.(mode1):
-			combinaisonOrdi= cs.getcombinaisonSecreteOrdi();
+			combinaisonOrdi= cs.getCombinaisonSecreteOrdi();
 
 		
 		//4.2 Entrées / Comparatif / test

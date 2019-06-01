@@ -20,6 +20,7 @@ int combinaisonSecreteJoueur [] = new int[Main.nPions];
 	}
 	
 	//Setters
+	//Mode1
 	void setCombinaisonSecreteOrdi() {
 		//1.2.1 Combinaison secrète généré par l'ordi.
 		for (int i=0 ; i<combinaisonSecreteOrdi.length; i++) {
@@ -33,6 +34,7 @@ int combinaisonSecreteJoueur [] = new int[Main.nPions];
 		}
 		System.out.println("\n-------------------------------------");		
 	}
+	//Mode2
 	void setCombinaisonSecreteJoueur(){
 		EntreesManuellesDuJeu emjMode2 = new EntreesManuellesDuJeu ();
 		System.out.println("veuillez entrer la combinaison: ");
@@ -49,9 +51,11 @@ int combinaisonSecreteJoueur [] = new int[Main.nPions];
 	}
 	
 	//Getters
-	int[] getcombinaisonSecreteOrdi() {
+	//Mode1
+	int[] getCombinaisonSecreteOrdi() {
 		return combinaisonSecreteOrdi;
-	}	//Getters
+	}
+	//Mode2
 	int[] getCombinaisonSecreteJoueur() {
 		return combinaisonSecreteJoueur;
 	}
