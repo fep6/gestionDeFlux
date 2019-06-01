@@ -47,13 +47,13 @@ public class RechercheMode1 {
 				//2.2.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	et affichage et test
 					
 					//Après factorisation dans ComparatifAffichageTest
-				ComparatifAffichageTestMode1();
+				// ComparatifAffichageTestMode1();
 				
 					// Avant factorisation dans ComparatifAffichageTest: 
-					// comparatifCombinaisonSecreteMode1();
+					comparatifCombinaisonSecreteMode1();
 				//2.2.3 Affichage & tests
 					// Avant factorisation dans ComparatifAffichageTest:
-					// affichageEtTestMode1();
+					affichageEtTestMode1();
 				
 		}
 		System.out.println("...Mais c'est "+verdictMode1);
@@ -65,7 +65,7 @@ public class RechercheMode1 {
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
 		for (pionMode1=0;pionMode1<Main.nPions;pionMode1++) {				
-			tableauJeuMode1[Main.nCoups][pionMode1]=tejMode1.getEntree(pionMode1);	
+			tableauJeuMode1[0][pionMode1]=tejMode1.getEntree(pionMode1);	
 		}
 	}
 
@@ -84,15 +84,15 @@ public class RechercheMode1 {
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecreteMode1(){
 		for (pionMode1=0; pionMode1<Main.nPions; pionMode1++) {
-			if ( tableauJeuMode1[Main.nCoups][pionMode1]==combinaisonOrdi[pionMode1] ) {
-				tableauReponseOrdi[Main.nCoups][pionMode1]="=";
+			if ( tableauJeuMode1[0][pionMode1]==combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[0][pionMode1]="=";
 			}
-			if ( tableauJeuMode1[Main.nCoups][pionMode1]<combinaisonOrdi[pionMode1] ) {
-				tableauReponseOrdi[Main.nCoups][pionMode1]="+";
+			if ( tableauJeuMode1[0][pionMode1]<combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[0][pionMode1]="+";
 				boleenSiGagneMode1 = false;
 			}
-			if ( tableauJeuMode1[Main.nCoups][pionMode1]>combinaisonOrdi[pionMode1] ) {
-				tableauReponseOrdi[Main.nCoups][pionMode1]="-";
+			if ( tableauJeuMode1[0][pionMode1]>combinaisonOrdi[pionMode1] ) {
+				tableauReponseOrdi[0][pionMode1]="-";
 				boleenSiGagneMode1 = false;
 			}
 		}
@@ -101,7 +101,7 @@ public class RechercheMode1 {
 	static void affichageEtTestMode1(){
 		System.out.print("REPONSE: ");
 		for (pionMode1=0; pionMode1<Main.nPions; pionMode1++) {
-			System.out.print(tableauReponseOrdi[Main.nCoups][pionMode1]);
+			System.out.print(tableauReponseOrdi[0][pionMode1]);
 		}
 		//2.1.1.4 test
 		if (tourRestantMode1 == 0 && !boleenSiGagneMode1 ) {
