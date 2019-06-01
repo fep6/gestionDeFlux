@@ -112,7 +112,7 @@ public class RechercheMode2 {
 	
 
 		
-	// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
 	
 	static void ComparatifAffichageTestMode2(){
 		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode2, coupMode2,tableauJeuMode2,combinaisonJoueur, tableauReponseJoueur, boleenSiGagneMode2);
@@ -120,9 +120,9 @@ public class RechercheMode2 {
 	}
 	
 
-	// Avant factorisation
+// Avant factorisation
 	
-	//3.1.1.2 comparatif combinaison secrète / entrée 
+	//Comparatif combinaison secrète / entrée 
 	static void comparatifCombinaisonSecreteMode2() {
 		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
 			if ( tableauJeuMode2[coupMode2][pionMode2]==combinaisonJoueur[pionMode2] ) {
@@ -138,7 +138,7 @@ public class RechercheMode2 {
 			}
 		}		
 	}
-	//3.1.1.3 Affichage & tests
+	//Affichage & tests
 	static void affichageEtTestMode2(){
 		//Affichage réponse
 		System.out.print("REPONSE: ");
@@ -146,7 +146,6 @@ public class RechercheMode2 {
 			System.out.print(tableauReponseJoueur[coupMode2][pionMode2]);
 		}
 		System.out.println("");
-		
 		//test
 		tourRestantMode2 = Main.nCoups - coupMode2;
 		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");

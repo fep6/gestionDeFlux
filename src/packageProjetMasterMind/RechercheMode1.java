@@ -71,7 +71,7 @@ public class RechercheMode1 {
 
 
 	
-	// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
 	
 	static void ComparatifAffichageTestMode1(){
 		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode1, coupMode1,tableauJeuMode1,combinaisonOrdi, tableauReponseOrdi, boleenSiGagneMode1);
@@ -79,7 +79,7 @@ public class RechercheMode1 {
 	}
 	
 	
-	// Avant factorisation
+// Avant factorisation
 	
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecreteMode1(){
@@ -99,11 +99,13 @@ public class RechercheMode1 {
 	}
 	//Affichage & tests
 	static void affichageEtTestMode1(){
+		//Affichage réponse
 		System.out.print("REPONSE: ");
 		for (pionMode1=0; pionMode1<Main.nPions; pionMode1++) {
 			System.out.print(tableauReponseOrdi[0][pionMode1]);
 		}
-		//2.1.1.4 test
+		System.out.println("");
+		//test
 		if (tourRestantMode1 == 0 && !boleenSiGagneMode1 ) {
 			verdictMode1 = "PERDU!";
 		}
