@@ -3,10 +3,10 @@ package packageProjetMasterMind;
 public class ComparatifAffichageTest2 {
 	
 	int pPion;
-	int pTableauJeu[][]= new int [Main.nCoups][Main.nPions];
+	int pTableauJeu[][]= new int [EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	int pCoup;
-	int pCombinaison[]= new int [Main.nPions];
-	String pTableauReponse[][]= new String[Main.nCoups][Main.nPions];
+	int pCombinaison[]= new int [EntreesConfigJeu.getNPions()];
+	String pTableauReponse[][]= new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	boolean pBoleenSiGagne;
 	int pTourRestant;
 	String pVerdict = new String();
@@ -32,7 +32,7 @@ public class ComparatifAffichageTest2 {
 	//Méthodes
 	
 	void comparatifCombinaisonSecrete(){
-		for (pPion=0; pPion<Main.nPions; pPion++) {
+		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
 			if ( pTableauJeu[pCoup][pPion]==pCombinaison[pPion] ) {
 				pTableauReponse[pCoup][pPion]="=";
 			}
@@ -49,7 +49,7 @@ public class ComparatifAffichageTest2 {
 	
 	void affichageEtTest() {
 		System.out.print("Reponse: ");
-		for (pPion=0; pPion<Main.nPions; pPion++) {
+		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
 			System.out.print(pTableauReponse[pCoup][pPion]);
 		}
 		System.out.println("");
@@ -60,7 +60,7 @@ public class ComparatifAffichageTest2 {
 		else if (pBoleenSiGagne==true) {
 			pVerdict = "GAGNE!";
 		}
-		pTourRestant = Main.nCoups - pCoup;
+		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
 		System.out.println(" -> Il vous reste: "+ pTourRestant + " coups!");
 	}
 	
@@ -72,10 +72,8 @@ public class ComparatifAffichageTest2 {
 		pBoleenSiGagne=RechercheMode1.boleenSiGagneMode1;
 		pTourRestant=RechercheMode1.tourRestantMode1;
 		
-		for (int pion=0; pion<Main.nPions;pion++) {
-		// test : bug
+		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
-		//test : ok
 		pCombinaison[pion]= RechercheMode1.combinaisonOrdi [pion];
 		pTableauReponse[pCoup][pion]= RechercheMode1.tableauReponseOrdi [pCoup][pion];
 		}
@@ -88,7 +86,7 @@ public class ComparatifAffichageTest2 {
 		pBoleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
 		
-		for (int pion=0; pion<Main.nPions;pion++) {
+		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		pTableauReponse[pCoup][pion]= RechercheMode2.tableauReponseJoueur [pCoup][pion];

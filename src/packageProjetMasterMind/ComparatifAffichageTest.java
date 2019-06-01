@@ -4,7 +4,7 @@ public class ComparatifAffichageTest {
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 	static void comparatifCombinaisonSecrete(int pPion, int pCoup,int pTableauJeu[][],
 			int pCombinaison[], String pTableauReponse[][], boolean pBoleenSiGagne){
-		for (pPion=0; pPion<Main.nPions; pPion++) {
+		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
 			if ( pTableauJeu[pCoup][pPion]==pCombinaison[pPion] ) {
 				pTableauReponse[pCoup][pPion]="=";
 			}
@@ -24,7 +24,7 @@ public class ComparatifAffichageTest {
 			int pTourRestant, boolean pBoleenSiGagne, String pVerdict){
 		//Affichage réponse
 		System.out.print("Reponse: ");
-		for (pPion=0; pPion<Main.nPions; pPion++) {
+		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
 			System.out.print(pTableauReponse[pCoup][pPion]);
 		}
 		System.out.println("");
@@ -35,7 +35,7 @@ public class ComparatifAffichageTest {
 		else if (pBoleenSiGagne==true) {
 			pVerdict = "GAGNE!";
 		}
-		pTourRestant = Main.nCoups - pCoup;
+		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
 		System.out.println(" -> Il vous reste: "+ pTourRestant + " coups!");
 	}
 

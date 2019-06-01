@@ -8,13 +8,13 @@ public class RechercheMode1 {
 
 //Tableau 2d
 	//Tableau pour la saisie d'entrée du joueur
-	static int[][] tableauJeuMode1 = new int[Main.nCoups][Main.nPions];	
+	static int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
-	static String tableauReponseOrdi [][]= new String[Main.nCoups][Main.nPions];
+	static String tableauReponseOrdi [][]= new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	
 //Tableau 1d
 	//Combinaison de l'ordinateur
-	static int combinaisonOrdi [] = new int [Main.nPions];
+	static int combinaisonOrdi [] = new int [EntreesConfigJeu.getNPions()];
 	
 	
 // Variables
@@ -23,7 +23,7 @@ public class RechercheMode1 {
 	//Nombre de tour de jeu
 	static int coupMode1 =0;
 	//tour restant
-	static int tourRestantMode1= Main.nCoups;
+	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	//N° de pionMode1
 	static int pionMode1;
 	// Renvoie si la partie est gagnée ou non
@@ -59,7 +59,7 @@ public class RechercheMode1 {
 		System.out.print("Veuillez entrer votre code: ");
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
-		for (pionMode1=0;pionMode1<Main.nPions;pionMode1++) {				
+		for (pionMode1=0;pionMode1<EntreesConfigJeu.getNPions();pionMode1++) {				
 			tableauJeuMode1[coupMode1][pionMode1]=tejMode1.getEntree(pionMode1);	
 		}
 	}

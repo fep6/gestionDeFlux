@@ -4,9 +4,9 @@ public class EntreesConfigJeu {
 	//Mode de jeu
 	private static int modeJeu;
 	//Nombre de coups
-	private int nCoups;
+	private static int nCoups;
 	//Nombre de pions
-	private int nPions;
+	static int nPions;
 
 	// Entrées des données du jeu 
 	EntreesConfigJeu () {
@@ -42,10 +42,10 @@ public class EntreesConfigJeu {
 	static int getModeJeu(){
 		return modeJeu;
 	}
-	int getNCoups(){
+	static int getNCoups(){
 		return nCoups;
 	}
-	int getNPions(){
+	static int getNPions(){
 		return nPions;
 	}
 	

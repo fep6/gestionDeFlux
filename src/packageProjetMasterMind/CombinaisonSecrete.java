@@ -3,17 +3,17 @@ package packageProjetMasterMind;
 public class CombinaisonSecrete {
 
 //1.2  Création Combinaison secrète de l'ordi.(pour modes 1 & 3)
-int combinaisonSecreteOrdi [] = new int[Main.nPions];	
-int combinaisonSecreteJoueur [] = new int[Main.nPions];
+int combinaisonSecreteOrdi [] = new int[EntreesConfigJeu.getNPions()];	
+int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	
 	CombinaisonSecrete(){
-		if ( Main.modeJeu == 1 ) {
+		if ( EntreesConfigJeu.getModeJeu()  == 1 ) {
 			setCombinaisonSecreteOrdi();
 		}
-		if (Main.modeJeu == 2) {
+		if ( EntreesConfigJeu.getModeJeu()  == 2) {
 			setCombinaisonSecreteJoueur();
 		}
-		if (Main.modeJeu == 3) {
+		if ( EntreesConfigJeu.getModeJeu()  == 3) {
 			setCombinaisonSecreteOrdi();
 			setCombinaisonSecreteJoueur();
 		}
@@ -40,11 +40,11 @@ int combinaisonSecreteJoueur [] = new int[Main.nPions];
 		System.out.println("veuillez entrer la combinaison: ");
 
 		// ..Et on va chercher le retour
-		for (int i = 0 ; i < Main.nPions; i++) {
-			combinaisonSecreteJoueur [i]= emjMode2.getEntree(i);
+		for (int pion = 0 ; pion < EntreesConfigJeu.getNPions(); pion++) {
+			combinaisonSecreteJoueur [pion]= emjMode2.getEntree(pion);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
-		for (int i = 0 ; i < Main.nPions; i++) {
+		for (int i = 0 ; i < EntreesConfigJeu.getNPions(); i++) {
 			System.out.print(combinaisonSecreteJoueur [i]);
 		}
 		System.out.print("\n ---------------------");

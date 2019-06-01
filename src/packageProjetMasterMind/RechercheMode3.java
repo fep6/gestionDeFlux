@@ -6,7 +6,7 @@ package packageProjetMasterMind;
 public class RechercheMode3 {
 	
 	//combinaison de la défense du joueur
-	private int combinaisonJoueur[] = new int [Main.nPions];
+	private int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
 	// Combinaison de l'ordinateur (mode1)
 	private int combinaisonOrdi [];	
 	// Verdict du jeu

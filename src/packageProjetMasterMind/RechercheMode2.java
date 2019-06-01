@@ -8,13 +8,13 @@ public class RechercheMode2 {
 	
 //Tableau 2d
 	//Tableau pour la saisie de l'ordinateur, avec son historique
-	static int[][] tableauJeuMode2 = new int[Main.nCoups][Main.nPions];	
+	static int[][] tableauJeuMode2 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Tableau de réponse du joueur, avec son historique
-	static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	static String  tableauReponseJoueur [][] = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
 
 // Tableau 1d
 	//combinaison de la défense du joueur
-	static int combinaisonJoueur[] = new int [Main.nPions];
+	static int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
 
 // variables
 	//Variable true si la partie est gagnée
@@ -22,7 +22,7 @@ public class RechercheMode2 {
 	//Boucles de coup (n° de coup à l'instant t)
 	static int coupMode2=0;	
 	//Nombre de tour de jeu
-	static int tourRestantMode2 = Main.nCoups;
+	static int tourRestantMode2 = EntreesConfigJeu.getNCoups();
 	//Numero de pion
 	static int pionMode2;
 	// Renvoie si la partie est gagnée ou non
@@ -32,9 +32,9 @@ public class RechercheMode2 {
 	//Valeur max du nombre limite
 	private static int Max = 10;
 	//Recherche 'vers le haut'
-	private static int[] dichoPlus = new int [Main.nPions] ;
+	private static int[] dichoPlus = new int [EntreesConfigJeu.getNPions()] ;
 	//Recherche  'vers le bas'
-	private static int[] dichoMoins = new int [Main.nPions] ;
+	private static int[] dichoMoins = new int [EntreesConfigJeu.getNPions()] ;
 
 	
 	
@@ -77,13 +77,13 @@ public class RechercheMode2 {
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==1) {
-			for (pionMode2=0;pionMode2<Main.nPions;pionMode2++) {	
+			for (pionMode2=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {	
 				tableauJeuMode2[0][pionMode2]=(int) (Max/2);
 			System.out.println("Pion "+ pionMode2 + " : " + tableauJeuMode2[0][pionMode2]);
 			}
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 		} else {
-			for (pionMode2=0;pionMode2<Main.nPions;pionMode2++) {
+			for (pionMode2=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {
 				if (tableauReponseJoueur[coupMode2-1][pionMode2].equals("=")) {
 					tableauJeuMode2[coupMode2][pionMode2]=tableauJeuMode2[coupMode2-1][pionMode2];
 					}	
@@ -104,7 +104,7 @@ public class RechercheMode2 {
 	}
 	
 	static void initVariablesDicho() {
-		for (pionMode2 =0; pionMode2<Main.nPions; pionMode2++) {
+		for (pionMode2 =0; pionMode2<EntreesConfigJeu.getNPions(); pionMode2++) {
 			dichoPlus[pionMode2]=Max;
 			dichoMoins[pionMode2]=0;
 		}
@@ -124,7 +124,7 @@ public class RechercheMode2 {
 	
 	//Comparatif combinaison secrète / entrée 
 	static void comparatifCombinaisonSecreteMode2() {
-		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
+		for (pionMode2=0; pionMode2<EntreesConfigJeu.getNPions(); pionMode2++) {
 			if ( tableauJeuMode2[coupMode2][pionMode2]==combinaisonJoueur[pionMode2] ) {
 				tableauReponseJoueur[coupMode2][pionMode2]="=";
 			}
@@ -142,12 +142,12 @@ public class RechercheMode2 {
 	static void affichageEtTestMode2(){
 		//Affichage réponse
 		System.out.print("REPONSE: ");
-		for (pionMode2=0; pionMode2<Main.nPions; pionMode2++) {
+		for (pionMode2=0; pionMode2<EntreesConfigJeu.getNPions(); pionMode2++) {
 			System.out.print(tableauReponseJoueur[coupMode2][pionMode2]);
 		}
 		System.out.println("");
 		//test
-		tourRestantMode2 = Main.nCoups - coupMode2;
+		tourRestantMode2 = EntreesConfigJeu.getNCoups() - coupMode2;
 		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
 		
 		if (tourRestantMode2 == 0 && !boleenSiGagneMode2 ) {
