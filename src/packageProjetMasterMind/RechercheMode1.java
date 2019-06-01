@@ -44,16 +44,20 @@ public class RechercheMode1 {
 			
 			    //2.2.1 entrées du joueur (var reponse)
 				entreesJoueur();
-				//2.2.2 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	et affichage et test
-					
-					//Après factorisation dans ComparatifAffichageTest
-				// ComparatifAffichageTestMode1();
-				
-					// Avant factorisation dans ComparatifAffichageTest: 
-					 comparatifCombinaisonSecreteMode1();
-				//2.2.3 Affichage & tests
-					// Avant factorisation dans ComparatifAffichageTest:
-					 affichageEtTestMode1();
+				//2.2.2 Jeux
+					//Après factorisation dans ComparatifAffichageTest2
+						//Avec méthodes surchargées
+				 			// ComparatifAffichageTestMode1();
+				 
+				 		//Avec instanciation  ComparatifAffichageTest2
+				 			ComparatifAffichageTest2 cat = new ComparatifAffichageTest2(pionMode1,coupMode1,tableauJeuMode1,combinaisonOrdi,tableauReponseOrdi,boleenSiGagneMode1,tableauReponseOrdi,tourRestantMode1,verdictMode1 );
+				 	
+				 	// Avant factorisation dans ComparatifAffichageTest: 
+						// 2.2.2.1 Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="	et affichage et test
+				 				//comparatifCombinaisonSecreteMode1();
+						//2.2.2.2 Affichage & tests
+							// Avant factorisation dans ComparatifAffichageTest2:
+								//affichageEtTestMode1();
 				
 		}
 		System.out.println("...Mais c'est "+verdictMode1);
@@ -71,7 +75,7 @@ public class RechercheMode1 {
 
 
 	
-// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+// Après factorisation dans ComparatifAffichageTest2 (méthode pour retour pour le mode 3)
 	
 	static void ComparatifAffichageTestMode1(){
 		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode1, coupMode1,tableauJeuMode1,combinaisonOrdi, tableauReponseOrdi, boleenSiGagneMode1);

@@ -112,11 +112,11 @@ public class RechercheMode2 {
 	
 
 		
-// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
+// Après factorisation dans ComparatifAffichageTest2 (méthode pour retour pour le mode 3)
 	
 	static void ComparatifAffichageTestMode2(){
-		ComparatifAffichageTest.comparatifCombinaisonSecrete(pionMode2, coupMode2,tableauJeuMode2,combinaisonJoueur, tableauReponseJoueur, boleenSiGagneMode2);
-		ComparatifAffichageTest.affichageEtTest(pionMode2, coupMode2, tableauReponseJoueur, tourRestantMode2, boleenSiGagneMode2, verdictMode2);
+		// ComparatifAffichageTest2.comparatifCombinaisonSecrete(pionMode2, coupMode2,tableauJeuMode2,combinaisonJoueur, tableauReponseJoueur, boleenSiGagneMode2);
+		// ComparatifAffichageTest2.affichageEtTest(pionMode2, coupMode2, tableauReponseJoueur, tourRestantMode2, boleenSiGagneMode2, verdictMode2);
 	}
 	
 
