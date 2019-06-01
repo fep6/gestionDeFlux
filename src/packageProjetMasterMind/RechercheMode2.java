@@ -8,21 +8,21 @@ public class RechercheMode2 {
 	
 //Tableau 2d
 	//Tableau pour la saisie de l'ordinateur, avec son historique
-	private static int[][] tableauJeuMode2 = new int[Main.nCoups][Main.nPions];	
+	static int[][] tableauJeuMode2 = new int[Main.nCoups][Main.nPions];	
 	// Tableau de réponse du joueur, avec son historique
-	private static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
+	static String  tableauReponseJoueur [][] = new String[Main.nCoups] [Main.nPions];
 
 // Tableau 1d
 	//combinaison de la défense du joueur
-	private static int combinaisonJoueur[] = new int [Main.nPions];
+	static int combinaisonJoueur[] = new int [Main.nPions];
 
 // variables
 	//Variable true si la partie est gagnée
-	private static boolean boleenSiGagneMode2;
+	static boolean boleenSiGagneMode2;
 	//Boucles de coup (n° de coup à l'instant t)
 	static int coupMode2=0;	
 	//Nombre de tour de jeu
-	private static int tourRestantMode2 = Main.nCoups;
+	static int tourRestantMode2 = Main.nCoups;
 	//Numero de pion
 	static int pionMode2;
 	// Renvoie si la partie est gagnée ou non

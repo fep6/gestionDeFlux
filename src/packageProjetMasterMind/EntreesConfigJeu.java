@@ -2,7 +2,7 @@ package packageProjetMasterMind;
 
 public class EntreesConfigJeu {
 	//Mode de jeu
-	private int modeJeu;
+	private static int modeJeu;
 	//Nombre de coups
 	private int nCoups;
 	//Nombre de pions
@@ -39,7 +39,7 @@ public class EntreesConfigJeu {
 	}
 	
 	// Getters 
-	int getModeJeu(){
+	static int getModeJeu(){
 		return modeJeu;
 	}
 	int getNCoups(){
