@@ -24,10 +24,12 @@ public class RechercheMode1 {
 	static int coupMode1 =0;
 	//tour restant
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
-	//N° de pionMode1
-	static int pionMode1;
 	// Renvoie si la partie est gagnée ou non
 	private static String verdictMode1="";
+	
+
+	//N° de pionMode1
+	// static int pionMode1;
  
 
 

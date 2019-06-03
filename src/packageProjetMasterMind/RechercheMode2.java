@@ -23,10 +23,12 @@ public class RechercheMode2 {
 	static int coupMode2=0;	
 	//Nombre de tour de jeu
 	static int tourRestantMode2 = EntreesConfigJeu.getNCoups();
-	//Numero de pion
-	static int pionMode2;
 	// Renvoie si la partie est gagnée ou non
 	private static String verdictMode2 = "";
+	
+
+	//Numero de pion
+	//static int pionMode2;
 
 // Variables pour recherche dichotomique
 	//Valeur max du nombre limite
@@ -79,36 +81,36 @@ public class RechercheMode2 {
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==1) {
-			for (int pion=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {	
-				tableauJeuMode2[0][pionMode2]=(int) (Max/2);
-			System.out.println("Pion "+ pionMode2 + " : " + tableauJeuMode2[0][pionMode2]);
+			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {	
+				tableauJeuMode2[0][pion]=(int) (Max/2);
+			System.out.println("Pion "+ pion + " : " + tableauJeuMode2[0][pion]);
 			}
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 		} else {
-			for (pionMode2=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {
-				if (tableauReponseJoueur[coupMode2-1][pionMode2].equals("=")) {
-					tableauJeuMode2[coupMode2][pionMode2]=tableauJeuMode2[coupMode2-1][pionMode2];
+			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {
+				if (tableauReponseJoueur[coupMode2-1][pion].equals("=")) {
+					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
 					}	
-				else if (tableauReponseJoueur[coupMode2-1][pionMode2].equals("+")) {
+				else if (tableauReponseJoueur[coupMode2-1][pion].equals("+")) {
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-					dichoMoins [pionMode2] = tableauJeuMode2[coupMode2-1][pionMode2];			
+					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];			
 					}
 				// (tableauReponseJoueur[coup-1][i].equals("-"))
 				else  {
 					// La recherche se fera vers le '-', on divise dichoPlus par 2
-					dichoPlus [pionMode2]= tableauJeuMode2[coupMode2-1][pionMode2];
+					dichoPlus [pion]= tableauJeuMode2[coupMode2-1][pion];
 				}
 				// On fait la moyenne des deux bornes
-				tableauJeuMode2[coupMode2][pionMode2]=(dichoPlus[pionMode2] + dichoMoins[pionMode2])/2;
-				System.out.println("Pion "+ pionMode2 + " : " + tableauJeuMode2[coupMode2][pionMode2]);
+				tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
+				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
 			}
 		}
 	}
 	
 	static void initVariablesDicho() {
-		for (pionMode2 =0; pionMode2<EntreesConfigJeu.getNPions(); pionMode2++) {
-			dichoPlus[pionMode2]=Max;
-			dichoMoins[pionMode2]=0;
+		for (int pion =0; pion<EntreesConfigJeu.getNPions(); pion++) {
+			dichoPlus[pion]=Max;
+			dichoMoins[pion]=0;
 		}
 	}
 	
