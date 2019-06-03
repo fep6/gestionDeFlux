@@ -2,7 +2,7 @@ package packageProjetMasterMind;
 
 public class ComparatifAffichageTest {
 	
-	static int pPion;
+	//static int pPion;
 	static int pTableauJeu[][]= new int [EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	static int pCoup;
 	static int pCombinaison[]= new int [EntreesConfigJeu.getNPions()];
@@ -32,16 +32,16 @@ public class ComparatifAffichageTest {
 	//Méthodes
 	
 	static void comparatifCombinaisonSecrete(){
-		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
-			if ( pTableauJeu[pCoup][pPion]==pCombinaison[pPion] ) {
-				pTableauReponse[pCoup][pPion]="=";
+		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
+			if ( pTableauJeu[pCoup][pion]==pCombinaison[pion] ) {
+				pTableauReponse[pCoup][pion]="=";
 			}
-			if ( pTableauJeu[pCoup][pPion]<pCombinaison[pPion] ) {
-				pTableauReponse[pCoup][pPion]="+";
+			if ( pTableauJeu[pCoup][pion]<pCombinaison[pion] ) {
+				pTableauReponse[pCoup][pion]="+";
 				pBoleenSiGagne = false;
 			}
-			if ( pTableauJeu[pCoup][pPion]>pCombinaison[pPion] ) {
-				pTableauReponse[pCoup][pPion]="-";
+			if ( pTableauJeu[pCoup][pion]>pCombinaison[pion] ) {
+				pTableauReponse[pCoup][pion]="-";
 				pBoleenSiGagne = false;
 			}
 		}
@@ -49,8 +49,8 @@ public class ComparatifAffichageTest {
 	
 	public static void affichageEtTest() {
 		System.out.print("Reponse: ");
-		for (pPion=0; pPion<EntreesConfigJeu.getNPions(); pPion++) {
-			System.out.print(pTableauReponse[pCoup][pPion]);
+		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
+			System.out.print(pTableauReponse[pCoup][pion]);
 		}
 		System.out.println("");
 		// test
@@ -67,7 +67,7 @@ public class ComparatifAffichageTest {
 //Setters
 	// On remplit les données de l'instance selon le N° de coup
 	void setMode1() {
-		pPion=RechercheMode1.pionMode1;
+		// pPion=RechercheMode1.pionMode1;
 		pCoup=RechercheMode1.coupMode1;
 		pBoleenSiGagne=RechercheMode1.boleenSiGagneMode1;
 		pTourRestant=RechercheMode1.tourRestantMode1;
@@ -81,7 +81,7 @@ public class ComparatifAffichageTest {
 	}
 	
 	void setMode2() {
-		pPion=RechercheMode2.pionMode2;
+		// pPion=RechercheMode2.pionMode2;
 		pCoup=RechercheMode2.coupMode2;
 		pBoleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
