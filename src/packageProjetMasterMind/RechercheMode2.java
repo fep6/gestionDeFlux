@@ -57,6 +57,8 @@ public class RechercheMode2 {
 					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
 					entreesJeuOrdi();
 					
+					//test
+					System.out.println("entreesJeuOrdi() exécutée!");
 					
 					//Après factorisation
 						//Par appel aux méthodes de ComparatifAffichageTest
@@ -72,12 +74,15 @@ public class RechercheMode2 {
 						//affichageEtTestMode2();
 			
 		} 
-		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);			
-
+		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);
 	}
 	
 	//3.2.1.1 Entrées de l'ordi 
 	static void entreesJeuOrdi(){
+
+		
+		//test
+		System.out .println("TEST : coupMode2 = "+coupMode2);
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==1) {
@@ -92,19 +97,25 @@ public class RechercheMode2 {
 					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
 					}	
 				else if (tableauReponseJoueur[coupMode2-1][pion].equals("+")) {
+					
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];			
+					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];
+					// On fait la moyenne des deux bornes
+					tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;			
 					}
 				// (tableauReponseJoueur[coup-1][i].equals("-"))
 				else  {
 					// La recherche se fera vers le '-', on divise dichoPlus par 2
 					dichoPlus [pion]= tableauJeuMode2[coupMode2-1][pion];
+					// On fait la moyenne des deux bornes
+					tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
 				}
-				// On fait la moyenne des deux bornes
-				tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
 				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
 			}
 		}
+		
+		//test
+		System.out.println("\n Sortie de entreesJeuOrdi() \n");
 	}
 	
 	static void initVariablesDicho() {

@@ -3,13 +3,13 @@ package packageProjetMasterMind;
 public class ComparatifAffichageTest {
 	
 	//static int pPion;
-	static int pTableauJeu[][]= new int [EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
-	static int pCoup;
-	static int pCombinaison[]= new int [EntreesConfigJeu.getNPions()];
-	static String pTableauReponse[][]= new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
-	static boolean pBoleenSiGagne;
-	static int pTourRestant;
-	static String pVerdict = new String();
+	static private int pTableauJeu[][]= new int [EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
+	static private int pCoup;
+	static private int pCombinaison[]= new int [EntreesConfigJeu.getNPions()];
+	static private String pTableauReponse[][]= new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
+	static private boolean pBooleenSiGagne;
+	static private int pTourRestant;
+	static private String pVerdict = new String();
 
 
 	ComparatifAffichageTest () {
@@ -19,7 +19,8 @@ public class ComparatifAffichageTest {
 			setMode1();
 		}
 		if (EntreesConfigJeu.getModeJeu()==2) {
-			setMode2();
+			// On charge les variables simples
+			setVariableEntreeMode2();
 		}
 		
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="
@@ -38,11 +39,11 @@ public class ComparatifAffichageTest {
 			}
 			if ( pTableauJeu[pCoup][pion]<pCombinaison[pion] ) {
 				pTableauReponse[pCoup][pion]="+";
-				pBoleenSiGagne = false;
+				pBooleenSiGagne = false;
 			}
 			if ( pTableauJeu[pCoup][pion]>pCombinaison[pion] ) {
 				pTableauReponse[pCoup][pion]="-";
-				pBoleenSiGagne = false;
+				pBooleenSiGagne = false;
 			}
 		}
 	}
@@ -54,10 +55,10 @@ public class ComparatifAffichageTest {
 		}
 		System.out.println("");
 		// test
-		if (pTourRestant == 0 && !pBoleenSiGagne ) {
+		if (pTourRestant == 0 && !pBooleenSiGagne ) {
 			pVerdict = "PERDU!";
 		}
-		else if (pBoleenSiGagne==true) {
+		else if (pBooleenSiGagne==true) {
 			pVerdict = "GAGNE!";
 		}
 		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
@@ -69,29 +70,37 @@ public class ComparatifAffichageTest {
 	void setMode1() {
 		// pPion=RechercheMode1.pionMode1;
 		pCoup=RechercheMode1.coupMode1;
-		pBoleenSiGagne=RechercheMode1.boleenSiGagneMode1;
+		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
 		pTourRestant=RechercheMode1.tourRestantMode1;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode1.combinaisonOrdi [pion];
-		pTableauReponse[pCoup][pion]= RechercheMode1.tableauReponseOrdi [pCoup][pion];
 		}
 		
 	}
 	
-	void setMode2() {
+	void setVariableEntreeMode2() {
+		
+		
+		//test
+		System.out.println("\n Entree dans entreesJeuOrdi() ");
+		
 		// pPion=RechercheMode2.pionMode2;
 		pCoup=RechercheMode2.coupMode2;
-		pBoleenSiGagne=RechercheMode2.boleenSiGagneMode2;
+		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
-		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
+		pTableauJeu[pCoup-1][pion]= RechercheMode2.tableauJeuMode2 [pCoup-1][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
-		pTableauReponse[pCoup][pion]= RechercheMode2.tableauReponseJoueur [pCoup][pion];
 		}
+
+		//test
+		System.out.println("Sortie de entreesJeuOrdi() \n");
 	}
+	
+
 	
 //Getter
 	String getVerdict (){
