@@ -43,7 +43,7 @@ public class RechercheMode3 {
 				RechercheMode2.entreesJeuOrdi();
 				
 				
-				//Après factorisation par ComparatifAffichageTest2
+				//Après factorisation par ComparatifAffichageTest
 				//Pour Mode 1
 				// RechercheMode1.ComparatifAffichageTestMode1();
 				//Pour Mode 2
@@ -53,7 +53,7 @@ public class RechercheMode3 {
 				
 				
 				
-				// avant factorisation mode 1 et 2 dans ComparatifAffichageTest2
+				// avant factorisation mode 1 et 2 dans ComparatifAffichageTest
 				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
 				//RechercheMode1.comparatifCombinaisonSecreteMode1();						
 				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
