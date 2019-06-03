@@ -29,7 +29,7 @@ public class ComparatifAffichageTest {
 	}
 	
 	
-	//Méthodes
+	//Méthodes communes aux mode 1 & 2
 	
 	static void comparatifCombinaisonSecrete(){
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {

@@ -60,14 +60,14 @@ public class RechercheMode2 {
 						//Par appel aux méthodes de ComparatifAffichageTest
 						//ComparatifAffichageTestMode2();
 				 		//Par instanciation  ComparatifAffichageTest
-			 			// ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-			 			//verdictMode2=cat2.getVerdict();
+			 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+			 			 verdictMode2=cat2.getVerdict();
 					
 					// Avant factorisation
 						//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-						comparatifCombinaisonSecreteMode2();
+						//comparatifCombinaisonSecreteMode2();
 						//3.1.3 Affichage & tests
-						affichageEtTestMode2();
+						//affichageEtTestMode2();
 			
 		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);			
@@ -79,7 +79,7 @@ public class RechercheMode2 {
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==1) {
-			for (pionMode2=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {	
+			for (int pion=0;pionMode2<EntreesConfigJeu.getNPions();pionMode2++) {	
 				tableauJeuMode2[0][pionMode2]=(int) (Max/2);
 			System.out.println("Pion "+ pionMode2 + " : " + tableauJeuMode2[0][pionMode2]);
 			}

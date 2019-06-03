@@ -59,8 +59,8 @@ public class RechercheMode1 {
 		System.out.print("Veuillez entrer votre code: ");
 		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
-		for (pionMode1=0;pionMode1<EntreesConfigJeu.getNPions();pionMode1++) {				
-			tableauJeuMode1[coupMode1][pionMode1]=tejMode1.getEntree(pionMode1);	
+		for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
+			tableauJeuMode1[coupMode1][pion]=tejMode1.getEntree(pion);	
 		}
 	}
 }
