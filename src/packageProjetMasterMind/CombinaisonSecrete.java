@@ -36,7 +36,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	}
 	//Mode2
 	void setCombinaisonSecreteJoueur(){
-		EntreesManuellesDuJeu emjMode2 = new EntreesManuellesDuJeu ();
+		EntreesDuJeu emjMode2 = new EntreesDuJeu ();
 		System.out.println("veuillez entrer la combinaison: ");
 
 		// ..Et on va chercher le retour

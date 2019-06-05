@@ -92,7 +92,6 @@ public class ComparatifAffichageTest {
 		pTourRestant=RechercheMode2.tourRestantMode2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
-		
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}

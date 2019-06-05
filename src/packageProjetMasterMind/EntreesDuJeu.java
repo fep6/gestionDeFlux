@@ -2,12 +2,12 @@ package packageProjetMasterMind;
 
 //Test de l'entrée de l'utilisateur
 
-public class EntreesManuellesDuJeu {
+public class EntreesDuJeu {
 	
 // entrée (tableau 2d à cause factorisation mode 1 / mode 2) à la taille du nombre de pions
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 	
-	EntreesManuellesDuJeu () {
+	EntreesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
 
 		for (int i=0; i<reponse.length ; i++) {
