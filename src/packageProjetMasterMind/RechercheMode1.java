@@ -15,8 +15,7 @@ public class RechercheMode1 {
 //Tableau 1d
 	//Combinaison de l'ordinateur
 	static int combinaisonOrdi [] = new int [EntreesConfigJeu.getNPions()];
-	
-	
+		
 // Variables
 	//Variable true si la partie est gagnée
 	static boolean boleenSiGagneMode1;
@@ -26,12 +25,6 @@ public class RechercheMode1 {
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	private static String verdictMode1="";
-	
-
-	//N° de pionMode1
-	// static int pionMode1;
- 
-
 
 	RechercheMode1(){
 		
@@ -43,16 +36,14 @@ public class RechercheMode1 {
 		while (verdictMode1 != "GAGNE!" && verdictMode1 != "PERDU!") {
 			boleenSiGagneMode1= true;
 			
-			    //2.2.1 entrées du joueur (var reponse)
-				entreesJoueur();
-				//2.2.2 Jeux
+		    //2.2.1 entrées du joueur
+			entreesJoueur();
 
-		 		//Avec instanciation  ComparatifAffichageTest
-	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
-	 			verdictMode1=cat1.getVerdict();
-			
+	 		//2.2.2 Jeux
+ 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+ 			verdictMode1=cat1.getVerdict();
 
-				coupMode1++;
+			coupMode1++;
 		}
 		System.out.println("...Mais c'est "+verdictMode1);
 	}

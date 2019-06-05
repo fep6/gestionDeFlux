@@ -11,16 +11,12 @@ public class ComparatifAffichageTest {
 	static private int pTourRestant;
 	static private String pVerdict = new String();
 
-
-	ComparatifAffichageTest () {
-		
+	ComparatifAffichageTest () {	
 	//On rapatrie les données du mode concerné
 		if (EntreesConfigJeu.getModeJeu()==1) {
 			setMode1();
 		}
 		if (EntreesConfigJeu.getModeJeu()==2) {
-			// On charge les variables simples
-			setVariableEntreeMode2();
 		}
 		
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="
@@ -47,7 +43,6 @@ public class ComparatifAffichageTest {
 			}
 		}
 	}
-	
 	public static void affichageEtTest() {
 		System.out.print("Reponse: ");
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
@@ -68,7 +63,6 @@ public class ComparatifAffichageTest {
 //Setters
 	// On remplit les données de l'instance selon le N° de coup
 	void setMode1() {
-		// pPion=RechercheMode1.pionMode1;
 		pCoup=RechercheMode1.coupMode1;
 		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
 		pTourRestant=RechercheMode1.tourRestantMode1;
@@ -77,16 +71,8 @@ public class ComparatifAffichageTest {
 		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode1.combinaisonOrdi [pion];
 		}
-		
 	}
-	
 	void setVariableEntreeMode2() {
-		
-		
-		//test
-		System.out.println("\n Entree dans entreesJeuOrdi() ");
-		
-		// pPion=RechercheMode2.pionMode2;
 		pCoup=RechercheMode2.coupMode2;
 		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
@@ -95,13 +81,7 @@ public class ComparatifAffichageTest {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
-
-		//test
-		System.out.println("Sortie de entreesJeuOrdi() \n");
 	}
-	
-
-	
 //Getter
 	static String getTableauReponse(int coup,int pion) {
 		return pTableauReponse [coup][pion];
@@ -110,7 +90,5 @@ public class ComparatifAffichageTest {
 		return pVerdict;
 	}
 
-
-	
 }
 

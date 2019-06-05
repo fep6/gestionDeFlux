@@ -55,22 +55,10 @@ public class RechercheMode2 {
 				
 					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
 					entreesJeuOrdi();
-					
-					//test
-					System.out.println("entreesJeuOrdi() exécutée!");
-					
-					//Après factorisation
-						//Par appel aux méthodes de ComparatifAffichageTest
-						//ComparatifAffichageTestMode2();
-				 		//Par instanciation  ComparatifAffichageTest
-			 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-			 			 verdictMode2=cat2.getVerdict();
-					
-					// Avant factorisation
-						//3.2.2 comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-						//comparatifCombinaisonSecreteMode2();
-						//3.1.3 Affichage & tests
-						//affichageEtTestMode2();
+
+			 		//Instanciation  ComparatifAffichageTest
+		 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+		 			 verdictMode2=cat2.getVerdict();
 
 			coupMode2++;
 		} 
@@ -96,12 +84,7 @@ public class RechercheMode2 {
 				
 				//Factorisation : On rapatrie la valeur du coup d'avant pour la tester
 				tableauReponseJoueur[coupMode2-1][pion]= ComparatifAffichageTest.getTableauReponse(coupMode2-1,pion);
-				
-				
-				//tests
-				//System.out.println("TEST tableauJeuMode2["+(int)(coupMode2-1)+"]["+pion+"] = "+ tableauJeuMode2[coupMode2-1][pion]);
-				System.out.println("TEST tableauReponseJoueur["+(int)(coupMode2-1)+"]["+pion+"] = " + tableauReponseJoueur[coupMode2-1][pion]);
-				// fin tests
+
 				
 				if (tableauReponseJoueur[coupMode2-1][pion].equals("=")) {
 					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
@@ -132,53 +115,12 @@ public class RechercheMode2 {
 			dichoMoins[pion]=0;
 		}
 	}
-	
-
 		
 // Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
 	
 	static void ComparatifAffichageTestMode2(){
 		 ComparatifAffichageTest.comparatifCombinaisonSecrete();
 		 ComparatifAffichageTest.affichageEtTest();
-	}
-	
-
-// Avant factorisation
-	
-	//Comparatif combinaison secrète / entrée 
-	static void comparatifCombinaisonSecreteMode2() {
-		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
-			if ( tableauJeuMode2[coupMode2][pion]==combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coupMode2][pion]="=";
-			}
-			if ( tableauJeuMode2[coupMode2][pion]<combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coupMode2][pion]="+";
-				boleenSiGagneMode2 = false;
-			}
-			if ( tableauJeuMode2[coupMode2][pion]>combinaisonJoueur[pion] ) {
-				tableauReponseJoueur[coupMode2][pion]="-";
-				boleenSiGagneMode2 = false;
-			}
-		}		
-	}
-	//Affichage & tests
-	static void affichageEtTestMode2(){
-		//Affichage réponse
-		System.out.print("REPONSE: ");
-		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
-			System.out.print(tableauReponseJoueur[coupMode2][pion]);
-		}
-		System.out.println("");
-		//test
-		tourRestantMode2 = EntreesConfigJeu.getNCoups() - coupMode2;
-		System.out.println(" -> Il vous reste: "+ tourRestantMode2 + " coups!");
-		
-		if (tourRestantMode2 == 0 && !boleenSiGagneMode2 ) {
-			verdictMode2 = "PERDU!";
-		}
-		else if (boleenSiGagneMode2==true) {
-			verdictMode2 = "GAGNE!";
-		}
 	}	
 	
 }
