@@ -82,13 +82,5 @@ public class EntreesConfigJeu {
 		nPions = test.getResultatGestionExeptionEntreesGlobales();	
 		System.out.println("test: Nombre de pions =" + nPions);
 	}
-	
-	//Setter pour factorisation
-//	void setTest(int test) {
-//		GestionExeptionEntreesGlobales t = new GestionExeptionEntreesGlobales(test);
-//		modeJeu = t.getResultatGestionExeptionEntreesGlobales();
-//		//test
-//		System.out.println("test: mode de jeu =" + modeJeu);
-//	}
 
 }
