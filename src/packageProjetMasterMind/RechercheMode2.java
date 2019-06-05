@@ -51,7 +51,6 @@ public class RechercheMode2 {
 		// 3.2. recherche +/- et affichage
 		while (!verdictMode2.equals("GAGNE!") && !verdictMode2.equals("PERDU!")) {
 			boleenSiGagneMode2= true;
-			coupMode2++;
 				System.out.println("\n Nous sommes au tour N° :" + coupMode2);
 				
 					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
@@ -72,7 +71,8 @@ public class RechercheMode2 {
 						//comparatifCombinaisonSecreteMode2();
 						//3.1.3 Affichage & tests
 						//affichageEtTestMode2();
-			
+
+			 			coupMode2++;
 		} 
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);
 	}
@@ -85,7 +85,7 @@ public class RechercheMode2 {
 		System.out .println("TEST : coupMode2 = "+coupMode2);
 		
 		// 1er coup: On donne la valeur 5 au début
-		if (coupMode2==1) {
+		if (coupMode2==0) {
 			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {	
 				tableauJeuMode2[0][pion]=(int) (Max/2);
 			System.out.println("Pion "+ pion + " : " + tableauJeuMode2[0][pion]);
@@ -93,23 +93,33 @@ public class RechercheMode2 {
 		// Sinon, l'ordi. tient compte de ce qu'a dit le joueur au coup d'avant (dichotomie)
 		} else {
 			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {
+				
+				//Facctorisation : On rapatrie la valeur du coup d'avant pour la tester
+				tableauReponseJoueur[coupMode2-1][pion]= ComparatifAffichageTest.getTableauReponse(coupMode2-1,pion);
+				
+				
+				//tests
+				System.out.println("TEST tableauReponseJoueur["+(int)(coupMode2-1)+"]["+pion+"] = "
+						+ tableauReponseJoueur[coupMode2-1][pion]);
+				System.out.println("TEST tableauJeuMode2["+(int)(coupMode2-1)+"]["+pion+"] = "
+						+ tableauJeuMode2[coupMode2-1][pion]);
+				// fin tests
+				
+				
 				if (tableauReponseJoueur[coupMode2-1][pion].equals("=")) {
 					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
 					}	
 				else if (tableauReponseJoueur[coupMode2-1][pion].equals("+")) {
 					
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];
-					// On fait la moyenne des deux bornes
-					tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;			
+					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];			
 					}
-				// (tableauReponseJoueur[coup-1][i].equals("-"))
 				else  {
 					// La recherche se fera vers le '-', on divise dichoPlus par 2
-					dichoPlus [pion]= tableauJeuMode2[coupMode2-1][pion];
-					// On fait la moyenne des deux bornes
-					tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
+					dichoPlus [pion]= dichoPlus [pion]/2;
 				}
+				// On fait la moyenne des deux bornes
+				tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
 				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
 			}
 		}

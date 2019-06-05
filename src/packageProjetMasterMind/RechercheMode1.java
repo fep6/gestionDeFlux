@@ -41,7 +41,6 @@ public class RechercheMode1 {
 		
 		//2.2 recherche +/- et affichage	
 		while (verdictMode1 != "GAGNE!" && verdictMode1 != "PERDU!") {
-			coupMode1++;
 			boleenSiGagneMode1= true;
 			
 			    //2.2.1 entrées du joueur (var reponse)
@@ -52,6 +51,8 @@ public class RechercheMode1 {
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
 			
+
+				coupMode1++;
 		}
 		System.out.println("...Mais c'est "+verdictMode1);
 	}

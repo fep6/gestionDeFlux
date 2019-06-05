@@ -92,8 +92,8 @@ public class ComparatifAffichageTest {
 		pTourRestant=RechercheMode2.tourRestantMode2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
-		// On charge le tableau de travail avec les valeurs du coup d'avant
-		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup-1][pion];
+		
+		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
 
@@ -104,10 +104,12 @@ public class ComparatifAffichageTest {
 
 	
 //Getter
+	static String getTableauReponse(int coup,int pion) {
+		return pTableauReponse [coup][pion];
+	}
 	String getVerdict (){
 		return pVerdict;
 	}
-
 
 
 	
