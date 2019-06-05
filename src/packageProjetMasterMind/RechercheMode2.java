@@ -67,10 +67,6 @@ public class RechercheMode2 {
 	
 	//3.2.1.1 Entrées de l'ordi
 	static void entreesJeuOrdi(){
-
-		
-		//test
-		System.out .println("TEST : coupMode2 = "+coupMode2);
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==0) {

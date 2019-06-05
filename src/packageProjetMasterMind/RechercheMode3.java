@@ -51,17 +51,8 @@ public class RechercheMode3 {
 				
 				
 				
+				//coupMode3++;
 				
-				
-				// avant factorisation mode 1 et 2 dans ComparatifAffichageTest
-				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-				//RechercheMode1.comparatifCombinaisonSecreteMode1();						
-				//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="			
-				//RechercheMode2.comparatifCombinaisonSecreteMode2();
-				//Affichage & tests
-				//RechercheMode1.affichageEtTestMode1();						
-				//Affichage & tests
-				//RechercheMode2.affichageEtTestMode2();	
 				}				
 			System.out.println("verdict = " + verdict);
 		}	

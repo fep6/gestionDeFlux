@@ -24,7 +24,7 @@ public class RechercheMode1 {
 	//tour restant
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode1="";
+	private static String verdictMode1;
 
 	RechercheMode1(){
 		
