@@ -77,7 +77,7 @@ public class RechercheMode2 {
 		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);
 	}
 	
-	//3.2.1.1 Entrées de l'ordi 
+	//3.2.1.1 Entrées de l'ordi
 	static void entreesJeuOrdi(){
 
 		
