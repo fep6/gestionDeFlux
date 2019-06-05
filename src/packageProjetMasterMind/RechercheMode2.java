@@ -103,7 +103,6 @@ public class RechercheMode2 {
 				System.out.println("TEST tableauReponseJoueur["+(int)(coupMode2-1)+"]["+pion+"] = " + tableauReponseJoueur[coupMode2-1][pion]);
 				// fin tests
 				
-				
 				if (tableauReponseJoueur[coupMode2-1][pion].equals("=")) {
 					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
 					}	
@@ -112,12 +111,13 @@ public class RechercheMode2 {
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
 					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];			
 					}
-				else  {
-					// La recherche se fera vers le '-', on divise dichoPlus par 2
-					dichoPlus [pion]=  tableauJeuMode2[coupMode2-1][pion]/2;
+				else if (tableauReponseJoueur[coupMode2-1][pion].equals("-")) {
+					// La recherche se fera vers le '-', la borne superieure prend la valeur du coup d'avant
+					dichoPlus [pion]=  tableauJeuMode2[coupMode2-1][pion];
 				}
 				// On fait la moyenne des deux bornes
 				tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
+				
 				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
 			}
 		}
