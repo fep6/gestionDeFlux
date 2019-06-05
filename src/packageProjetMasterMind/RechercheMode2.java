@@ -114,15 +114,7 @@ public class RechercheMode2 {
 			dichoPlus[pion]=Max;
 			dichoMoins[pion]=0;
 		}
-	}
-		
-// Après factorisation dans ComparatifAffichageTest (méthode pour retour pour le mode 3)
-	
-	static void ComparatifAffichageTestMode2(){
-		 ComparatifAffichageTest.comparatifCombinaisonSecrete();
-		 ComparatifAffichageTest.affichageEtTest();
 	}	
-	
 }
 
 
