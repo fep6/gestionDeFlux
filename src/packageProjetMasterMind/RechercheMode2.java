@@ -104,9 +104,6 @@ public class RechercheMode2 {
 				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
 			}
 		}
-		
-		//test
-		System.out.println("\n Sortie de entreesJeuOrdi() \n");
 	}
 	
 	static void initVariablesDicho() {

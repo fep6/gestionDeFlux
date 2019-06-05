@@ -17,6 +17,7 @@ public class ComparatifAffichageTest {
 			setMode1();
 		}
 		if (EntreesConfigJeu.getModeJeu()==2) {
+			setMode2();
 		}
 		
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="
@@ -57,7 +58,7 @@ public class ComparatifAffichageTest {
 			pVerdict = "GAGNE!";
 		}
 		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
-		System.out.println(" -> Il vous reste: "+ pTourRestant + " coups!");
+		System.out.println(" -> Il reste: "+ pTourRestant + " coups!");
 	}
 	
 //Setters
@@ -72,7 +73,7 @@ public class ComparatifAffichageTest {
 		pCombinaison[pion]= RechercheMode1.combinaisonOrdi [pion];
 		}
 	}
-	void setVariableEntreeMode2() {
+	void setMode2() {
 		pCoup=RechercheMode2.coupMode2;
 		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
