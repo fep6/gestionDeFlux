@@ -23,6 +23,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	//Mode1
 	void setCombinaisonSecreteOrdi() {
 		//1.2.1 Combinaison secrète généré par l'ordi.
+		System.out.println("L'ordinateur entre sa combinaison secrète...");
 		for (int i=0 ; i<combinaisonSecreteOrdi.length; i++) {
 			combinaisonSecreteOrdi[i]=(int) (Math.random()*10);
 		}
@@ -37,7 +38,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	//Mode2
 	void setCombinaisonSecreteJoueur(){
 		EntreesDuJeu emjMode2 = new EntreesDuJeu ();
-		System.out.println("veuillez entrer la combinaison: ");
+		System.out.println("veuillez entrer votre combinaison secrète: ");
 
 		// ..Et on va chercher le retour
 		for (int pion = 0 ; pion < EntreesConfigJeu.getNPions(); pion++) {

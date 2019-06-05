@@ -4,7 +4,7 @@ package packageProjetMasterMind;
 
 public class EntreesDuJeu {
 	
-// entrée (tableau 2d à cause factorisation mode 1 / mode 2) à la taille du nombre de pions
+// entrée 
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 	
 	EntreesDuJeu () {
