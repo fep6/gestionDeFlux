@@ -33,19 +33,21 @@ public class RechercheMode1 {
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 		
 		//2.2 recherche +/- et affichage	
-		while (verdictMode1 != "GAGNE!" && verdictMode1 != "PERDU!") {
+		while (verdictMode1 != "LE JOUEUR A GAGNE!" && verdictMode1 != "LE JOUEUR A PERDU!") {
 			boleenSiGagneMode1= true;
 			
 		    //2.2.1 entrées du joueur
 			entreesJoueur();
 
 	 		//2.2.2 Jeux
- 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
- 			verdictMode1=cat1.getVerdict();
+				//On renseigne le mode de jeu
+ 				ComparatifAffichageTest.pModeEnCours=1;
+	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+	 			verdictMode1=cat1.getVerdict();
 
 			coupMode1++;
 		}
-		System.out.println("...Mais c'est "+verdictMode1);
+		System.out.println("...Fin de la partie : "+ verdictMode1);
 	}
 	
 	//entrées du joueur (var reponse)
@@ -56,6 +58,10 @@ public class RechercheMode1 {
 		for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
 			tableauJeuMode1[coupMode1][pion]=tejMode1.getEntree(pion);	
 		}
+	}
+	//Getters
+	String getVerdictMode1(){
+		return verdictMode1;
 	}
 }
 

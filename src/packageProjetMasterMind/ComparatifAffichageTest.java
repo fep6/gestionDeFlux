@@ -10,13 +10,15 @@ public class ComparatifAffichageTest {
 	static private boolean pBooleenSiGagne;
 	static private int pTourRestant;
 	static private String pVerdict = new String();
+	// Mode3 : Définit quel mode a la main
+	static int pModeEnCours;
 
 	ComparatifAffichageTest () {	
 	//On rapatrie les données du mode concerné
-		if (EntreesConfigJeu.getModeJeu()==1) {
+		if (pModeEnCours==1) {
 			setMode1();
 		}
-		if (EntreesConfigJeu.getModeJeu()==2) {
+		if (pModeEnCours==2) {
 			setMode2();
 		}
 		
@@ -51,11 +53,19 @@ public class ComparatifAffichageTest {
 		}
 		System.out.println("");
 		// test
-		if (pTourRestant == 0 && !pBooleenSiGagne ) {
-			pVerdict = "PERDU!";
+		if (pTourRestant == 0 && !pBooleenSiGagne && pModeEnCours==1) {
+			pVerdict = "LE JOUEUR A PERDU!";
 		}
-		else if (pBooleenSiGagne==true) {
-			pVerdict = "GAGNE!";
+		else if (pBooleenSiGagne==true && pModeEnCours==1) {
+			pVerdict = "LE JOUEUR A GAGNE!";
+		}
+		else if (pTourRestant == 0 && !pBooleenSiGagne && pModeEnCours==2) {
+			pVerdict = "L'ORDINATEUR A PERDU!";
+		}
+		else if (pBooleenSiGagne==true && pModeEnCours==2) {
+			pVerdict = "L'ORDINATEUR A GAGNE!";
+		} else { 
+			pVerdict = "LE JEU EST EN COURS";
 		}
 		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
 		System.out.println(" -> Il reste: "+ pTourRestant + " coups!");
@@ -67,6 +77,7 @@ public class ComparatifAffichageTest {
 		pCoup=RechercheMode1.coupMode1;
 		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
 		pTourRestant=RechercheMode1.tourRestantMode1;
+		pModeEnCours=1;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
@@ -77,12 +88,14 @@ public class ComparatifAffichageTest {
 		pCoup=RechercheMode2.coupMode2;
 		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
 		pTourRestant=RechercheMode2.tourRestantMode2;
+		pModeEnCours=2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
 	}
+	
 //Getter
 	static String getTableauReponse(int coup,int pion) {
 		return pTableauReponse [coup][pion];

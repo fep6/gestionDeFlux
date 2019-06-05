@@ -8,23 +8,27 @@ public class RechercheMode3 {
 	//combinaison de la défense du joueur
 	private int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
 	// Combinaison de l'ordinateur (mode1)
-	private int combinaisonOrdi [];	
-	// Verdict du jeu
-	private String verdict;
+	private int combinaisonOrdi [];
 	// condition de sortie du while
 	private boolean boleenSiGagne;
 	//Comptage de coup (n° de coup à l'instant t)
-	private static int coup=0;
+	private static int coupMode3=0;	
+	// Verdict du jeu
+	private String verdict;
+	// Renvoie si la partie est gagnée ou non
+	private static String verdictMode1;
+	// Renvoie si la partie est gagnée ou non
+	private static String verdictMode2;
 	
 	
 	RechercheMode3(){
 		
 		//4.1 Entrées des combinaisons secrètes 
 		CombinaisonSecrete cs = new CombinaisonSecrete();
-			//4.1.1 Retour de la combinaison du joueur  mode(2)
-			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
-			//4.1.2 Retour de la combinaison de l'ordi.(mode1):
+			//4.1.1 Retour de la combinaison de l'ordi.(mode1):
 			combinaisonOrdi= cs.getCombinaisonSecreteOrdi();
+			//4.1.2 Retour de la combinaison du joueur  mode(2)
+			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
 
 		
 		//4.2 Entrées / Comparatif / test
@@ -35,24 +39,21 @@ public class RechercheMode3 {
 			//4.2.2 Recherche +/- et affichage	
 			while (verdict != "GAGNE!" && verdict != "PERDU!") {
 				boleenSiGagne= true;
-				coup++;
-				System.out.println("\n Nous sommes au tour N° :" + coup);
-			    //Entrées du joueur
-				RechercheMode1.entreesJoueur();					
-				//Entrées de l'ordi
+				System.out.println("\n Nous sommes au tour N° :" + coupMode3);
+				
+				//4.2.2.1 Entrées
+				RechercheMode1.entreesJoueur();
 				RechercheMode2.entreesJeuOrdi();
 				
+		 		//4.2.2.2 Jeux 
+				//(Mode1)
+	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+	 			verdictMode1=cat1.getVerdict();
+				//(Mode2)
+	 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+	 			 verdictMode2=cat2.getVerdict();
 				
-				//Après factorisation par ComparatifAffichageTest
-				//Pour Mode 1
-				// RechercheMode1.ComparatifAffichageTestMode1();
-				//Pour Mode 2
-				// RechercheMode2.ComparatifAffichageTestMode2();
-				
-				
-				
-				//coupMode3++;
-				
+				coupMode3++;
 				}				
 			System.out.println("verdict = " + verdict);
 		}	

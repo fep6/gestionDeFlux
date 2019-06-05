@@ -49,7 +49,7 @@ public class RechercheMode2 {
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
 		
 		// 3.2. recherche +/- et affichage
-		while (!verdictMode2.equals("GAGNE!") && !verdictMode2.equals("PERDU!")) {
+		while (!verdictMode2.equals("L'ORDINATEUR A GAGNE!") && !verdictMode2.equals("L'ORDINATEUR A PERDU!")) {
 			boleenSiGagneMode2= true;
 			System.out.println("\n Nous sommes au tour N° :" + coupMode2);
 				
@@ -57,12 +57,13 @@ public class RechercheMode2 {
 					entreesJeuOrdi();
 
 			 		//Instanciation  ComparatifAffichageTest
-		 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-		 			 verdictMode2=cat2.getVerdict();
+	 				ComparatifAffichageTest.pModeEnCours=2;
+		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+		 			verdictMode2=cat2.getVerdict();
 
 			coupMode2++;
 		} 
-		System.out.println("...Fin de la partie : L'ordinateur a "+ verdictMode2);
+		System.out.println("...Fin de la partie : "+ verdictMode2);
 	}
 	
 	//3.2.1.1 Entrées de l'ordi
@@ -107,6 +108,10 @@ public class RechercheMode2 {
 			dichoPlus[pion]=Max;
 			dichoMoins[pion]=0;
 		}
+	}
+	//Getters
+	String getVerdictMode2(){
+		return verdictMode2;
 	}	
 }
 
