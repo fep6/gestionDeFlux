@@ -24,7 +24,7 @@ public class RechercheMode1 {
 	//tour restant
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode1;
+	static String verdictMode1;
 
 	RechercheMode1(){
 		
@@ -53,10 +53,10 @@ public class RechercheMode1 {
 	//entrées du joueur (var reponse)
 	static void entreesJoueur() {
 		System.out.print("Veuillez entrer votre code: ");
-		EntreesManuellesDuJeu tejMode1 = new EntreesManuellesDuJeu ();
+		EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
 		for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
-			tableauJeuMode1[coupMode1][pion]=tejMode1.getEntree(pion);	
+			tableauJeuMode1[coupMode1][pion]=emjMode1.getEntree(pion);	
 		}
 	}
 	//Getters

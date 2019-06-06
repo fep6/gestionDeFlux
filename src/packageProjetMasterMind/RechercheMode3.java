@@ -14,11 +14,7 @@ public class RechercheMode3 {
 	//Comptage de coup (n° de coup à l'instant t)
 	private static int coupMode3=0;	
 	// Verdict du jeu
-	private String verdict;
-	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode1;
-	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode2;
+	private String verdictMode3;
 	
 	
 	RechercheMode3(){
@@ -37,9 +33,9 @@ public class RechercheMode3 {
 			RechercheMode2.initVariablesDicho();
 			
 			//4.2.2 Recherche +/- et affichage	
-			while (verdict != "GAGNE!" && verdict != "PERDU!") {
+			while (verdictMode3 != "LE JOUEUR A GAGNE!" && verdictMode3 != "LE JOUEUR A PERDU!" &&verdictMode3 != "L'ORDINATEUR A GAGNE!" && verdictMode3 != "L'ORDINATEUR A PERDU!" ) {
 				boleenSiGagne= true;
-				System.out.println("\n Nous sommes au tour N° :" + coupMode3);
+				System.out.println("\n Nous sommes au tour N° :" + coupMode3+1);
 				
 				//4.2.2.1 Entrées
 				RechercheMode1.entreesJoueur();
@@ -47,15 +43,18 @@ public class RechercheMode3 {
 				
 		 		//4.2.2.2 Jeux 
 				//(Mode1)
+ 				ComparatifAffichageTest.pModeEnCours=1;
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
-	 			verdictMode1=cat1.getVerdict();
+	 			verdictMode3=cat1.getVerdict();
+				
 				//(Mode2)
-	 			 ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-	 			 verdictMode2=cat2.getVerdict();
+ 				ComparatifAffichageTest.pModeEnCours=2;
+	 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+	 			verdictMode3=cat2.getVerdict();
 				
 				coupMode3++;
 				}				
-			System.out.println("verdict = " + verdict);
+			System.out.println("verdict = " + verdictMode3);
 		}	
 }
 

@@ -13,10 +13,10 @@ private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 		for (int i=0; i<reponse.length ; i++) {
 
 				if (i == 0) {
-					System.out.print(i+1 + "ère entrée?");
+					System.out.print((int)(i+1) + "ère entrée?");
 				}
 				else {
-					System.out.print(i+1 + "eme entrée?");
+					System.out.print((int)(i+1) + "eme entrée?");
 				}
 					//instanciation du test try/catch 
 					GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales(reponse [i]);

@@ -10,7 +10,7 @@ public class ComparatifAffichageTest {
 	static private boolean pBooleenSiGagne;
 	static private int pTourRestant;
 	static private String pVerdict = new String();
-	// Mode3 : Définit quel mode a la main
+	// Mode3 : Définit quel mode a la main (renseignement pour mode 3)
 	static int pModeEnCours;
 
 	ComparatifAffichageTest () {	
@@ -94,6 +94,7 @@ public class ComparatifAffichageTest {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
+
 	}
 	
 //Getter

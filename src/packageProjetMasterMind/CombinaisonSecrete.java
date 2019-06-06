@@ -37,8 +37,8 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	}
 	//Mode2
 	void setCombinaisonSecreteJoueur(){
-		EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
 		System.out.println("Veuillez entrer votre combinaison secrète: ");
+		EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
 
 		// ..Et on va chercher le retour
 		for (int pion = 0 ; pion < EntreesConfigJeu.getNPions(); pion++) {

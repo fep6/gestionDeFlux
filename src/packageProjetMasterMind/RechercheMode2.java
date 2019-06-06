@@ -24,7 +24,7 @@ public class RechercheMode2 {
 	//Nombre de tour de jeu
 	static int tourRestantMode2 = EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
-	private static String verdictMode2 = "";
+	static String verdictMode2 = "";
 	
 
 	//Numero de pion
