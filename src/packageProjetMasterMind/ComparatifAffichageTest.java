@@ -10,7 +10,7 @@ public class ComparatifAffichageTest {
 	static private boolean pBooleenSiGagne;
 	static private int pTourRestant;
 	static private String pVerdict = new String();
-	// Mode3 : Définit quel mode a la main (renseignement pour mode 3)
+	// Mode3 : Définit quel mode a la main 
 	static int pModeEnCours;
 
 	ComparatifAffichageTest () {	
@@ -29,9 +29,12 @@ public class ComparatifAffichageTest {
 	}
 	
 	
-	//Méthodes communes aux mode 1 & 2
+	//Méthodes communes aux mode 1,2,3
 	
 	static void comparatifCombinaisonSecrete(){
+		//test
+		System.out.println("Mode de jeu en cours ="+pModeEnCours);
+		//fin test
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
 			if ( pTableauJeu[pCoup][pion]==pCombinaison[pion] ) {
 				pTableauReponse[pCoup][pion]="=";
@@ -44,6 +47,11 @@ public class ComparatifAffichageTest {
 				pTableauReponse[pCoup][pion]="-";
 				pBooleenSiGagne = false;
 			}
+			//Test
+			System.out.println("pCombinaison["+pion+"] = "+pCombinaison[pion]);
+			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
+			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
+			//Fin test	
 		}
 	}
 	public static void affichageEtTest() {
@@ -75,7 +83,9 @@ public class ComparatifAffichageTest {
 			pVerdict = "LE JEU EST EN COURS";
 		}
 		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
-		System.out.println(" -> Il reste: "+ pTourRestant + " coups!");
+		System.out.println(" ______________________________________");
+		System.out.println(" -> Il reste: "+ (int)(pTourRestant-1) + " coups!");
+		System.out.println(" ______________________________________");
 	}
 	
 //Setters
