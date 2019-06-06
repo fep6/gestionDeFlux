@@ -10,7 +10,7 @@ public class RechercheMode2 {
 	//Tableau pour la saisie de l'ordinateur, avec son historique
 	static int[][] tableauJeuMode2 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Tableau de réponse du joueur, avec son historique
-	static String  tableauReponseJoueur [][] = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
+	static String[][]  tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
 
 // Tableau 1d
 	//combinaison de la défense du joueur
@@ -109,7 +109,10 @@ public class RechercheMode2 {
 			dichoMoins[pion]=0;
 		}
 	}
-	//Getters
+	//Getters (pour mode3)
+	static int getTableauJeuMode2(int coup,int pion) {
+		return tableauJeuMode2 [coup][pion];
+	}
 	String getVerdictMode2(){
 		return verdictMode2;
 	}	

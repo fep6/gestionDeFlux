@@ -10,7 +10,7 @@ public class RechercheMode1 {
 	//Tableau pour la saisie d'entrée du joueur
 	static int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
-	static String tableauReponseOrdi [][]= new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
+	static String[][] tableauReponseOrdi = new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	
 //Tableau 1d
 	//Combinaison de l'ordinateur
@@ -59,7 +59,14 @@ public class RechercheMode1 {
 			tableauJeuMode1[coupMode1][pion]=emjMode1.getEntree(pion);	
 		}
 	}
-	//Getters
+	
+	//Getters (pour mode3)
+	static int getTableauJeuMode1(int coup,int pion) {
+		return tableauJeuMode1 [coup][pion];
+	}
+	static String getTableauReponseOrdi(int coup,int pion) {
+		return tableauReponseOrdi [coup][pion];
+	}
 	String getVerdictMode1(){
 		return verdictMode1;
 	}
