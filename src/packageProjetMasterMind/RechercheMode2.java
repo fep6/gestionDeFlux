@@ -71,6 +71,9 @@ public class RechercheMode2 {
 		
 		// 1er coup: On donne la valeur 5 au début
 		if (coupMode2==0) {
+			System.out.println("----------------------------");
+			System.out.println("PROPOSITION DE L'ORDINATEUR:");
+			
 			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {	
 				tableauJeuMode2[0][pion]=(int) (Max/2);
 			System.out.println("Pion "+ pion + " : " + tableauJeuMode2[0][pion]);
