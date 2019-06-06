@@ -47,11 +47,18 @@ public class ComparatifAffichageTest {
 		}
 	}
 	public static void affichageEtTest() {
-		System.out.print("Reponse: ");
+		if (pModeEnCours==1) {
+			System.out.print("Reponse à la proposition du joueur (mode1)");
+		} else if (pModeEnCours==2) {
+			System.out.print("Reponse à la combinaison de l'ordinateur (Mode2): ");
+		} else {
+			System.out.print("Erreur dans la donnée de ComparatifAffichageTest.pModeEnCours!!! ");
+		}
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
 			System.out.print(pTableauReponse[pCoup][pion]);
 		}
 		System.out.println("");
+		
 		// test
 		if (pTourRestant == 0 && !pBooleenSiGagne && pModeEnCours==1) {
 			pVerdict = "LE JOUEUR A PERDU!";
