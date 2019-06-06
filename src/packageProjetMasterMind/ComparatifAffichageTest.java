@@ -94,7 +94,6 @@ public class ComparatifAffichageTest {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
-
 	}
 	
 //Getter

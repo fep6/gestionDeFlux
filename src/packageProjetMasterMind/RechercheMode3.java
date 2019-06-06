@@ -62,9 +62,11 @@ public class RechercheMode3 {
 				
 		 		//4.2.2.2 Jeux 
 				//(Mode1)
+ 				ComparatifAffichageTest.pModeEnCours=1;
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode3=cat1.getVerdict();
 				//(Mode2)
+ 				ComparatifAffichageTest.pModeEnCours=2;
 	 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 	 			verdictMode3=cat2.getVerdict();
 	 			

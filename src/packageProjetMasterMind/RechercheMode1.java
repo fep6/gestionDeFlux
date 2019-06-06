@@ -41,7 +41,7 @@ public class RechercheMode1 {
 
 	 		//2.2.2 Jeux
 				//On renseigne le mode de jeu
- 				//ComparatifAffichageTest.pModeEnCours=1;
+ 				ComparatifAffichageTest.pModeEnCours=1;
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
 

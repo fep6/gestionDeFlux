@@ -57,7 +57,7 @@ public class RechercheMode2 {
 					entreesJeuOrdi();
 
 			 		//3.2.2 Instanciation  ComparatifAffichageTest
-	 				//ComparatifAffichageTest.pModeEnCours=2;
+	 				ComparatifAffichageTest.pModeEnCours=2;
 		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 		 			verdictMode2=cat2.getVerdict();
 
