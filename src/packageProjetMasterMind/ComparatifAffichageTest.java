@@ -89,10 +89,7 @@ public class ComparatifAffichageTest {
 		} else { 
 			pVerdict = "LE JEU EST EN COURS";
 		}
-		pTourRestant = EntreesConfigJeu.getNCoups() - pCoup;
-		System.out.println(" ______________________________________");
-		System.out.println(" -> Il reste: "+ (int)(pTourRestant-1) + " coups!");
-		System.out.println(" ______________________________________");
+
 	}
 	
 //Setters

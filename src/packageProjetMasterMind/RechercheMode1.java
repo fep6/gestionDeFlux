@@ -44,7 +44,13 @@ public class RechercheMode1 {
  				ComparatifAffichageTest.pModeEnCours=1;
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
-
+	 			
+	 			//Récapitulatif
+	 			tourRestantMode1 = EntreesConfigJeu.getNCoups() - coupMode1;
+	 			System.out.println(" ______________________________________");
+	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode1-1) + " coups!");
+	 			System.out.println(" ______________________________________");
+	 			
 			coupMode1++;
 		}
 		System.out.println("...Fin de la partie : "+ verdictMode1);

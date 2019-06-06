@@ -69,7 +69,13 @@ public class RechercheMode3 {
 				//(Mode2)
  				ComparatifAffichageTest.pModeEnCours=2;
 	 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-	 			verdictMode3=cat2.getVerdict();
+	 			verdictMode3=cat2.getVerdict();	
+	 			
+	 			//Récapitulatif
+	 			tourRestantMode3 = EntreesConfigJeu.getNCoups() - coupMode3;
+	 			System.out.println(" ______________________________________");
+	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode3-1) + " coups!");
+	 			System.out.println(" ______________________________________");
 	 			
 				coupMode3++;
 			}				
