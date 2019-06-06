@@ -100,6 +100,7 @@ public class ComparatifAffichageTest {
 	void setMode1() {
 		pCoup=RechercheMode1.coupMode1;
 		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
+		pTourRestant=RechercheMode1.tourRestantMode1;
 		pModeEnCours=1;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
@@ -110,6 +111,7 @@ public class ComparatifAffichageTest {
 	void setMode2() {
 		pCoup=RechercheMode2.coupMode2;
 		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
+		pTourRestant=RechercheMode2.tourRestantMode2;
 		pModeEnCours=2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
@@ -120,6 +122,8 @@ public class ComparatifAffichageTest {
 	void setMode3() {
 		pCoup=RechercheMode3.getCoupMode3();
 		pBooleenSiGagne=RechercheMode3.getBoleenSiGagneMode3();
+		pTourRestant=RechercheMode3.getTourRestantMode3();
+		
 		
 		if (pModeEnCours==1) {
 			for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {

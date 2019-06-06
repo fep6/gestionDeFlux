@@ -26,6 +26,8 @@ public class RechercheMode3 {
 		private static boolean boleenSiGagneMode3;
 		//Comptage de coup (n° de coup à l'instant t)
 		private static int coupMode3=0;	
+		//Nombre de tour de jeu
+		static int tourRestantMode3 = EntreesConfigJeu.getNCoups();
 		// Verdict du jeu
 		private String verdictMode3;
 	
@@ -88,6 +90,9 @@ public class RechercheMode3 {
 	}	
 	static int getCoupMode3(){
 		return coupMode3;
+	}	
+	static int getTourRestantMode3(){
+		return tourRestantMode3;
 	}
 	static boolean getBoleenSiGagneMode3(){
 		return boleenSiGagneMode3;
