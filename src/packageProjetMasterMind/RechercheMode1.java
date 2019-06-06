@@ -37,7 +37,7 @@ public class RechercheMode1 {
 			boleenSiGagneMode1= true;
 			
 		    //2.2.1 entrées du joueur
-			entreesJoueur();
+			entreesJoueur(coupMode1, tableauJeuMode1);
 
 	 		//2.2.2 Jeux
 				//On renseigne le mode de jeu
@@ -45,10 +45,10 @@ public class RechercheMode1 {
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
 	 			
-	 			//Récapitulatif
-	 			tourRestantMode1 = EntreesConfigJeu.getNCoups() - coupMode1;
+	 			//Récapitulatif (Affichage)
+	 			tourRestantMode1 = EntreesConfigJeu.getNCoups() - (int)(coupMode1-1);
 	 			System.out.println(" ______________________________________");
-	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode1-1) + " coups!");
+	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode1) + " coups!");
 	 			System.out.println(" ______________________________________");
 	 			
 			coupMode1++;
@@ -57,20 +57,20 @@ public class RechercheMode1 {
 	}
 	
 	//entrées du joueur (var reponse)
-	static void entreesJoueur() {
+	static void entreesJoueur(int coup, int[][] tableauJeuMode1) {
 		System.out.println("----------------------------");
 		System.out.println("PROPOSITION DU JOUEUR:");
 		EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
-		for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
-			tableauJeuMode1[coupMode1][pion]=emjMode1.getEntree(pion);	
+		for ( int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
+			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	
 		}
 	}
 	
 	//Getters (pour mode3)
-	static int getTableauJeuMode1(int coup,int pion) {
-		return tableauJeuMode1 [coup][pion];
-	}
+//	static int getTableauJeuMode1(int coup,int pion) {
+//		return tableauJeuMode1 [coup][pion];
+//	}
 //	static String getTableauReponseOrdi(int coup,int pion) {
 //		return tableauReponseOrdi [coup][pion];
 //	}

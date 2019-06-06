@@ -54,17 +54,17 @@ public class RechercheMode2 {
 			System.out.println("\n Nous sommes au tour N° :" + coupMode2);
 				
 					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
-					entreesJeuOrdi();
+					entreesJeuOrdi(coupMode2,tableauJeuMode2,tableauReponseJoueur,dichoPlus,dichoMoins,Max);
 
 			 		//3.2.2 Instanciation  ComparatifAffichageTest
 	 				ComparatifAffichageTest.pModeEnCours=2;
 		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 		 			verdictMode2=cat2.getVerdict();	
 		 			
-		 			//Récapitulatif
-		 			tourRestantMode2 = EntreesConfigJeu.getNCoups() - coupMode2;
+		 			//Récapitulatif (Affichage)
+		 			tourRestantMode2 = EntreesConfigJeu.getNCoups() - (int)(coupMode2-1);
 		 			System.out.println(" ______________________________________");
-		 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode2-1) + " coups!");
+		 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode2) + " coups!");
 		 			System.out.println(" ______________________________________");
 
 			coupMode2++;
@@ -73,10 +73,10 @@ public class RechercheMode2 {
 	}
 	
 	//3.2.1.1 Entrées de l'ordi
-	static void entreesJeuOrdi(){
+	static void entreesJeuOrdi(int coup, int[][] tableauJeuMode2,String[][] tableauReponseJoueur, int[] dichoPlus, int[] dichoMoins, int Max ){
 		
 		// 1er coup: On donne la valeur 5 au début
-		if (coupMode2==0) {
+		if (coup==0) {
 			System.out.println("----------------------------");
 			System.out.println("PROPOSITION DE L'ORDINATEUR:");
 			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {	
@@ -88,25 +88,25 @@ public class RechercheMode2 {
 			for (int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {
 				
 				//Factorisation : On rapatrie la valeur du coup d'avant pour la tester
-				tableauReponseJoueur[coupMode2-1][pion]= ComparatifAffichageTest.getTableauReponse(coupMode2-1,pion);
+				tableauReponseJoueur[coup-1][pion]= ComparatifAffichageTest.getTableauReponse(coup-1,pion);
 
 				
-				if (tableauReponseJoueur[coupMode2-1][pion].equals("=")) {
-					tableauJeuMode2[coupMode2][pion]=tableauJeuMode2[coupMode2-1][pion];
+				if (tableauReponseJoueur[coup-1][pion].equals("=")) {
+					tableauJeuMode2[coup][pion]=tableauJeuMode2[coup-1][pion];
 					}	
-				else if (tableauReponseJoueur[coupMode2-1][pion].equals("+")) {
+				else if (tableauReponseJoueur[coup-1][pion].equals("+")) {
 					
 					// Si c'est "+", la borne inférieure prend la valeur du coup d'avant
-					dichoMoins [pion] = tableauJeuMode2[coupMode2-1][pion];			
+					dichoMoins [pion] = tableauJeuMode2[coup-1][pion];			
 					}
-				else if (tableauReponseJoueur[coupMode2-1][pion].equals("-")) {
+				else if (tableauReponseJoueur[coup-1][pion].equals("-")) {
 					// La recherche se fera vers le '-', la borne superieure prend la valeur du coup d'avant
-					dichoPlus [pion]=  tableauJeuMode2[coupMode2-1][pion];
+					dichoPlus [pion]=  tableauJeuMode2[coup-1][pion];
 				}
 				// On fait la moyenne des deux bornes
-				tableauJeuMode2[coupMode2][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
+				tableauJeuMode2[coup][pion]=(dichoPlus[pion] + dichoMoins[pion])/2;
 				
-				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coupMode2][pion]);
+				System.out.println("Pion "+ pion + " : " + tableauJeuMode2[coup][pion]);
 			}
 		}
 	}
@@ -118,9 +118,12 @@ public class RechercheMode2 {
 		}
 	}
 	//Getters (pour mode3)
-	static int getTableauJeuMode2(int coup,int pion) {
-		return tableauJeuMode2 [coup][pion];
-	}
+//	static int getTableauJeuMode2(int coup,int pion) {
+//		return tableauJeuMode2 [coup][pion];
+//	}
+//	static String getTableauReponseJoueur(int coup,int pion) {
+//		return tableauReponseJoueur [coup][pion];
+//	}
 	String getVerdictMode2(){
 		return verdictMode2;
 	}	
