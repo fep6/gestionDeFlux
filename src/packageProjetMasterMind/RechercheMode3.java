@@ -17,13 +17,13 @@ public class RechercheMode3 {
 
 	//Tableau 1d
 		//combinaison de la défense du joueur (mode2)
-		private int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
+		private static int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
 		// Combinaison de l'ordinateur (mode1)
-		private int combinaisonOrdi [];
+		private static int combinaisonOrdi [];
 		// condition de sortie du while
 		
 	//Autres variables		
-		private boolean boleenSiGagne;
+		private static boolean boleenSiGagneMode3;
 		//Comptage de coup (n° de coup à l'instant t)
 		private static int coupMode3=0;	
 		// Verdict du jeu
@@ -36,7 +36,7 @@ public class RechercheMode3 {
 		CombinaisonSecrete cs = new CombinaisonSecrete();
 			//4.1.1 Retour de la combinaison de l'ordi.(mode1):
 			combinaisonOrdi= cs.getCombinaisonSecreteOrdi();
-			//4.1.2 Retour de la combinaison du joueur  mode(2)
+			//4.1.2 Retour de la combinaison du joueur  (mode2):
 			combinaisonJoueur= cs.getCombinaisonSecreteJoueur();
 
 		
@@ -44,12 +44,11 @@ public class RechercheMode3 {
 
 			//4.2.1 Initialisation des bornes de recherche dichotomiques pour le mode 2
 			RechercheMode2.initVariablesDicho();
-			
-			//4.2.2 Recherche +/- et affichage	
+						//4.2.2 Recherche +/- et affichage	
 			while (verdictMode3 != "LE JOUEUR A GAGNE!" && verdictMode3 != "LE JOUEUR A PERDU!" 
 					&& verdictMode3 != "L'ORDINATEUR A GAGNE!" && verdictMode3 != "L'ORDINATEUR A PERDU!" ) {
-				boleenSiGagne= true;
-				System.out.println("\n Nous sommes au tour N° :" + coupMode3+1);
+				boleenSiGagneMode3= true;
+				System.out.println("\n Nous sommes au tour N° :" + (int)(coupMode3+1));
 				
 				//4.2.2.1 Entrées
 				RechercheMode1.entreesJoueur();
@@ -71,9 +70,28 @@ public class RechercheMode3 {
 	 			verdictMode3=cat2.getVerdict();
 	 			
 				coupMode3++;
-				}				
+			}				
 			System.out.println("verdict = " + verdictMode3);
-		}	
+		}
+	//Getters (pour ComparatifAffichageTest.setMode3)
+	static int getTableauJeuMode1(int coup,int pion) {
+		return tableauJeuMode1 [coup][pion];
+	}
+	static int getTableauJeuMode2(int coup,int pion) {
+		return tableauJeuMode2 [coup][pion];
+	}
+	static int getCombinaisonOrdi(int pion) {
+		return combinaisonOrdi[pion];
+	}
+	static int getCombinaisonJoueur(int pion) {
+		return combinaisonJoueur[pion];
+	}	
+	static int getCoupMode3(){
+		return coupMode3;
+	}
+	static boolean getBoleenSiGagneMode3(){
+		return boleenSiGagneMode3;
+	}
 }
 
 	

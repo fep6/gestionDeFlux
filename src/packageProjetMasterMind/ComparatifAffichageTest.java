@@ -19,8 +19,13 @@ public class ComparatifAffichageTest {
 			setMode1();
 		}
 		if (pModeEnCours==2) {
-			setMode2();
+			setMode2();	
+		}	
+		//Pour Mode 3 (prioritaire)
+		if (EntreesConfigJeu.modeJeu==3) {
+			setMode3();
 		}
+
 		
 	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="
 		comparatifCombinaisonSecrete();
@@ -33,6 +38,7 @@ public class ComparatifAffichageTest {
 	
 	static void comparatifCombinaisonSecrete(){
 		//test
+		System.out.println("------\n TEST");
 		System.out.println("Mode de jeu en cours ="+pModeEnCours);
 		//fin test
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
@@ -48,6 +54,7 @@ public class ComparatifAffichageTest {
 				pBooleenSiGagne = false;
 			}
 			//Test
+			
 			System.out.println("pTableauJeu["+pCoup+"]["+pion+"] = "+pTableauJeu[pCoup][pion]);
 			System.out.println("pCombinaison["+pion+"] = "+pCombinaison[pion]);
 			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
@@ -93,7 +100,6 @@ public class ComparatifAffichageTest {
 	void setMode1() {
 		pCoup=RechercheMode1.coupMode1;
 		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
-		pTourRestant=RechercheMode1.tourRestantMode1;
 		pModeEnCours=1;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
@@ -104,13 +110,29 @@ public class ComparatifAffichageTest {
 	void setMode2() {
 		pCoup=RechercheMode2.coupMode2;
 		pBooleenSiGagne=RechercheMode2.boleenSiGagneMode2;
-		pTourRestant=RechercheMode2.tourRestantMode2;
 		pModeEnCours=2;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode2.tableauJeuMode2 [pCoup][pion];
 		pCombinaison[pion]= RechercheMode2.combinaisonJoueur [pion];
 		}
+	}
+	void setMode3() {
+		pCoup=RechercheMode3.getCoupMode3();
+		pBooleenSiGagne=RechercheMode3.getBoleenSiGagneMode3();
+		
+		if (pModeEnCours==1) {
+			for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
+				pTableauJeu[pCoup][pion]= RechercheMode3.getTableauJeuMode1 (pCoup,pion);
+				pCombinaison[pion]= RechercheMode3.getCombinaisonOrdi(pion);
+			}	
+		}		
+		if (pModeEnCours==2) {
+			for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
+				pTableauJeu[pCoup][pion]= RechercheMode3.tableauJeuMode2 [pCoup][pion];
+				pCombinaison[pion]= RechercheMode3.getCombinaisonJoueur(pion);
+			}	
+		}			
 	}
 	
 //Getter

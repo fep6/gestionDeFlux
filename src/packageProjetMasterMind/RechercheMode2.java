@@ -21,8 +21,6 @@ public class RechercheMode2 {
 	static boolean boleenSiGagneMode2;
 	//Boucles de coup (n° de coup à l'instant t)
 	static int coupMode2=0;	
-	//Nombre de tour de jeu
-	static int tourRestantMode2 = EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode2 = "";
 	
