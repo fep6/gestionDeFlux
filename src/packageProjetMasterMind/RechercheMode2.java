@@ -62,10 +62,7 @@ public class RechercheMode2 {
 		 			verdictMode2=cat2.getVerdict();	
 		 			
 		 			//Récapitulatif (Affichage)
-		 			tourRestantMode2 = EntreesConfigJeu.getNCoups() - (int)(coupMode2-1);
-		 			System.out.println(" ______________________________________");
-		 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode2) + " coups!");
-		 			System.out.println(" ______________________________________");
+		 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode2, coupMode2);
 
 			coupMode2++;
 		} 
@@ -117,10 +114,6 @@ public class RechercheMode2 {
 			dichoMoins[pion]=0;
 		}
 	}
-	//Getters (pour mode3)
-	String getVerdictMode2(){
-		return verdictMode2;
-	}	
 }
 
 

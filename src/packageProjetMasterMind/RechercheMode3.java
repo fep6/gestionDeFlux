@@ -5,16 +5,15 @@ package packageProjetMasterMind;
 
 public class RechercheMode3 {
 	//Tableau 2d 
-		//Tableau pour la saisie d'entrée du joueur (Mode 1)
+		// Tableau pour la saisie d'entrée du joueur (Mode 1)
 		static int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 		// Variable réponse corrective de l'ordinateur en fonction du jeu du joueur (Mode 1)
 		static String[][] tableauReponseOrdi = new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
-		//Tableau pour la saisie de l'ordinateur, avec son historique (Mode2)
+		// Tableau pour la saisie de l'ordinateur, avec son historique (Mode2)
 		static int[][] tableauJeuMode2 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 		// Tableau de réponse du joueur, avec son historique (Mode2)
 		static String[][] tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
 		
-
 	//Tableau 1d
 		//combinaison de la défense du joueur (mode2)
 		private static int combinaisonJoueur[] = new int [EntreesConfigJeu.getNPions()];
@@ -24,9 +23,9 @@ public class RechercheMode3 {
 		
 	//Autres variables		
 		private static boolean boleenSiGagneMode3;
-		//Comptage de coup (n° de coup à l'instant t)
+		// Comptage de coup (n° de coup à l'instant t)
 		private static int coupMode3 = 0;	
-		//Nombre de tour de jeu
+		// Nombre de tour de jeu
 		static int tourRestantMode3 = EntreesConfigJeu.getNCoups();
 		// Verdict du jeu
 		private String verdictMode3;
@@ -73,15 +72,12 @@ public class RechercheMode3 {
 		 			//On rapatrie les données
 		 			verdictMode3=cat1.getVerdict();
 				//(Mode2)
- 				ComparatifAffichageTest.pModeEnCours=2;
-	 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
-	 			verdictMode3=cat2.getVerdict();	
+	 				ComparatifAffichageTest.pModeEnCours=2;
+		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+		 			verdictMode3=cat2.getVerdict();	
 	 			
 	 			//Récapitulatif
-	 			tourRestantMode3 = EntreesConfigJeu.getNCoups() - (int)(coupMode3-1);
-	 			System.out.println(" ______________________________________");
-	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode3) + " coups!");
-	 			System.out.println(" ______________________________________");
+		 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode3, coupMode3);
 	 			
 				coupMode3++;
 			}				

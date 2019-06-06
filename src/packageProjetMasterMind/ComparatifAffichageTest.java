@@ -91,7 +91,13 @@ public class ComparatifAffichageTest {
 		}
 
 	}
-	
+// Divers affichage
+	static void affichageRecapitulatif(int tourRestant, int coup){
+			tourRestant = EntreesConfigJeu.getNCoups() - (int)(coup-1);
+			System.out.println(" ______________________________________");
+			System.out.println(" -> Il reste: "+ (int)(tourRestant-1) + " coups!");
+			System.out.println(" ______________________________________");
+	}
 //Setters
 	// On remplit les données de l'instance selon le N° de coup
 	void setMode1() {

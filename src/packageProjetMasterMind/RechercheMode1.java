@@ -46,10 +46,7 @@ public class RechercheMode1 {
 	 			verdictMode1=cat1.getVerdict();
 	 			
 	 			//Récapitulatif (Affichage)
-	 			tourRestantMode1 = EntreesConfigJeu.getNCoups() - (int)(coupMode1-1);
-	 			System.out.println(" ______________________________________");
-	 			System.out.println(" -> Il reste: "+ (int)(tourRestantMode1) + " coups!");
-	 			System.out.println(" ______________________________________");
+	 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode1, coupMode1);
 	 			
 			coupMode1++;
 		}
@@ -65,11 +62,6 @@ public class RechercheMode1 {
 		for ( int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
 			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	
 		}
-	}
-	
-	//Getters (pour mode3)
-	String getVerdictMode1(){
-		return verdictMode1;
 	}
 }
 
