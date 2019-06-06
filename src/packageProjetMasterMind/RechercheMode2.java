@@ -42,8 +42,8 @@ public class RechercheMode2 {
 	
 	RechercheMode2(){
 		//Initialisation du bornage dichotomique
-		initVariablesDicho();
-		
+		 initVariablesDicho(dichoPlus, dichoMoins, Max);
+
 		//3.1 Entrées de la combinaison du joueur 
 		CombinaisonSecrete csj = new CombinaisonSecrete();
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
@@ -111,19 +111,13 @@ public class RechercheMode2 {
 		}
 	}
 	
-	static void initVariablesDicho() {
+	static void initVariablesDicho(int[]dichoPlus,int[]dichoMoins,int Max) {
 		for (int pion =0; pion<EntreesConfigJeu.getNPions(); pion++) {
 			dichoPlus[pion]=Max;
 			dichoMoins[pion]=0;
 		}
 	}
 	//Getters (pour mode3)
-//	static int getTableauJeuMode2(int coup,int pion) {
-//		return tableauJeuMode2 [coup][pion];
-//	}
-//	static String getTableauReponseJoueur(int coup,int pion) {
-//		return tableauReponseJoueur [coup][pion];
-//	}
 	String getVerdictMode2(){
 		return verdictMode2;
 	}	

@@ -68,12 +68,6 @@ public class RechercheMode1 {
 	}
 	
 	//Getters (pour mode3)
-//	static int getTableauJeuMode1(int coup,int pion) {
-//		return tableauJeuMode1 [coup][pion];
-//	}
-//	static String getTableauReponseOrdi(int coup,int pion) {
-//		return tableauReponseOrdi [coup][pion];
-//	}
 	String getVerdictMode1(){
 		return verdictMode1;
 	}
