@@ -48,8 +48,8 @@ public class ComparatifAffichageTest {
 				pBooleenSiGagne = false;
 			}
 			//Test
+			System.out.println("pTableauJeu["+pCoup+"]["+pion+"] = "+pTableauJeu[pCoup][pion]);
 			System.out.println("pCombinaison["+pion+"] = "+pCombinaison[pion]);
-			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
 			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
 			//Fin test	
 		}
