@@ -2,12 +2,12 @@ package packageProjetMasterMind;
 
 //Test de l'entrée de l'utilisateur
 
-public class EntreesDuJeu {
+public class EntreesManuellesDuJeu {
 	
 // entrée 
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 	
-	EntreesDuJeu () {
+	EntreesManuellesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
 
 		for (int i=0; i<reponse.length ; i++) {

@@ -37,12 +37,12 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	}
 	//Mode2
 	void setCombinaisonSecreteJoueur(){
-		EntreesDuJeu emjMode2 = new EntreesDuJeu ();
-		System.out.println("veuillez entrer votre combinaison secrète: ");
+		EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
+		System.out.println("Veuillez entrer votre combinaison secrète: ");
 
 		// ..Et on va chercher le retour
 		for (int pion = 0 ; pion < EntreesConfigJeu.getNPions(); pion++) {
-			combinaisonSecreteJoueur [pion]= emjMode2.getEntree(pion);
+			combinaisonSecreteJoueur [pion]= edjMode2.getEntree(pion);
 		}
 		System.out.print("\n ---------------------"+"\nLa proposition est donc: ");
 		for (int i = 0 ; i < EntreesConfigJeu.getNPions(); i++) {
