@@ -10,7 +10,7 @@ public class RechercheMode2 {
 	//Tableau pour la saisie de l'ordinateur, avec son historique
 	static int[][] tableauJeuMode2 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Tableau de réponse du joueur, avec son historique
-	static String[][]  tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
+	static String[][] tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
 
 // Tableau 1d
 	//combinaison de la défense du joueur
@@ -56,8 +56,8 @@ public class RechercheMode2 {
 					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
 					entreesJeuOrdi();
 
-			 		//Instanciation  ComparatifAffichageTest
-	 				ComparatifAffichageTest.pModeEnCours=2;
+			 		//3.2.2 Instanciation  ComparatifAffichageTest
+	 				//ComparatifAffichageTest.pModeEnCours=2;
 		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 		 			verdictMode2=cat2.getVerdict();
 

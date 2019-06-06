@@ -12,7 +12,7 @@ public class RechercheMode3 {
 		//Tableau pour la saisie de l'ordinateur, avec son historique (Mode2)
 		static int[][] tableauJeuMode2 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 		// Tableau de réponse du joueur, avec son historique (Mode2)
-		static String[][]  tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
+		static String[][] tableauReponseJoueur  = new String[EntreesConfigJeu.getNCoups()] [EntreesConfigJeu.getNPions()];
 		
 
 	//Tableau 1d
@@ -21,8 +21,6 @@ public class RechercheMode3 {
 		// Combinaison de l'ordinateur (mode1)
 		private int combinaisonOrdi [];
 		// condition de sortie du while
-		
-		
 		
 	//Autres variables		
 		private boolean boleenSiGagne;
@@ -34,7 +32,7 @@ public class RechercheMode3 {
 	
 	RechercheMode3(){
 		
-		//4.1 Entrées des combinaisons secrètes 
+		//4.1 Entrées des combinaisons secrètes (ordinateur et joueur)
 		CombinaisonSecrete cs = new CombinaisonSecrete();
 			//4.1.1 Retour de la combinaison de l'ordi.(mode1):
 			combinaisonOrdi= cs.getCombinaisonSecreteOrdi();
@@ -56,7 +54,7 @@ public class RechercheMode3 {
 				//4.2.2.1 Entrées
 				RechercheMode1.entreesJoueur();
 				RechercheMode2.entreesJeuOrdi();
-					//On rapatrie les données de chaque 'rechercheModeX'
+					//On rapatrie les données de chaque 'RechercheModeX'
 				for (int pion =0; pion<EntreesConfigJeu.getNPions();pion++) {
 					tableauJeuMode1[coupMode3][pion]=RechercheMode1.getTableauJeuMode1(coupMode3,pion);
 					tableauJeuMode2[coupMode3][pion]=RechercheMode2.getTableauJeuMode2(coupMode3,pion);
@@ -64,9 +62,12 @@ public class RechercheMode3 {
 				
 		 		//4.2.2.2 Jeux 
 				//(Mode1)
-				
+	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+	 			verdictMode3=cat1.getVerdict();
 				//(Mode2)
-				
+	 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+	 			verdictMode3=cat2.getVerdict();
+	 			
 				coupMode3++;
 				}				
 			System.out.println("verdict = " + verdictMode3);

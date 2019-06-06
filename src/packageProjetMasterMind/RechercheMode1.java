@@ -41,7 +41,7 @@ public class RechercheMode1 {
 
 	 		//2.2.2 Jeux
 				//On renseigne le mode de jeu
- 				ComparatifAffichageTest.pModeEnCours=1;
+ 				//ComparatifAffichageTest.pModeEnCours=1;
 	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
 
@@ -64,9 +64,9 @@ public class RechercheMode1 {
 	static int getTableauJeuMode1(int coup,int pion) {
 		return tableauJeuMode1 [coup][pion];
 	}
-	static String getTableauReponseOrdi(int coup,int pion) {
-		return tableauReponseOrdi [coup][pion];
-	}
+//	static String getTableauReponseOrdi(int coup,int pion) {
+//		return tableauReponseOrdi [coup][pion];
+//	}
 	String getVerdictMode1(){
 		return verdictMode1;
 	}
