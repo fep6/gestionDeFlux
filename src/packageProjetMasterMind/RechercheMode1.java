@@ -63,7 +63,7 @@ public class RechercheMode1 {
 			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	
 		}
 	}
-	//Setters
+	//Setters pour ComparatifAffichageTest.setMode1()
 	static int getCoupMode1(){
 		return coupMode1;
 	}
