@@ -101,14 +101,14 @@ public class ComparatifAffichageTest {
 //Setters
 	// On remplit les données de l'instance selon le N° de coup
 	void setMode1() {
-		pCoup=RechercheMode1.coupMode1;
-		pBooleenSiGagne=RechercheMode1.boleenSiGagneMode1;
-		pTourRestant=RechercheMode1.tourRestantMode1;
+		pCoup=RechercheMode1.getCoupMode1();
+		pBooleenSiGagne=RechercheMode1.getBoleenSiGagneMode1();
+		pTourRestant=RechercheMode1.getTourRestantMode1();
 		pModeEnCours=1;
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
-		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
-		pCombinaison[pion]= RechercheMode1.combinaisonOrdi [pion];
+		pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(pCoup, pion);
+		pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
 		}
 	}
 	void setMode2() {

@@ -63,6 +63,22 @@ public class RechercheMode1 {
 			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	
 		}
 	}
+	//Setters
+	static int getCoupMode1(){
+		return coupMode1;
+	}
+	static boolean getBoleenSiGagneMode1(){
+		return boleenSiGagneMode1;
+	}
+	static int getTourRestantMode1(){
+		return tourRestantMode1;
+	}
+	static int getTableauJeuMode1(int coup, int pion){
+		return tableauJeuMode1[coup][pion];
+	}
+	static int getCombinaisonOrdi(int pion){
+		return combinaisonOrdi[pion];
+	}
 }
 
 	
