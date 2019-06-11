@@ -15,7 +15,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 		}
 		if ( EntreesConfigJeu.getModeJeu()  == 3) {
 			setCombinaisonSecreteOrdi();
-			setCombinaisonSecreteJoueur();
+			setCombinaisonSecreteJoueur(); 
 		}
 	}
 	
