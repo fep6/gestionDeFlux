@@ -63,7 +63,6 @@ public class EntreesConfigJeu {
 			+ "3-> Mode duel où l'ordinateur et vous jouez tour à tour, \n"
 			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
 						
-			// Semi-factorisation
 			test.setGestionExeptionEntreesGlobales(modeJeu);
 			modeJeu = test.getResultatGestionExeptionEntreesGlobales();			
 		} while ( modeJeu < 1 || modeJeu > 3 );
@@ -73,7 +72,7 @@ public class EntreesConfigJeu {
 			
 		do {
 			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
-			// Semi-factorisation
+		
 			test.setGestionExeptionEntreesGlobales(nCoups);
 			nCoups = test.getResultatGestionExeptionEntreesGlobales();		
 		} while ( nCoups < 1 || nCoups > 20 );
@@ -81,7 +80,7 @@ public class EntreesConfigJeu {
 	
 	void setNPions() {
 		System.out.println("Veuillez entrer le nombre de pions: ");
-		// Semi factorisation
+		
 		test.setGestionExeptionEntreesGlobales(nPions);
 		nPions = test.getResultatGestionExeptionEntreesGlobales();	
 		System.out.println("test: Nombre de pions =" + nPions);

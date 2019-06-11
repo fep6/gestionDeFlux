@@ -6,23 +6,22 @@ public class EntreesManuellesDuJeu {
 	
 // entrée 
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
-GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales();
+GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales();
 	
 	EntreesManuellesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
 
-		for (int i=0; i<reponse.length ; i++) {
+		for (int pion=0; pion<reponse.length ; pion++) {
 
-				if (i == 0) {
-					System.out.print((int)(i+1) + "ère entrée?");
+				if (pion == 0) {
+					System.out.print((int)(pion+1) + "ère entrée?");
 				}
 				else {
-					System.out.print((int)(i+1) + "eme entrée?");
+					System.out.print((int)(pion+1) + "eme entrée?");
 				}
 					
-					geeg.setGestionExeptionEntreesGlobales(reponse [i]);
-					// retour des données
-					reponse [i] = geeg.getResultatGestionExeptionEntreesGlobales();
+				test.setGestionExeptionEntreesGlobales(reponse [pion]);
+				reponse [pion] = test.getResultatGestionExeptionEntreesGlobales();
 				
 		}
 	}
