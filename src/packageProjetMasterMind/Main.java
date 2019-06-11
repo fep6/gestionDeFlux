@@ -1,12 +1,13 @@
 package packageProjetMasterMind;
 
 public class Main { 
+
+static EntreesConfigJeu ecj = new EntreesConfigJeu();
+	
 	
 	public static void main(String[] args) {
 		
-// 1 Entrée du mode, du nombre de pions, du nombre de coups,
-
-		EntreesConfigJeu ecj = new EntreesConfigJeu();
+		ecj.setEntreesConfigJeu();
 		
 // 2 Recherche +/- :
 	if ( EntreesConfigJeu.getModeJeu()  == 1) {

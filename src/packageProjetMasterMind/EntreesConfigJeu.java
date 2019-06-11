@@ -11,7 +11,7 @@ public class EntreesConfigJeu {
 	GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales();
 	
 	// Entrées des données du jeu 
-	EntreesConfigJeu () {
+	void setEntreesConfigJeu () {
 		
 		// Entrées des données du jeu
 		this.setModeJeu();

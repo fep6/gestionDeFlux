@@ -12,8 +12,6 @@ public class GestionExeptionEntreesGlobales {
 	
 	void setGestionExeptionEntreesGlobales (int test) {
 		do {
-			
-		
 			str = sc.nextLine();
 			try {
 				test = Integer.parseInt(str);
