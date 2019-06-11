@@ -39,6 +39,7 @@ public class RechercheMode2 {
 	private static int[] dichoMoins = new int [EntreesConfigJeu.getNPions()] ;
 
 	CombinaisonSecrete csj = new CombinaisonSecrete();
+	ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 	
 	RechercheMode2(){
 		//Initialisation du bornage dichotomique
@@ -58,11 +59,11 @@ public class RechercheMode2 {
 
 			 		//3.2.2 Instanciation  ComparatifAffichageTest
 	 				ComparatifAffichageTest.pModeEnCours=2;
-		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+		 			cat2.setComparatifAffichageTest();
 		 			verdictMode2=cat2.getVerdict();	
 		 			
 		 			//Récapitulatif (Affichage)
-		 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode2, coupMode2);
+		 			cat2.affichageRecapitulatif(tourRestantMode2, coupMode2);
 
 			coupMode2++;
 		} 

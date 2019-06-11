@@ -25,8 +25,10 @@ public class RechercheMode1 {
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode1="";
+	
 	static	CombinaisonSecrete cso = new CombinaisonSecrete();
 	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
+	static ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 
 	RechercheMode1(){
 		
@@ -45,11 +47,11 @@ public class RechercheMode1 {
 	 		//2.2.2 Jeux
 				//On renseigne le mode de jeu
  				ComparatifAffichageTest.pModeEnCours=1;
-	 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+	 			cat1.setComparatifAffichageTest();
 	 			verdictMode1=cat1.getVerdict();
 	 			
 	 			//Récapitulatif (Affichage)
-	 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode1, coupMode1);
+	 			cat1.affichageRecapitulatif(tourRestantMode1, coupMode1);
 	 			
 			coupMode1++;
 		}

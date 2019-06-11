@@ -13,17 +13,11 @@ public class EntreesConfigJeu {
 	// Entrées des données du jeu 
 	void setEntreesConfigJeu () {
 		
-		// Entrées des données du jeu
 		this.setModeJeu();
-		// Nombre de coups
 		this.setNCoups();
-		// Nombre de pions
 		this.setNPions();	
 		
-
-			
 		// Recapitulatif
-		
 		System.out.println("\n _____________________________________________ \n ");	
 		System.out.println("\n RECAPTULATIF: \n Vous avez choisi le jeu:");
 		System.out.println("Avec " + nPions + " pions, à retrouver en " 

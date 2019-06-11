@@ -37,6 +37,8 @@ public class RechercheMode3 {
 	
 
 		CombinaisonSecrete cs = new CombinaisonSecrete();
+		ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+		ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
 	
 	RechercheMode3(){
 		
@@ -69,17 +71,17 @@ public class RechercheMode3 {
 				
 		 		//4.2.2.2 Jeux 
 				//(Mode1)
-	 				ComparatifAffichageTest.pModeEnCours=1;
-		 			ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
+	 				cat1.pModeEnCours=1;
+		 			cat1.setComparatifAffichageTest();
 		 			//On rapatrie les données
 		 			verdictMode3=cat1.getVerdict();
 				//(Mode2)
-	 				ComparatifAffichageTest.pModeEnCours=2;
-		 			ComparatifAffichageTest cat2 = new ComparatifAffichageTest();
+	 				cat2.pModeEnCours=2;
+		 			cat2.setComparatifAffichageTest();
 		 			verdictMode3=cat2.getVerdict();	
 	 			
 	 			//Récapitulatif
-		 			ComparatifAffichageTest.affichageRecapitulatif(tourRestantMode3, coupMode3);
+		 			cat2.affichageRecapitulatif(tourRestantMode3, coupMode3);
 	 			
 				coupMode3++;
 			}				

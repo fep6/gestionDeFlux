@@ -10,31 +10,23 @@ public class ComparatifAffichageTest {
 	static private boolean pBooleenSiGagne;
 	static private int pTourRestant;
 	static private String pVerdict = new String();
-	// Mode3 : Définit quel mode a la main 
+	// Définit quel mode a la main 
 	static int pModeEnCours;
 
-	ComparatifAffichageTest () {	
-	//On rapatrie les données du mode concerné
+	void setComparatifAffichageTest () {
 		if (pModeEnCours==1) {
 			setMode1();
 		}
 		if (pModeEnCours==2) {
 			setMode2();	
-		}	
-		//Pour Mode 3 (prioritaire)
+		}
 		if (EntreesConfigJeu.modeJeu==3) {
 			setMode3();
 		}
 
-		
-	//Comparatif combinaison secrète / entrée => réponse ordinateur par "+" ou "-" ou "="
 		comparatifCombinaisonSecrete();
-	//Affichage & tests
 		affichageEtTest();
 	}
-	
-	
-	//Méthodes communes aux mode 1,2,3
 	
 	static void comparatifCombinaisonSecrete(){
 		//test
@@ -53,12 +45,6 @@ public class ComparatifAffichageTest {
 				pTableauReponse[pCoup][pion]="-";
 				pBooleenSiGagne = false;
 			}
-			//Test
-			
-			System.out.println("pTableauJeu["+pCoup+"]["+pion+"] = "+pTableauJeu[pCoup][pion]);
-			System.out.println("pCombinaison["+pion+"] = "+pCombinaison[pion]);
-			System.out.println("pTableauReponse["+pion+"] = "+pTableauReponse[pCoup][pion]);
-			//Fin test	
 		}
 	}
 	public static void affichageEtTest() {
@@ -73,8 +59,6 @@ public class ComparatifAffichageTest {
 			System.out.print(pTableauReponse[pCoup][pion]);
 		}
 		System.out.println("");
-		
-		// test
 		if (pTourRestant == 0 && !pBooleenSiGagne && pModeEnCours==1) {
 			pVerdict = "LE JOUEUR A PERDU!";
 		}
@@ -89,23 +73,20 @@ public class ComparatifAffichageTest {
 		} else { 
 			pVerdict = "LE JEU EST EN COURS";
 		}
-
 	}
 // Divers affichage
-	static void affichageRecapitulatif(int tourRestant, int coup){
+	void affichageRecapitulatif(int tourRestant, int coup){
 			tourRestant = EntreesConfigJeu.getNCoups() - (int)(coup-1);
 			System.out.println(" ______________________________________");
 			System.out.println(" -> Il reste: "+ (int)(tourRestant-1) + " coups!");
 			System.out.println(" ______________________________________");
 	}
 //Setters
-	// On remplit les données de l'instance selon le N° de coup
 	void setMode1() {
 		pCoup=RechercheMode1.getCoupMode1();
 		pBooleenSiGagne=RechercheMode1.getBoleenSiGagneMode1();
 		pTourRestant=RechercheMode1.getTourRestantMode1();
 		pModeEnCours=1;
-		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 		pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(pCoup, pion);
 		pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
@@ -126,7 +107,6 @@ public class ComparatifAffichageTest {
 		pCoup=RechercheMode3.getCoupMode3();
 		pBooleenSiGagne=RechercheMode3.getBoleenSiGagneMode3();
 		pTourRestant=RechercheMode3.getTourRestantMode3();
-		
 		
 		if (pModeEnCours==1) {
 			for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
