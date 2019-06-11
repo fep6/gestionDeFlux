@@ -6,7 +6,7 @@ public class CombinaisonSecrete {
 int combinaisonSecreteOrdi [] = new int[EntreesConfigJeu.getNPions()];	
 int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	
-	CombinaisonSecrete(){
+	CombinaisonSecrete(){ 
 		if ( EntreesConfigJeu.getModeJeu()  == 1 ) { 
 			setCombinaisonSecreteOrdi();
 		}
@@ -15,7 +15,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 		}
 		if ( EntreesConfigJeu.getModeJeu()  == 3) {
 			setCombinaisonSecreteOrdi();
-			setCombinaisonSecreteJoueur(); 
+			setCombinaisonSecreteJoueur();
 		}
 	}
 	

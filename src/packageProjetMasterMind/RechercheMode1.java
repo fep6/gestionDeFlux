@@ -24,7 +24,7 @@ public class RechercheMode1 {
 	//tour restant
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
-	static String verdictMode1;
+	static String verdictMode1="";
 
 	RechercheMode1(){
 		
@@ -32,7 +32,8 @@ public class RechercheMode1 {
 		CombinaisonSecrete cso = new CombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 		
-		//2.2 recherche +/- et affichage	
+		//2.2 recherche +/- et affichage
+		
 		while (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!")) {
 			boleenSiGagneMode1= true;
 			
