@@ -8,6 +8,8 @@ public class EntreesConfigJeu {
 	//Nombre de pions
 	static int nPions;
 
+	GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales();
+	
 	// Entrées des données du jeu 
 	EntreesConfigJeu () {
 		
@@ -17,6 +19,8 @@ public class EntreesConfigJeu {
 		this.setNCoups();
 		// Nombre de pions
 		this.setNPions();	
+		
+
 			
 		// Recapitulatif
 		
@@ -60,7 +64,7 @@ public class EntreesConfigJeu {
 			+ "le premier à trouver la combinaison secréte de l'autre a gagné");
 						
 			// Semi-factorisation
-			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(modeJeu);
+			test.setGestionExeptionEntreesGlobales(modeJeu);
 			modeJeu = test.getResultatGestionExeptionEntreesGlobales();			
 		} while ( modeJeu < 1 || modeJeu > 3 );
 	}
@@ -70,7 +74,7 @@ public class EntreesConfigJeu {
 		do {
 			System.out.println("Veuillez entrer le nombre de coups souhaités (entre 1 & 20): ");
 			// Semi-factorisation
-			GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nCoups);
+			test.setGestionExeptionEntreesGlobales(nCoups);
 			nCoups = test.getResultatGestionExeptionEntreesGlobales();		
 		} while ( nCoups < 1 || nCoups > 20 );
 	}
@@ -78,7 +82,7 @@ public class EntreesConfigJeu {
 	void setNPions() {
 		System.out.println("Veuillez entrer le nombre de pions: ");
 		// Semi factorisation
-		GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales(nPions);
+		test.setGestionExeptionEntreesGlobales(nPions);
 		nPions = test.getResultatGestionExeptionEntreesGlobales();	
 		System.out.println("test: Nombre de pions =" + nPions);
 	}

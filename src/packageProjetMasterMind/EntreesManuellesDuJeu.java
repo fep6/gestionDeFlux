@@ -6,6 +6,7 @@ public class EntreesManuellesDuJeu {
 	
 // entrée 
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
+GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales();
 	
 	EntreesManuellesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
@@ -18,8 +19,8 @@ private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 				else {
 					System.out.print((int)(i+1) + "eme entrée?");
 				}
-					//instanciation du test try/catch 
-					GestionExeptionEntreesGlobales geeg = new GestionExeptionEntreesGlobales(reponse [i]);
+					
+					geeg.setGestionExeptionEntreesGlobales(reponse [i]);
 					// retour des données
 					reponse [i] = geeg.getResultatGestionExeptionEntreesGlobales();
 				

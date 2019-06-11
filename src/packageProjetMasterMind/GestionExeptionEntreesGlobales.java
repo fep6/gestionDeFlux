@@ -10,7 +10,7 @@ public class GestionExeptionEntreesGlobales {
 	// Résultat
 	private int resultat;
 	
-	GestionExeptionEntreesGlobales (int test) {
+	void setGestionExeptionEntreesGlobales (int test) {
 		do {
 			
 		
