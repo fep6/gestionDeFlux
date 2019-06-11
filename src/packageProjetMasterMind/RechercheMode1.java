@@ -25,13 +25,13 @@ public class RechercheMode1 {
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode1="";
-	
+	static	CombinaisonSecrete cso = new CombinaisonSecrete();
 	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 
 	RechercheMode1(){
 		
 		//2.1  Entrée de la combinaison de l'ordi.:
-		CombinaisonSecrete cso = new CombinaisonSecrete();
+		cso.setCombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 		
 		//2.2 recherche +/- et affichage

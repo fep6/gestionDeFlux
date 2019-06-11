@@ -7,7 +7,7 @@ int combinaisonSecreteOrdi [] = new int[EntreesConfigJeu.getNPions()];
 int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
 	
-	CombinaisonSecrete(){ 
+	void setCombinaisonSecrete(){ 
 		if ( EntreesConfigJeu.getModeJeu()  == 1 ) { 
 			setCombinaisonSecreteOrdi();
 		}

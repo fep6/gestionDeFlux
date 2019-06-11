@@ -35,11 +35,13 @@ public class RechercheMode3 {
 		int[] dichoMoins= new int[EntreesConfigJeu.getNPions()];
 		int Max = 10;
 	
+
+		CombinaisonSecrete cs = new CombinaisonSecrete();
 	
 	RechercheMode3(){
 		
 		//4.1 Entrées des combinaisons secrètes (ordinateur et joueur)
-		CombinaisonSecrete cs = new CombinaisonSecrete();
+			cs.setCombinaisonSecrete();
 			//4.1.1 Retour de la combinaison de l'ordi.(mode1):
 			combinaisonOrdi= cs.getCombinaisonSecreteOrdi();
 			//4.1.2 Retour de la combinaison du joueur  (mode2):

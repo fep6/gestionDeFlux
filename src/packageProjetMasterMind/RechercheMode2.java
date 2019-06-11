@@ -38,14 +38,14 @@ public class RechercheMode2 {
 	//Recherche  'vers le bas'
 	private static int[] dichoMoins = new int [EntreesConfigJeu.getNPions()] ;
 
-	
+	CombinaisonSecrete csj = new CombinaisonSecrete();
 	
 	RechercheMode2(){
 		//Initialisation du bornage dichotomique
 		 initVariablesDicho(dichoPlus, dichoMoins, Max);
 
 		//3.1 Entrées de la combinaison du joueur 
-		CombinaisonSecrete csj = new CombinaisonSecrete();
+		csj.setCombinaisonSecrete();
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
 		
 		// 3.2. recherche +/- et affichage
