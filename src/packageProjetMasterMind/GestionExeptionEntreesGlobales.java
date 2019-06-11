@@ -11,6 +11,8 @@ public class GestionExeptionEntreesGlobales {
 	private int resultat;
 	
 	GestionExeptionEntreesGlobales (int test) {
+		do {
+			
 		
 			str = sc.nextLine();
 			try {
@@ -20,7 +22,7 @@ public class GestionExeptionEntreesGlobales {
 			} catch (NumberFormatException e){
 				System.out.println(" : Cette valeur n'est pas une entrée valide!");
 			}
-		
+		} while(str.equals(""));
 	}
 	
 	int getResultatGestionExeptionEntreesGlobales() {
