@@ -55,8 +55,8 @@ public class RechercheMode3 {
 				dichoMoins[pion]=0;
 			}
 						//4.2.2 Recherche +/- et affichage	
-			while (verdictMode3 != "LE JOUEUR A GAGNE!" && verdictMode3 != "LE JOUEUR A PERDU!" 
-					&& verdictMode3 != "L'ORDINATEUR A GAGNE!" && verdictMode3 != "L'ORDINATEUR A PERDU!" ) {
+			while (!verdictMode3.equals("LE JOUEUR A GAGNE!") && !verdictMode3.equals("LE JOUEUR A PERDU!") 
+					&& !verdictMode3.equals("L'ORDINATEUR A GAGNE!") && !verdictMode3.equals("L'ORDINATEUR A PERDU!" )) {
 				boleenSiGagneMode3= true;
 				System.out.println("\n Nous sommes au tour N° :" + (int)(coupMode3+1));
 				

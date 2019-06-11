@@ -33,7 +33,7 @@ public class RechercheMode1 {
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 		
 		//2.2 recherche +/- et affichage	
-		while (verdictMode1 != "LE JOUEUR A GAGNE!" && verdictMode1 != "LE JOUEUR A PERDU!") {
+		while (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!")) {
 			boleenSiGagneMode1= true;
 			
 		    //2.2.1 entrées du joueur
