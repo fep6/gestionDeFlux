@@ -5,6 +5,7 @@ public class CombinaisonSecrete {
 //1.2  Création Combinaison secrète de l'ordi.(pour modes 1 & 3)
 int combinaisonSecreteOrdi [] = new int[EntreesConfigJeu.getNPions()];	
 int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
+EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
 	
 	CombinaisonSecrete(){ 
 		if ( EntreesConfigJeu.getModeJeu()  == 1 ) { 
@@ -38,7 +39,7 @@ int combinaisonSecreteJoueur [] = new int[EntreesConfigJeu.getNPions()];
 	//Mode2
 	void setCombinaisonSecreteJoueur(){
 		System.out.println("Veuillez entrer votre combinaison secrète: ");
-		EntreesManuellesDuJeu edjMode2 = new EntreesManuellesDuJeu ();
+		edjMode2.setEntreesManuellesDuJeu();
 
 		// ..Et on va chercher le retour
 		for (int pion = 0 ; pion < EntreesConfigJeu.getNPions(); pion++) {

@@ -25,6 +25,8 @@ public class RechercheMode1 {
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode1="";
+	
+	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 
 	RechercheMode1(){
 		
@@ -58,7 +60,7 @@ public class RechercheMode1 {
 	static void entreesJoueur(int coup, int[][] tableauJeuMode1) {
 		System.out.println("----------------------------");
 		System.out.println("PROPOSITION DU JOUEUR:");
-		EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
+		emjMode1.setEntreesManuellesDuJeu();
 		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
 		for ( int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
 			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	

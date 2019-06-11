@@ -8,7 +8,7 @@ public class EntreesManuellesDuJeu {
 private int[] reponse = new int[EntreesConfigJeu.getNPions()];
 GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales();
 	
-	EntreesManuellesDuJeu () {
+	void setEntreesManuellesDuJeu () {
 		// Renseignement des variables de classe par les variables d'instance
 
 		for (int pion=0; pion<reponse.length ; pion++) {

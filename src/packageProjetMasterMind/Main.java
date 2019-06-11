@@ -7,7 +7,7 @@ static EntreesConfigJeu ecj = new EntreesConfigJeu();
 	
 	public static void main(String[] args) {
 		
-		ecj.setEntreesConfigJeu();
+	ecj.setEntreesConfigJeu();
 		
 // 2 Recherche +/- :
 	if ( EntreesConfigJeu.getModeJeu()  == 1) {
