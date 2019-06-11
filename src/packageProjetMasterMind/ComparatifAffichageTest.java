@@ -29,10 +29,6 @@ public class ComparatifAffichageTest {
 	}
 	
 	static void comparatifCombinaisonSecrete(){
-		//test
-		System.out.println("------\n TEST");
-		System.out.println("Mode de jeu en cours ="+pModeEnCours);
-		//fin test
 		for (int pion=0; pion<EntreesConfigJeu.getNPions(); pion++) {
 			if ( pTableauJeu[pCoup][pion]==pCombinaison[pion] ) {
 				pTableauReponse[pCoup][pion]="=";
@@ -76,7 +72,7 @@ public class ComparatifAffichageTest {
 	}
 // Divers affichage
 	void affichageRecapitulatif(int tourRestant, int coup){
-			tourRestant = EntreesConfigJeu.getNCoups() - (int)(coup-1);
+			tourRestant = EntreesConfigJeu.getNCoups() - (int)(coup);
 			System.out.println(" ______________________________________");
 			System.out.println(" -> Il reste: "+ (int)(tourRestant-1) + " coups!");
 			System.out.println(" ______________________________________");

@@ -28,7 +28,7 @@ public class RechercheMode3 {
 		// Nombre de tour de jeu
 		static int tourRestantMode3 = EntreesConfigJeu.getNCoups();
 		// Verdict du jeu
-		private String verdictMode3;
+		private String verdictMode3="";
 		
 	//Recherche dichotomique mode 2
 		int[] dichoPlus= new int[EntreesConfigJeu.getNPions()];
