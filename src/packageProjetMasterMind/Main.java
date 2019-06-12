@@ -5,7 +5,7 @@ public class Main {
 static EntreesConfigJeu ecj = new EntreesConfigJeu();
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 	ecj.setEntreesConfigJeu();
 		
