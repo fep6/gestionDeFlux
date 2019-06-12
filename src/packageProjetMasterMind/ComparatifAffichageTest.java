@@ -78,14 +78,19 @@ public class ComparatifAffichageTest {
 			System.out.println(" ______________________________________");
 	}
 //Setters
-	void setMode1(int[][] tableauJeuMode1) {//mettre param
+	
+	//mettre param
+	void setMode1(int[][] tableauJeuMode1) {
 		pCoup=RechercheMode1.getCoupMode1();
 		pBooleenSiGagne=RechercheMode1.getBoleenSiGagneMode1();
 		pTourRestant=RechercheMode1.getTourRestantMode1();
 		pModeEnCours=1;
+		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
-		pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(tableauJeuMode1[pCoup][pion]);//mettre tableauJeu param
-		pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
+			
+			//mettre tableauJeu param
+		pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(tableauJeuMode1[pCoup][pion]);pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
+		
 		}
 	}
 	void setMode2() {

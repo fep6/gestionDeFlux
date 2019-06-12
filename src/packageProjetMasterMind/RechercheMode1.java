@@ -30,8 +30,9 @@ public class RechercheMode1 {
 	static ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 
 	void jeuMode1(){
+		//instanciation de tableauModeJeuMode1 ici
+		int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 		
-		int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	//instanciation de tableauModeJeuMode1 ici
 		cso.setCombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
 
