@@ -54,10 +54,10 @@ public class RechercheMode2 {
 			boleenSiGagneMode2= true;
 			System.out.println("\n Nous sommes au tour N° :" + coupMode2);
 				
-					//3.2.1 Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
+					//Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
 					entreesJeuOrdi(coupMode2,tableauJeuMode2,tableauReponseJoueur,dichoPlus,dichoMoins,Max);
 
-			 		//3.2.2 Instanciation  ComparatifAffichageTest
+			 		//ComparatifAffichageTest
 	 				ComparatifAffichageTest.pModeEnCours=2;
 		 			cat2.setComparatifAffichageTest();
 		 			verdictMode2=cat2.getVerdict();	

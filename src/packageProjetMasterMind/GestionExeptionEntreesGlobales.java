@@ -6,9 +6,9 @@ public class GestionExeptionEntreesGlobales {
 	// private static int iteration=0;
 	private Scanner sc = new Scanner(System.in);
 	// Variable d'entrée
-	private String str;
+	private String str="";
 	// Résultat
-	private int resultat;
+	private int resultat=0;
 	
 	void setGestionExeptionEntreesGlobales (int test) {
 		do {

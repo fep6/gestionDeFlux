@@ -69,13 +69,11 @@ public class RechercheMode3 {
 				RechercheMode2.entreesJeuOrdi(coupMode3, tableauJeuMode2,tableauReponseJoueur,dichoPlus, dichoMoins,Max );
 
 				
-		 		//4.2.2.2 Jeux 
-				//(Mode1)
+		 		//Jeux
 	 				cat1.pModeEnCours=1;
 		 			cat1.setComparatifAffichageTest();
-		 			//On rapatrie les données
 		 			verdictMode3=cat1.getVerdict();
-				//(Mode2)
+				
 	 				cat2.pModeEnCours=2;
 		 			cat2.setComparatifAffichageTest();
 		 			verdictMode3=cat2.getVerdict();	

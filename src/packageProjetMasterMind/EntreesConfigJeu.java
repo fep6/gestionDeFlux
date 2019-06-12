@@ -2,11 +2,11 @@ package packageProjetMasterMind;
 
 public class EntreesConfigJeu {
 	//Mode de jeu
-	static int modeJeu;
+	static int modeJeu=0;
 	//Nombre de coups
-	private static int nCoups;
+	private static int nCoups=0;
 	//Nombre de pions
-	static int nPions;
+	static int nPions=0;
 
 	GestionExeptionEntreesGlobales test = new GestionExeptionEntreesGlobales();
 	

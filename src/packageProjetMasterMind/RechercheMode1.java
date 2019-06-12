@@ -8,7 +8,6 @@ public class RechercheMode1 {
 
 //Tableau 2d
 	//Tableau pour la saisie d'entrée du joueur
-	static int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 	// Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 	static String[][] tableauReponseOrdi = new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	
@@ -32,25 +31,23 @@ public class RechercheMode1 {
 
 	void jeuMode1(){
 		
-		//2.1  Entrée de la combinaison de l'ordi.:
+		int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	//instanciation de tableauModeJeuMode1 ici
 		cso.setCombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
-		
-		//2.2 recherche +/- et affichage
+
 		
 		while (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!")) {
 			boleenSiGagneMode1= true;
 			
-		    //2.2.1 entrées du joueur
 			entreesJoueur(coupMode1, tableauJeuMode1);
 
-	 		//2.2.2 Jeux
-				//On renseigne le mode de jeu
+				// mode de jeu
  				ComparatifAffichageTest.pModeEnCours=1;
-	 			cat1.setComparatifAffichageTest();
+ 				
+	 			cat1.setComparatifAffichageTest(tableauJeuMode1);//passer tableaujeu en parametre
+	 			
 	 			verdictMode1=cat1.getVerdict();
 	 			
-	 			//Récapitulatif (Affichage)
 	 			cat1.affichageRecapitulatif(tourRestantMode1, coupMode1);
 	 			
 			coupMode1++;
@@ -58,12 +55,11 @@ public class RechercheMode1 {
 		System.out.println("...Fin de la partie : "+ verdictMode1);
 	}
 	
-	//entrées du joueur (var reponse)
 	static void entreesJoueur(int coup, int[][] tableauJeuMode1) {
 		System.out.println("----------------------------");
 		System.out.println("PROPOSITION DU JOUEUR:");
 		emjMode1.setEntreesManuellesDuJeu();
-		// Rapatriement des données de l'instance tej dans la variable de classe tableauJeuMode1
+		
 		for ( int pion=0;pion<EntreesConfigJeu.getNPions();pion++) {				
 			tableauJeuMode1[coup][pion]=emjMode1.getEntree(pion);	
 		}
@@ -78,8 +74,8 @@ public class RechercheMode1 {
 	static int getTourRestantMode1(){
 		return tourRestantMode1;
 	}
-	static int getTableauJeuMode1(int coup, int pion){
-		return tableauJeuMode1[coup][pion];
+	public static int getTableauJeuMode1(int tableauJeuMode1) {
+		return tableauJeuMode1;
 	}
 	static int getCombinaisonOrdi(int pion){
 		return combinaisonOrdi[pion];
