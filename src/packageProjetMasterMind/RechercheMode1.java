@@ -30,7 +30,7 @@ public class RechercheMode1 {
 	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 	static ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 
-	RechercheMode1(){
+	void jeuMode1(){
 		
 		//2.1  Entrée de la combinaison de l'ordi.:
 		cso.setCombinaisonSecrete();
