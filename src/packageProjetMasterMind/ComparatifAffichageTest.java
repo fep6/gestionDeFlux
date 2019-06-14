@@ -12,10 +12,12 @@ public class ComparatifAffichageTest {
 	static private String pVerdict = new String();
 	// Définit quel mode a la main 
 	static int pModeEnCours;
-
-	void setComparatifAffichageTest (int[][] tableauJeuMode1) {
+	
+	//void setComparatifAffichageTest (int[][] tableauJeuMode1) 
+	void setComparatifAffichageTest () {
 		if (pModeEnCours==1) {
-			setMode1(tableauJeuMode1);//passer param
+			//passer param*
+			setMode1();
 		}
 		if (pModeEnCours==2) {
 			setMode2();	
@@ -79,8 +81,8 @@ public class ComparatifAffichageTest {
 	}
 //Setters
 	
-	//mettre param
-	void setMode1(int[][] tableauJeuMode1) {
+	//mettre param*
+	void setMode1() {
 		pCoup=RechercheMode1.getCoupMode1();
 		pBooleenSiGagne=RechercheMode1.getBoleenSiGagneMode1();
 		pTourRestant=RechercheMode1.getTourRestantMode1();
@@ -88,8 +90,10 @@ public class ComparatifAffichageTest {
 		
 		for (int pion=0; pion<EntreesConfigJeu.getNPions();pion++) {
 			
-			//mettre tableauJeu param
-		pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(tableauJeuMode1[pCoup][pion]);pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
+			//mettre tableauJeu param*
+		// pTableauJeu[pCoup][pion]= RechercheMode1.getTableauJeuMode1(tableauJeuMode1[pCoup][pion]);
+		pTableauJeu[pCoup][pion]= RechercheMode1.tableauJeuMode1 [pCoup][pion];
+		pCombinaison[pion]= RechercheMode1.getCombinaisonOrdi(pion);
 		
 		}
 	}

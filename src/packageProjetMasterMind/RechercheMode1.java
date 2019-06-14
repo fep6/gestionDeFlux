@@ -8,6 +8,7 @@ public class RechercheMode1 {
 
 //Tableau 2d
 	//Tableau pour la saisie d'entrée du joueur
+	static int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	// Variable réponse corrective de l'ordinateur en fonction du jeu du joueur
 	static String[][] tableauReponseOrdi = new String[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];
 	
@@ -29,9 +30,9 @@ public class RechercheMode1 {
 	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
 	static ComparatifAffichageTest cat1 = new ComparatifAffichageTest();
 
-	void jeuMode1(){
-		//instanciation de tableauModeJeuMode1 ici
-		int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
+	RechercheMode1(){
+		//instanciation de tableauModeJeuMode1 ici*
+		//int[][] tableauJeuMode1 = new int[EntreesConfigJeu.getNCoups()][EntreesConfigJeu.getNPions()];	
 		
 		cso.setCombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
@@ -45,7 +46,10 @@ public class RechercheMode1 {
 				// mode de jeu
  				ComparatifAffichageTest.pModeEnCours=1;
  				
-	 			cat1.setComparatifAffichageTest(tableauJeuMode1);//passer tableaujeu en parametre
+ 				cat1.setComparatifAffichageTest();
+ 				//passer tableaujeu en parametre*
+	 			//cat1.setComparatifAffichageTest(tableauJeuMode1);
+	 			
 	 			
 	 			verdictMode1=cat1.getVerdict();
 	 			
@@ -75,7 +79,8 @@ public class RechercheMode1 {
 	static int getTourRestantMode1(){
 		return tourRestantMode1;
 	}
-	public static int getTableauJeuMode1(int tableauJeuMode1) {
+	//public static int getTableauJeuMode1(int tableauJeuMode1)
+	static int getTableauJeuMode1(int tableauJeuMode1) {
 		return tableauJeuMode1;
 	}
 	static int getCombinaisonOrdi(int pion){

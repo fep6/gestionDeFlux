@@ -7,14 +7,14 @@ public class Main {
 	
 	
 	public static void main(String[] args) {	
-	RechercheMode1 j1 = new RechercheMode1();
+	//RechercheMode1 j1 = new RechercheMode1();
 		
 	ecj.setEntreesConfigJeu();
 		
 // 2 Recherche +/- :
 	if ( EntreesConfigJeu.getModeJeu()  == 1) {
 			// j1.jeuMode1();
-		j1.jeuMode1();
+		RechercheMode1 j1 = new RechercheMode1();
 		}
 	else if ( EntreesConfigJeu.getModeJeu()  == 2) {
 			RechercheMode2 j2 = new RechercheMode2();
