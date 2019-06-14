@@ -25,10 +25,7 @@ public class RechercheMode2 {
 	static int tourRestantMode2 = EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode2 = "";
-	
-
-	//Numero de pion
-	//static int pionMode2;
+	boolean jeuEnCoursMode2= true;
 
 // Variables pour recherche dichotomique
 	//Valeur max du nombre limite
@@ -48,23 +45,19 @@ public class RechercheMode2 {
 		//3.1 Entrées de la combinaison du joueur 
 		csj.setCombinaisonSecrete();
 		combinaisonJoueur= csj.getCombinaisonSecreteJoueur();
-		
-		// 3.2. recherche +/- et affichage
-		while (!verdictMode2.equals("L'ORDINATEUR A GAGNE!") && !verdictMode2.equals("L'ORDINATEUR A PERDU!")) {
+		while (jeuEnCoursMode2) {
 			boleenSiGagneMode2= true;
 			System.out.println("\n Nous sommes au tour N° :" + coupMode2);
-				
-					//Entrées de l'ordi(var tableauJeuMode2[][]) et recherche dichotomique :
-					entreesJeuOrdi(coupMode2,tableauJeuMode2,tableauReponseJoueur,dichoPlus,dichoMoins,Max);
-
-			 		//ComparatifAffichageTest
-	 				ComparatifAffichageTest.pModeEnCours=2;
-		 			cat2.setComparatifAffichageTest();
-		 			verdictMode2=cat2.getVerdict();	
-		 			
-		 			//Récapitulatif (Affichage)
-		 			cat2.affichageRecapitulatif(tourRestantMode2, coupMode2);
-
+			entreesJeuOrdi(coupMode2,tableauJeuMode2,tableauReponseJoueur,dichoPlus,dichoMoins,Max);
+			ComparatifAffichageTest.pModeEnCours=2;
+ 			cat2.setComparatifAffichageTest();
+ 			verdictMode2=cat2.getVerdict();
+ 			if (!verdictMode2.equals("L'ORDINATEUR A GAGNE!") && !verdictMode2.equals("L'ORDINATEUR A PERDU!")) {
+ 				jeuEnCoursMode2 =true;
+ 			} else {
+ 				jeuEnCoursMode2 =false;
+ 			}
+ 			cat2.affichageRecapitulatif(tourRestantMode2, coupMode2);
 			coupMode2++;
 		} 
 		System.out.println("...Fin de la partie : "+ verdictMode2);

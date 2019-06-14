@@ -25,6 +25,8 @@ public class RechercheMode1 {
 	static int tourRestantMode1= EntreesConfigJeu.getNCoups();
 	// Renvoie si la partie est gagnée ou non
 	static String verdictMode1="";
+	//Jeu en cours
+	boolean jeuEnCoursMode1=true;
 	
 	static	CombinaisonSecrete cso = new CombinaisonSecrete();
 	static EntreesManuellesDuJeu emjMode1 = new EntreesManuellesDuJeu ();
@@ -36,26 +38,19 @@ public class RechercheMode1 {
 		
 		cso.setCombinaisonSecrete();
 		combinaisonOrdi= cso.getCombinaisonSecreteOrdi();
-
-		
-		while (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!")) {
+		while (jeuEnCoursMode1) {
 			boleenSiGagneMode1= true;
-			
 			entreesJoueur(coupMode1, tableauJeuMode1);
-
-				// mode de jeu
- 				ComparatifAffichageTest.pModeEnCours=1;
- 				
- 				cat1.setComparatifAffichageTest();
- 				//passer tableaujeu en parametre*
-	 			//cat1.setComparatifAffichageTest(tableauJeuMode1);
-	 			
-	 			
-	 			verdictMode1=cat1.getVerdict();
-	 			
-	 			cat1.affichageRecapitulatif(tourRestantMode1, coupMode1);
-	 			
-			coupMode1++;
+			ComparatifAffichageTest.pModeEnCours=1;
+			cat1.setComparatifAffichageTest();
+ 			verdictMode1=cat1.getVerdict();
+ 			if (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!")) {
+ 				jeuEnCoursMode1 =true;
+ 			} else {
+ 				jeuEnCoursMode1 =false;
+ 			}
+ 			cat1.affichageRecapitulatif(tourRestantMode1, coupMode1);
+ 			coupMode1++;
 		}
 		System.out.println("...Fin de la partie : "+ verdictMode1);
 	}
