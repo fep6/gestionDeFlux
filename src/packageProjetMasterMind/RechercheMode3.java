@@ -27,8 +27,9 @@ public class RechercheMode3 {
 		private static int coupMode3 = 0;	
 		// Nombre de tour de jeu
 		static int tourRestantMode3 = EntreesConfigJeu.getNCoups();
-		// Verdict du jeu
-		private String verdictMode3="";
+		// Verdicts du jeu
+		private String verdictMode1="";
+		private String verdictMode2="";
 		
 	//Recherche dichotomique mode 2
 		int[] dichoPlus= new int[EntreesConfigJeu.getNPions()];
@@ -59,8 +60,8 @@ public class RechercheMode3 {
 				dichoMoins[pion]=0;
 			}
 						//4.2.2 Recherche +/- et affichage 	
-			while (!verdictMode3.equals("LE JOUEUR A GAGNE!") && !verdictMode3.equals("LE JOUEUR A PERDU!") 
-					&& !verdictMode3.equals("L'ORDINATEUR A GAGNE!") && !verdictMode3.equals("L'ORDINATEUR A PERDU!" )) {
+			while (!verdictMode1.equals("LE JOUEUR A GAGNE!") && !verdictMode1.equals("LE JOUEUR A PERDU!") 
+					&& !verdictMode2.equals("L'ORDINATEUR A GAGNE!") && !verdictMode2.equals("L'ORDINATEUR A PERDU!" )) {
 				boleenSiGagneMode3= true;
 				System.out.println("\n Nous sommes au tour N° :" + (int)(coupMode3+1));
 				
@@ -72,18 +73,22 @@ public class RechercheMode3 {
 		 		//Jeux
 	 				cat1.pModeEnCours=1;
 		 			cat1.setComparatifAffichageTest();
-		 			verdictMode3=cat1.getVerdict();
+		 			verdictMode1=cat1.getVerdict();
 				
 	 				cat2.pModeEnCours=2;
 		 			cat2.setComparatifAffichageTest();
-		 			verdictMode3=cat2.getVerdict();	
+		 			verdictMode2=cat2.getVerdict();	
 	 			
 	 			//Récapitulatif
 		 			cat2.affichageRecapitulatif(tourRestantMode3, coupMode3);
+		 		
+		 			//TESTS
+		 			//System.out.println();
 	 			
 				coupMode3++;
 			}				
-			System.out.println("verdict = " + verdictMode3);
+			System.out.println("Verdict du joueur = " + verdictMode1);				
+			System.out.println("Verdict de l'ordinateur = " + verdictMode2);
 		}
 	//Getters (pour ComparatifAffichageTest.setMode3)
 	static int getTableauJeuMode1(int coup,int pion) {
