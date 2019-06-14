@@ -58,7 +58,7 @@ public class RechercheMode3 {
 				dichoPlus[pion]=Max;
 				dichoMoins[pion]=0;
 			}
-						//4.2.2 Recherche +/- et affichage	
+						//4.2.2 Recherche +/- et affichage 	
 			while (!verdictMode3.equals("LE JOUEUR A GAGNE!") && !verdictMode3.equals("LE JOUEUR A PERDU!") 
 					&& !verdictMode3.equals("L'ORDINATEUR A GAGNE!") && !verdictMode3.equals("L'ORDINATEUR A PERDU!" )) {
 				boleenSiGagneMode3= true;
