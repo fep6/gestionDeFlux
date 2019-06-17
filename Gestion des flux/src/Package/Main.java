@@ -1,5 +1,5 @@
 package Package;
-//Package à importer afin d'utiliser l'objet File 
+//Package à importer afin d'utiliser l'objet File  
 import java.io.File;
 import java.io.IOException;
 
