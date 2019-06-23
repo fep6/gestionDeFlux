@@ -19,7 +19,7 @@ public class ComparatifAffichageTest {
 			//passer param*
 			setMode1();
 		}
-		if (pModeEnCours==2) {
+		if (pModeEnCours==2) {  
 			setMode2();	
 		}
 		if (EntreesConfigJeu.modeJeu==3) {
